@@ -1,8 +1,8 @@
 ---
 layout: default
-title: Home
+title : Home
 nav_order: 1
+description : "description"
 ---
 
-# Dandelion : An Efficient And Fully Automated Approach To Sample Chemical Reaction Space
 
