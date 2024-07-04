@@ -1,12 +1,11 @@
 ---
 layout: default
-title: Second Page
+title: User guide
 nav_order: 2
 has_children: true
 ---
 
-# Second Page
-
-This is the content of the second page.
+# User guide
+This is a broad outline on how the software is used. 
 
 
