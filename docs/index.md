@@ -17,5 +17,5 @@ Documentation site of Dandelion
 Dandelion is an efficient and fully automated approach to sample chemical reaction space.
 
 <div style="text-align: center;">
-  <img src="img/overall_scheme.png" alt="My Image" width="350"/>
+  <img src="img/overall_scheme.PNG" alt="My Image" width="350"/>
 </div>
