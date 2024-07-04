@@ -8,4 +8,4 @@ nav_order: 1
 
 Documentation site of Dandelion, An Efficient And Fully Automated Approach To Sample Chemical Reaction Space.
 
-![My Image](img/pes_scheme.png)
+<img src="img/pes_scheme.png" alt="My Image" width="300"/>
