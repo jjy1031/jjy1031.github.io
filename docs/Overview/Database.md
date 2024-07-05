@@ -6,8 +6,5 @@ nav_order: 1
 ---
 
 # Database
-
-<div style="text-align: center;">
-  <img src="img/db_overview.png" alt="My Image" width="500"/>
-</div>
+![db_overview](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/8280b521-1385-4127-b731-1a9b09aba091)
 
