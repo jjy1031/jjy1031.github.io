@@ -14,7 +14,7 @@ Documentation site of Dandelion
 
 # Introduction
 
-Dandelion is an efficient and fully automated approach to sample chemical reaction space.
+Dandelion is a program that aims to improve Machine Learning Interatomic Potentials(MLIP) by sampling the Potential Energy Surface(PES) of molecules effectively. To sample structures efficiently, our approach selectively employs ab initio calculations after using tight-binding method. This allows for building expanded database beyond equilibrium states. 
 
 <div style="text-align: center;">
   <img src="img/overall_scheme.PNG" alt="My Image" width="500"/>
