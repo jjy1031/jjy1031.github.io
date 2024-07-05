@@ -51,10 +51,11 @@ Be sure to change 'mhyeok' to your username please.
 ### Single-ended Growing String Method
 - 1_create_gsm_jobs.ipynb
 
-You can change input_path and output_path in config.
+  You can change `input_path` and `output_path` in config.
 
-`input_path` should contain XYZ files of mother structures.
-
+  `input_path` should contain XYZ files of mother structures.
+  
+  `output_path` will be the directory where generated coordinates(seeds) will be stored.
 
 - 2_run_gsm_jobs.ipynb
 - 3_filter_reactions.ipynb
