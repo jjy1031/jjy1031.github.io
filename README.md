@@ -8,14 +8,12 @@ Documentation : <https://jjy1031.github.io/>
   - conda
   - openmpi
 
-- Install from source
+### Setup conda environment
 
 ```python
 git clone
 cd 
 ```
-
-### Setup conda environment
 
 ```python
 conda env create -f ts.yaml
