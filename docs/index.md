@@ -19,3 +19,6 @@ Dandelion is a program that aims to improve Machine Learning Interatomic Potenti
 <div style="text-align: center;">
   <img src="img/overall_scheme.PNG" alt="My Image" width="500"/>
 </div>
+
+## Git repository
+<https://github.com/jjy1031/jjy1031.github.io>
