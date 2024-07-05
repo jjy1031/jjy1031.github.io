@@ -49,9 +49,14 @@ Be sure to change 'mhyeok' to your username please.
 ## Workflow
 
 ### Single-ended Growing String Method
-1. 1_create_gsm_jobs.ipynb
-2. 2_run_gsm_jobs.ipynb
-3. 3_filter_reactions.ipynb
+- 1_create_gsm_jobs.ipynb
+
+You can change input_path and output_path in config.
+'input_path' should contain XYZ files of mother structures.
+
+
+- 2_run_gsm_jobs.ipynb
+- 3_filter_reactions.ipynb
 
 
 ### Nudged Elastic Band 
