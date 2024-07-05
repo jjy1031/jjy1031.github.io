@@ -6,5 +6,5 @@ has_children: true
 ---
 
 # Overview
-This is a broad outline on how the software is used. 
+The following pages contain some background information about Dandelion. 
 
