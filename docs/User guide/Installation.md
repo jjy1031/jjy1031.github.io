@@ -7,4 +7,8 @@ nav_order: 1
 
 # Installation
 
-Installation
+
+
+  ```python
+  conda env create -f ts.yaml
+  ```
