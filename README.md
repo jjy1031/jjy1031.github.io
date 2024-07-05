@@ -6,7 +6,7 @@ Documentation : <https://jjy1031.github.io/>
 ## Installation
 - Prerequisites
 
-- git
+### Install from source
   ```python
   git clone
   ```
