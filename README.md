@@ -8,7 +8,7 @@ Documentation : <https://jjy1031.github.io/>
   - conda
   - openmpi
 
-## Install from source
+- Install from source
 
 ```python
 git clone
