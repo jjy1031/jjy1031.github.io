@@ -7,8 +7,7 @@ nav_order: 2
 
 # Workflow
 
-<div style="text-align: center;">
-  <img src="img/overall_scheme.PNG" alt="My Image" width="500"/>
-</div>
+![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
+
 
 
