@@ -27,14 +27,14 @@ conda env create -f ts.yaml
 conda activate ts
 pip install -e
 ```
-***Please move pyGSM folder to /home/username/package.***
+Please move pyGSM folder to /home/username/package.
 
 ### Install Orca
 
 ```python
 tar -xf orca.tar.xz
 ```
-***Please move Orca folder to /home/username/package.***
+Please move Orca folder to /home/username/package.
 
 ### Setup environment variable
 
@@ -44,7 +44,7 @@ export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
 export OMP_NUM_THREADS=1
 
-***Be sure to change 'mhyeok' to your username please.***
+Be sure to change 'mhyeok' to your username please.
 
 ## Examples
 
