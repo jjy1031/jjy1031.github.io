@@ -18,4 +18,4 @@ Documentation : <https://jjy1031.github.io/>
 ## References 
 
 
-## Citing 
+## Citation
