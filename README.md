@@ -16,11 +16,13 @@ cd
 ```
 
 ### Setup conda environment
+
 ```python
 conda env create -f ts.yaml
 ```
 
 ### Install pyGSM
+
 ```python
 conda activate ts
 pip install -e
@@ -28,6 +30,7 @@ pip install -e
 ***Please move pyGSM folder to /home/username/package.***
 
 ### Install Orca
+
 ```python
 tar -xf orca.tar.xz
 ```
