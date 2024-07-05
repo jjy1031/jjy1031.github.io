@@ -38,11 +38,13 @@ Please move Orca folder to /home/username/package.
 
 ### Setup environment variable
 
+```python
 export PATH="/home/mhyeok/package/orca/orca_5_0_4:$PATH" \
 export PYTHONPATH=/home/mhyeok/package/pyGSM:$PYTHONPATH \
 export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
 export OMP_NUM_THREADS=1
+```
 
 Be sure to change 'mhyeok' to your username please.
 
