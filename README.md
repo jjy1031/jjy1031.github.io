@@ -49,6 +49,7 @@ Be sure to change 'mhyeok' to your username please.
 ## Workflow
 
 ### Single-ended Growing String Method
+
 - **1_create_gsm_jobs.ipynb**
 
   You can change `input_path` and `output_path` in config.
@@ -57,7 +58,11 @@ Be sure to change 'mhyeok' to your username please.
   
   `output_path` will be the directory where generated coordinates(seeds) will be stored.
 
+  You can get coordinates from mother structures in this process.
+
 - **2_run_gsm_jobs.ipynb**
+  
+  
 - **3_filter_reactions.ipynb**
 
 
