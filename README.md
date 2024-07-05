@@ -32,7 +32,7 @@ Please move pyGSM folder to /home/username/package.
 ```python
 tar -xf orca.tar.xz
 ```
-Please move Orca folder to /home/username/package.
+Please move orca folder to /home/username/package.
 
 ### Setup environment variable
 
