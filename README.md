@@ -52,7 +52,8 @@ Be sure to change 'mhyeok' to your username please.
 - 1_create_gsm_jobs.ipynb
 
 You can change input_path and output_path in config.
-'input_path' should contain XYZ files of mother structures.
+
+`input_path` should contain XYZ files of mother structures.
 
 
 - 2_run_gsm_jobs.ipynb
