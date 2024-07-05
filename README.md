@@ -6,5 +6,10 @@ Documentation : <https://jjy1031.github.io/>
 ## Installation
 - Prerequisites
 
+- git
+  ```python
+  git clone
+  ```
+
 
 ## Citing 
