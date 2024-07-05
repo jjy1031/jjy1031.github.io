@@ -67,6 +67,8 @@ We automated the generation of mother structures and the corresponding driving c
 ```python
 $ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
 ```
+  `input_path` should contain XYZ files of mother structures.
+  
   You can run SE-GSM in this process.
   
 - **3_filter_reactions.ipynb**
@@ -81,13 +83,17 @@ $ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
   2 structures, or those that are repetitive.
 
 ### Nudged Elastic Band 
-1. 1_neb_xtb.py
-2. 2_make_rxns_json.ipynb
-3. 3_compile_xtb_h5.py
+- 1_neb_xtb.py
+- 
+```python
+$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
+```
+- 2_make_rxns_json.ipynb
+- 3_compile_xtb_h5.py
 
 ### wB97X/6-31g(d) refinement
-1. 1_wb97x_on_xtb_h5.py
-2. 2_compile_wb97x_h5.ipynb
+- 1_wb97x_on_xtb_h5.py
+- 2_compile_wb97x_h5.ipynb
 
 
 ## References 
