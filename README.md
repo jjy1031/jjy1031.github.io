@@ -50,6 +50,8 @@ Be sure to change 'mhyeok' to your username please.
 
 ### Single-ended Growing String Method
 
+We automated the generation of mother structures and the corresponding driving coordinates in this process. 
+
 - **1_create_gsm_jobs.ipynb**
 
   You can change `input_path` and `output_path` in config.
@@ -57,14 +59,26 @@ Be sure to change 'mhyeok' to your username please.
   `input_path` should contain XYZ files of mother structures.
   
   `output_path` will be the directory where generated coordinates(seeds) will be stored.
-
-  You can get coordinates from mother structures in this process.
+  
+  You can get coordinates from mother structures.
 
 - **2_run_gsm_jobs.ipynb**
-  
+
+```python
+$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
+```
+  You can run SE-GSM in this process.
   
 - **3_filter_reactions.ipynb**
+  
+ You should modify the `input_path` and `output_path` of the config file. 
 
+ `input_path` should contain XYZ files of generated coordinates(seeds).
+
+ `output_path` will be the directory where filtered coordinates(seeds) will be stored.
+ 
+  If you run this cell, you can get filtered structures. This filtering algorithm excludes trivial    pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
+  2 structures, or those that are repetitive.
 
 ### Nudged Elastic Band 
 1. 1_neb_xtb.py
