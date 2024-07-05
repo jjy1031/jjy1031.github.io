@@ -5,6 +5,8 @@ Documentation : <https://jjy1031.github.io/>
 
 ## Installation
 - Prerequisites
+  - conda
+  - openmpi
 
 ### Install from source
   ```python
