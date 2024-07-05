@@ -48,8 +48,22 @@ export OMP_NUM_THREADS=1
 
 Be sure to change 'mhyeok' to your username please.
 
-## Examples
+## Workflow
 
+### Single-ended Growing String Method
+1. 1_create_gsm_jobs.ipynb
+2. 2_run_gsm_jobs.ipynb
+3. 3_filter_reactions.ipynb
+
+
+### Nudged Elastic Band 
+1. 1_neb_xtb.py
+2. 2_make_rxns_json.ipynb
+3. 3_compile_xtb_h5.py
+
+### wB97X/6-31g(d) refinement
+1. 1_wb97x_on_xtb_h5.py
+2. 2_compile_wb97x_h5.ipynb
 
 
 ## References 
