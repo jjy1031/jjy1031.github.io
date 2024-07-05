@@ -6,7 +6,7 @@ nav_order: 1
 
 # Welcome to Dandelion
 
-Documentation site of Dandelion
+This is the documentation site of Dandelion
 
 <div style="text-align: center;">
   <img src="img/pes_scheme.png" alt="My Image" width="350"/>
