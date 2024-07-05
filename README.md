@@ -10,7 +10,7 @@ Documentation : <https://jjy1031.github.io/>
 
 ### Install from source
   ```python
-  git clone
+  conda env create -f ts.yaml
   ```
 
 ## Examples
