@@ -17,14 +17,15 @@ cd dandelion_test
 If you have authentification error, you should get personal access token.
 
 ```python
-conda env create -f ts.yaml
+conda env create -f environment.yml
+conda activate ts
+pip install -e
 ```
 
 ### Install pyGSM
 
 ```python
-conda activate ts
-pip install -e
+
 ```
 Please move pyGSM folder to /home/username/package.
 
