@@ -8,9 +8,8 @@ nav_order: 1
 
 This is the documentation site of Dandelion
 
-<div style="text-align: center;">
-  <img src="img/pes_scheme.png" alt="My Image" width="350"/>
-</div>
+![pes_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/5e541d6d-94b6-4c69-a452-bbac4cb2c26f)
+
 
 # Introduction
 
