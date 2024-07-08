@@ -1,7 +1,7 @@
 # Dandelion 
 Dandelion is a code for Automated and Efficient Sampling of Chemical Reaction Space.
 
-Documentation : <https://jjy1031.github.io/>
+Documentation : <https://jjy1031.github.io>
 
 ## Installation
 - Prerequisites
@@ -16,40 +16,41 @@ cd dandelion_test
 ```
 If you have authentification error, you should get personal access token.
 
-
 ### Setup conda environment
 
 ```python
 conda env create -f environment.yml
 conda activate ts
-pip install -e
+pip install -e .
 ```
 
 ### Install pyGSM
 
 ```python
-
+pip install -e git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
 ```
-Please move pyGSM folder to /home/username/package.
 
 ### Install Orca
 
 ```python
 tar -xf orca.tar.xz
 ```
-Please move orca folder to /home/username/package.
 
-### Setup environment variable
-
+### Setup environment variables in '.bashrc'
 ```python
-export PATH="/home/mhyeok/package/orca/orca_5_0_4:$PATH" \
-export PYTHONPATH=/home/mhyeok/package/pyGSM:$PYTHONPATH \
+export PATH="/path/to/your/orca/directory:$PATH" \
+```
+```python
+export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
+```
+```python
 export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
-export OMP_NUM_THREADS=1
 ```
 
-Be sure to change 'mhyeok' to your username please.
+```python
+export OMP_NUM_THREADS=1
+```
 
 ## Workflow
 
