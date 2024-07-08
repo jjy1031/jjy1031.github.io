@@ -11,9 +11,10 @@ Documentation : <https://jjy1031.github.io/>
 ### Setup conda environment
 
 ```python
-git clone
-cd 
+git clone https://github.com/mhyeok1/dandelion_test.git
+cd dandelion_test
 ```
+If you have authentification error, you should get personal access token.
 
 ```python
 conda env create -f ts.yaml
