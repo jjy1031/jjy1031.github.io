@@ -36,7 +36,7 @@ pip install -e git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
 tar -xf orca.tar.xz
 ```
 
-### Setup environment variables in '.bashrc'
+### Setup environment variables in `.bashrc`
 ```python
 export PATH="/path/to/your/orca/directory:$PATH" \
 ```
