@@ -8,13 +8,16 @@ Documentation : <https://jjy1031.github.io/>
   - conda
   - openmpi
 
-### Setup conda environment
+### Download Dandelion
 
 ```python
 git clone https://github.com/mhyeok1/dandelion_test.git
 cd dandelion_test
 ```
 If you have authentification error, you should get personal access token.
+
+
+### Setup conda environment
 
 ```python
 conda env create -f environment.yml
