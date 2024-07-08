@@ -64,6 +64,11 @@ ulimit -s unlimited\
 export OMP_NUM_THREADS=1
 ```
 
+### Verifying Installation
+
+By executing `python dandelion_sample.py -h`, 
+
+
 ## Workflow
 
 ### Single-ended Growing String Method
