@@ -47,8 +47,12 @@ tar -xf orca.tar.xz
 
 ### Setup environment variables in `.bashrc`
 
-You can
+You can open your `.bashrc` file:
+```python
+vi ~/.bashrc
+```
 
+Add the following lines to your `.bashrc` file:
 ```python
 export PATH="/path/to/your/orca/directory:$PATH" \
 ```
@@ -59,9 +63,14 @@ export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
 export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
 ```
-
 ```python
 export OMP_NUM_THREADS=1
+```
+
+Apply the changes:
+
+```python
+source ~/.bashrc
 ```
 
 ### Verifying Installation
