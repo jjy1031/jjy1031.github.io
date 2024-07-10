@@ -13,11 +13,9 @@ Dandelion is -.
 ![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
 
 
-## 1. Single-ended Growing String Method
+## 1. dandelion_sample.py
 
 We automated the generation of mother structures and the corresponding driving coordinates in this process. 
-
-- **dandelion_sample.py**
 
   ``` python
 
@@ -35,6 +33,25 @@ We automated the generation of mother structures and the corresponding driving c
                           Number of worker processes
 
   ```
+
+  This process consists of six steps below.
+
+  ### 1. Creating GSM
+  In this procedure, you can make GSM jobs from mother structures.
+  This algorithm considers number of connections to break, to change, to form and decides possible rxn.
+  Result is stored in your/mother/structure/path/1_gsm/.../ISOMERS.TXT
+
+  ```
+  BREAK 5 6
+  ADD 4 6
+  ADD 3 6
+  ```
+  ### 2. Running GSM
+  ### 3. Filtering GSM
+  ### 4. Running NEB
+  ### 5. Filtering NEB
+  ### 6. Compiling samples
+  
 
 - **dandelion_refine.py**
 
