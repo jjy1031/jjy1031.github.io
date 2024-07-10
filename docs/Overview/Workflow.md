@@ -38,7 +38,8 @@ We automated the generation of mother structures and the corresponding driving c
 
   ### 1. Creating GSM
   In this procedure, you can make GSM jobs from mother structures.
-  This algorithm considers number of connections to break, to change, to form and decides possible rxn.
+  This algorithm considers number of connections to break, to change, to form and decides possible rxn and 
+  generate possible driving coordinates.
   Result is stored in your/mother/structure/path/1_gsm/.../ISOMERS.TXT
 
   ```
@@ -47,7 +48,30 @@ We automated the generation of mother structures and the corresponding driving c
   ADD 3 6
   ```
   ### 2. Running GSM
+  
   ### 3. Filtering GSM
+
+  Through this process, you can get filtered structures. This filtering algorithm excludes trivial    
+  pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
+  2 structures, or those that are repetitive.
+
+  '''
+Faith of pyGSM run
+
+1) png is not made
+- xTB not converge
+- pyGSM suicide on his criteria
+
+2) png is made
+- Exiting early -> should filter out
+- Ran out of iterations -> also includes potential rxn
+- Converged -> very rare
+'''
+
+Example of filtered structures :
+
+
+
   ### 4. Running NEB
   ### 5. Filtering NEB
   ### 6. Compiling samples
@@ -69,9 +93,6 @@ $ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
 
  `output_path` will be the directory where filtered coordinates(seeds) will be stored.
  
-  If you run this cell, you can get filtered structures. This filtering algorithm excludes trivial    pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
-  2 structures, or those that are repetitive.
-
 ## 2. Nudged Elastic Band 
 - 1_neb_xtb.py
 - 
