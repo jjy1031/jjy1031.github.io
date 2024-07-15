@@ -138,8 +138,6 @@ Third step is to:
 ║                          3. Filtering GSM                          ║
 ╚════════════════════════════════════════════════════════════════════╝
 
-
-
 Arguments provided:
   input_path: /home/jjy1031/example/outputs/1_gsm
   output_path: /home/jjy1031/example/outputs/2_gsm_filtered
