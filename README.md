@@ -86,57 +86,6 @@ source ~/.bashrc
 
 By executing `python dandelion_sample.py -h`, 
 
-
-## Workflow
-
-### Single-ended Growing String Method
-
-We automated the generation of mother structures and the corresponding driving coordinates in this process. 
-
-- **1_create_gsm_jobs.ipynb**
-
-  You can change `input_path` and `output_path` in config.
-
-  `input_path` should contain XYZ files of mother structures.
-  
-  `output_path` will be the directory where generated coordinates(seeds) will be stored.
-  
-  You can get coordinates from mother structures.
-
-- **2_run_gsm_jobs.ipynb**
-
-```python
-$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
-```
-  `input_path` should contain XYZ files of mother structures.
-  
-  You can run SE-GSM in this process.
-  
-- **3_filter_reactions.ipynb**
-  
- You should modify the `input_path` and `output_path` of the config file. 
-
- `input_path` should contain XYZ files of generated coordinates(seeds).
-
- `output_path` will be the directory where filtered coordinates(seeds) will be stored.
- 
-  If you run this cell, you can get filtered structures. This filtering algorithm excludes trivial    pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
-  2 structures, or those that are repetitive.
-
-### Nudged Elastic Band 
-- 1_neb_xtb.py
-- 
-```python
-$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
-```
-- 2_make_rxns_json.ipynb
-- 3_compile_xtb_h5.py
-
-### wB97X/6-31g(d) refinement
-- 1_wb97x_on_xtb_h5.py
-- 2_compile_wb97x_h5.ipynb
-
-
 ## References 
 
 
