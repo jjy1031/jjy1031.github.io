@@ -34,11 +34,9 @@ Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instru
 
 ```python
 pip install -e git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
-```
-
-``` python
 pip install -e .
 ```
+By executing `gsm`, you can verify that the program has been successfully downloaded.
 
 ### Install Orca
 
