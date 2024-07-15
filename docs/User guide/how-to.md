@@ -195,9 +195,6 @@ Fourth step is to:
 ╔════════════════════════════════════════════════════════════════════╗
 ║                           4. Running NEB                           ║
 ╚════════════════════════════════════════════════════════════════════╝
-
-
-
 Arguments provided:
   input_path: /home/jjy1031/example/outputs/2_gsm_filtered
   output_path: /home/jjy1031/example/outputs/3_neb
@@ -217,7 +214,6 @@ Fifth step is to :
 ╔════════════════════════════════════════════════════════════════════╗
 ║                          5. Filtering NEB                          ║
 ╚════════════════════════════════════════════════════════════════════╝
-
 
 
 Arguments provided:
