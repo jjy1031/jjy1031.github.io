@@ -123,13 +123,11 @@ Second step is to run GSM.
 ║                           2. Running GSM                           ║
 ╚════════════════════════════════════════════════════════════════════╝
 
-
-
 Arguments provided:
   input_path: /home/jjy1031/example/outputs/1_gsm
   max_workers: 10
 
-GSM on seeds: 100%|██████████████████████████| 1406/1406 [00:00<00:00]
+GSM on seeds: 100%|███████████████████████▉| 1401/1406 [1:35:42<00:20]
 GSM finished!
 
 ```
