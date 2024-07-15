@@ -59,7 +59,7 @@ Add the following lines to your `.bashrc` file:
 export PATH="/path/to/your/orca/directory:$PATH" \
 ```
 
-2.Set the `PYTHONPATH` for pyGSM:
+2. Set the `PYTHONPATH` for pyGSM:
 ```python
 export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
 ```
