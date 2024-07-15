@@ -1,7 +1,7 @@
 # Dandelion 
 Dandelion is a code for Automated and Efficient Sampling of Chemical Reaction Space.
 
-![KakaoTalk_20240715_190427993_02](https://github.com/user-attachments/assets/58a935b4-6508-45d5-8ff0-d6d9eabc99d4)
+![dandelion (1000 x 500 px) (2)](https://github.com/user-attachments/assets/e2dec9d2-b750-4db2-89aa-abb9f16f45f2)
 
 Documentation : <https://jjy1031.github.io>
 
