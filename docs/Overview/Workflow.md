@@ -13,7 +13,7 @@ Dandelion is -.
 ![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
 
 
-## 1. dandelion_sample.py
+## Single-ended Growing method
 
 We automated the generation of mother structures and the corresponding driving coordinates in this process. 
 
