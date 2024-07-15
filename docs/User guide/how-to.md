@@ -7,25 +7,38 @@ nav_order: 2
 
 # Example
 
-This page provides a general overview of dandelion.
-
-We used 5 mother structures to 
-
+This page provides a general overview of dandelion, which can efficiently create extensive database with sampling chemical compound space near transition state from the example of 5 mother structures below.
+We will focus on how to expand dataset from several mother structures.
 ![struc_cl7138](https://github.com/user-attachments/assets/3adec694-1ce6-4296-adfe-a96e95b3f621)
 
 
-Download mother structures in path `/home/jjy1031/example/mother_strucs`
+First, we have to prepare some mother structures to initiate. This is achieved through
+9 geometry optimization using the GFN2-xTB level of theory on the PES, providing stable molecular
+10 configurations as a starting point. Make sure that all of your prepared mother structures are in specific `input_path`.
 
-Make sure your current conda environment is **ts**
-
-Move your current directory ( working directory ) to path which dandelion_sample.py is located.
-
-You can enter this for more information:
-``` python
-python dandelion_sample.py -h
+```
+├── Cl7138
+│   └── ClGeom-m7138-i1-c1-opt
+│       └── struc.xyz
+├── Cl7164
+│   └── ClGeom-m7164-i1-c1-opt
+│       └── struc.xyz
+├── Cl7166
+│   └── ClGeom-m7166-i1-c1-opt
+│       └── struc.xyz
+├── Cl7168
+│   └── ClGeom-m7168-i1-c1-opt
+│       └── struc.xyz
+└── Cl7188
+    └── ClGeom-m7188-i1-c1-opt
+        └── struc.xyz
 ```
 
-```python
+To run dandelion, your current conda environment should be **ts**, and you should move your current directory ( working directory ) to path where dandelion_sample.py is located.
+
+You can enter this in terminal for more information:
+``` python
+$ python dandelion_sample.py -h
 
 usage: dandelion_sample.py [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
@@ -44,7 +57,7 @@ options:
 
 If you enter this:
 ```python
-python dandelion_sample.py -i /home/jjy1031/example/mother_strucs -o /home/jjy1031/example/outputs -n 10
+python dandelion_sample.py -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
 ```
 
 Total 6 steps below will be executed automatically.
@@ -66,14 +79,12 @@ Total 6 steps below will be executed automatically.
 
 ```
 
-First step is to 
+First step is to create GSM. In this process, dandelion generates possible driving coordinates(seeds) from each mother structures.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
 ║                          1. Creating GSM                           ║
 ╚════════════════════════════════════════════════════════════════════╝
-
-
 
 Arguments provided:
   input_path: /home/jjy1031/example/mother_strucs
@@ -96,8 +107,15 @@ Arguments provided:
 Creating GSM finished!
 
 ```
+The `ISOMERS.txt` in created output folder will store some information about where bonds should be added or broken to generate possible driving coordinates from mother structures.
 
-Second step is to
+```
+BREAK 5 6
+ADD 4 6
+ADD 3 6
+```
+
+Second step is to run GSM.
 
 ```
 
