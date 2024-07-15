@@ -11,6 +11,25 @@ This page provides a general overview of dandelion.
 
 We used 5 mother structures to 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 Download mother structures in path `/home/jjy1031/example/mother_strucs`
 
 Make sure your current conda environment is **ts**
@@ -282,5 +301,88 @@ In outputs/4_neb_filtered :
 ├── 4_neb_filtered
   └── reactions.json
 ```
+
+Next step is to execute dandelion_refine.py
+
+You can enter -h or --help if u want more information:
+```
+(ts) [jjy1031@ne00 dandelion]$ python dandelion_refine.py -h
+usage: dandelion_refine.py [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
+
+Refine force on obtained samples, Other parameters can be set in each modules
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_PATH, --input_path INPUT_PATH
+                        Input path of working directory containing xtb.h5
+  -n MAX_WORKERS, --max_workers MAX_WORKERS
+                        Number of worker processes
+  --orca ORCA           Path of the orca binary file
+```
+
+If you enter like this:
+```
+(ts) [jjy1031@ne00 dandelion]$ python dandelion_refine.py -i /home/jjy1031/example/outputs -n 10 --orca ORCA
+```
+
+2 steps below will be executed automatically !
+```
+          ⢀⣀⣀⣀⣀⣀⡀       ⢀⢀⣀⢀⠞⠖⠁⠡⡂⡆ ⡠⢀⡀
+         ⠺⢿⣿⣿⣿⣿⣿⣿⣷⣦⣠⣤⣤⣤⣄⣀⣀ ⡏⢸  ⢀ ⠣⠈ ⡠⡋⡨⡋⡂
+           ⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⡎⢀⡰⢀⢎⠌⢀⠔⣐⠠⣄⣀
+       ⢀ ⡔⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣷⣄⠂ ⢊⠎ ⠠⠂⡀⠕⠌⠌ ⡄⡠⢄
+    ⢀⡆⠄⠁⢈⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀   ⣀⣿⣿⣿⣆⠐    ⡨⠒⠁⡀⢠⣦⠍⠇⡀⢲⠂⡄⠄
+   ⠨⡀⠑⡈ ⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄   ⠈  ⣬⠠⣰⣿ ⢳⢹⡄⡆⠄⢀⢼
+ ⡄⠱⠈⠁⠑⢄⠐⣾⣿⣿⡿⠋⠁⣀⣠⣬⣽⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⠟⠁⡟⣅⡢⠁⠠⠜⡄⡑⢌⢧⡀ ⡀⣰⢁⡐⢁⢄⣡⣧⡤⠄
+⠠⡐⠓⠂⠌  ⢀⣿⣿⡏⢀⣴⣿⠿⠛⠉⠉⠶⢸⣿⣿⠿⠁⠢⠨⢀⣻⣿⣿⣿⣿⢟⣿⣝⠂  ⠠⡠⢆⠈⡂⠱⡇ ⣅⠫⠂⡠⢂⡪⠋  ⠁⡆
+⡶⠉ ⢀⡀⠁⡁⢸⣿⣿⢠⣾⡟⠁⣿⣿⡇ ⢀⠈⠉⠁    ⣀⠷⣹⣏⣷⢏⠹⠁    ⠈⢈ ⢇ ⢸⠱⢸⡏⡀⡶⡸⠎  ⠰⠁⡸
+⢈⡕⡈⠁⠐⠂⢀⢸⣿⣿⣾⠏⣿⣿⡿⣻⣿⢞⡢⠄ ⠈ ⡀⡤⠂⠁⠉⠌       ⢀⢀⠠⠐⢄ ⡀⢆⠎⢹⣶⣷⣧⡈⠈⠉⠤⠂⠉⢀⠱⡀
+⢠⡊    ⠁⣸⣿⣿⣿⣀⠉⡻⡏⠋⠁ ⠁⠒⠒⡀⣍⠍⠁ ⡀ ⢠⠂     ⢀⠈⠄⢀⠄⡒⠅⠈⢄⢡ ⢿⣿⣷⣿⡄ ⠐⠄⠤ ⠜⢀
+⠐⠁ ⠤⠒⢠⣾⣿⣿⣿⣿⣿⣷⣄⢄  ⢀ ⡏ ⢰⣃⠊⡐⠐⠁⢀⠈  ⣀ ⠰⠢⢀⠂⡰⠈⠂  ⡱⠂⢂⡇⡈⠻⢿⣿⠇   ⡤⠄⣀⡰⠁
+    ⠁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦ ⠄ ⠉   ⠸⠫⢞⠈⣰⠈ ⡐⢲⣿⡏       ⢠⡾ ⣀⠊⢱ ⠠⡀    ⢈⢀⡐⠤⣕⡄
+    ⢰⣿⡿⠛⠉   ⠈⠙⠛         ⠈⠈ ⠻⠔⠁⢸⡍⡇      ⢀⣏ ⢀⠠⠆ ⠣⡀⠈⡠⡀⠉⠢⡤⠢⣈⡡⣢⠦
+⠈⠁           ⢻⣇               ⢸⡇⡇      ⣼⡿⠉  ⢀⡇ ⠑⡄⠑⣌⢄ ⠙⢄⠠⡪⣅
+             ⠈⣾⡆              ⢸⣏⡇     ⢠⣿⠇   ⠸⢌⢢⢄⡠⠣⠈⠢⡁⡈⣎⢢⡬⠃
+
+               Energy refinement on samples using orca
+                          Ver. 0.6.0 by mlee
+```
+
+```
+╔════════════════════════════════════════════════════════════════════╗
+║                         7. Refining forces                         ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+
+Arguments provided:
+  input_path: /home/jjy1031/example/outputs/xtb.h5
+  output_path: /home/jjy1031/example/outputs/wb97x.db
+  max_workers: 10
+  orca: ORCA
+
+Created db file at /home/jjy1031/example/outputs/wb97x.db
+
+Formulas: |                                 | 0/0 [00:00<?, ? hour/it]
+wB97X calculation finished!
+```
+
+```
+╔════════════════════════════════════════════════════════════════════╗
+║                     8. Compiling final samples                     ║
+╚════════════════════════════════════════════════════════════════════╝
+
+
+
+Arguments provided:
+  input_path: /home/jjy1031/example/outputs/wb97x.db
+  output_path: /home/jjy1031/example/outputs/wb97x.h5
+
+Compiled successfully!
+```
+
+
+
+
 
 
