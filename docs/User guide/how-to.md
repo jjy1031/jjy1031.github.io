@@ -131,7 +131,7 @@ GSM finished!
 
 ```
 
-Third step is to:
+Third step is to filter GSM. 
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
