@@ -12,10 +12,7 @@ This page provides a general overview of dandelion.
 We used 5 mother structures to 
 
 ![struc_cl7138](https://github.com/user-attachments/assets/3adec694-1ce6-4296-adfe-a96e95b3f621)
-![struc_cl7164](https://github.com/user-attachments/assets/289683e0-1571-494f-bf1e-ca909cd7cd33)
-![struc_cl7166](https://github.com/user-attachments/assets/dec9375a-694a-4b0a-8e1a-31008cc683a5)
-![struc_cl7168](https://github.com/user-attachments/assets/404fd715-895d-4ef6-8120-8089f262cf6e)
-![struc_cl7188](https://github.com/user-attachments/assets/c53230a7-b93a-403b-81b6-6e9cdc0a1ae0)
+
 
 Download mother structures in path `/home/jjy1031/example/mother_strucs`
 
