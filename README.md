@@ -89,7 +89,8 @@ source ~/.bashrc
 By executing `python dandelion_sample.py -h`, 
 
 ## References 
-
+Grambow, Colin A. et al., Scientific Data, 7.1, 137 (2020)
+Schreiner, Mathias et al., Scientific Data, 9.1, 779 (2022)
 
 ## Citation
 If you are using Dandelion in your research, please cite:
