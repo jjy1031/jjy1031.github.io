@@ -35,7 +35,7 @@ pip install -e .
 Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instructions or simply use:
 
 ```python
-pip install -e git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
+git clone git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
 pip install -e .
 ```
 By executing `gsm`, you can verify that the program has been successfully downloaded.
