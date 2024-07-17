@@ -7,19 +7,19 @@ nav_order: 2
 
 # Workflow
 
-Dandelion is -.
-
+Dandelion provides integrated streamlined process to create extensive database using sampled chemical spaces along the reaction pathways with efficient computational cost.
+This method consists of four stages: the preparation of mother structures, product search, landscape exploration and database generation.
 
 ![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
 
 
-## Single-ended Growing method
+## 1. Product Search
 
-We automated the generation of mother structures and the corresponding driving coordinates in this process. 
+Dandelion can provide automated generation of possible driving coordinates from mother structures in this process. The available commands of sampling chemical spaces can be queried with `-h` or `--help` arguments : 
 
   ``` python
 
-  usage: dandelion_sample.py [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
+  usage: dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
   Do SEGSM and NEB from mother structures, Other parameters can be set in each modules
 
@@ -34,20 +34,22 @@ We automated the generation of mother structures and the corresponding driving c
 
   ```
 
-  This process consists of six steps below.
+  This process consists of three steps below.
 
-  ### 1. Creating GSM
-  In this procedure, you can make GSM jobs from mother structures.
-  This algorithm considers number of connections to break, to change, to form and decides possible rxn and 
-  generate possible driving coordinates.
-  Result is stored in your/mother/structure/path/1_gsm/.../ISOMERS.TXT
+  ### 1.1 Creating GSM
+  In this procedure, you can make possible GSM jobs from mother structures. Overall algorithm calculates the 
+  number of bonds to be broken or added, decides possible rxn and generate possible driving coordinates.
+  In `your/mother/structure/path/1_gsm/.../ISOMERS.TXT`, you can get some information about caclulated 
+  reactions.
 
   ```
   BREAK 5 6
   ADD 4 6
   ADD 3 6
   ```
-  ### 2. Running GSM
+
+  ### 1.2 Running GSM
+  
   
   ### 3. Filtering GSM
 
@@ -69,40 +71,19 @@ Faith of pyGSM run
 '''
 
 Example of filtered structures :
-
-
-
-  ### 4. Running NEB
-  ### 5. Filtering NEB
-  ### 6. Compiling samples
   
+## 2. Landscape Search
 
-- **dandelion_refine.py**
+### 4. Running NEB
 
-```python
-$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
-```
-  `input_path` should contain XYZ files of mother structures.
-  
-  You can run SE-GSM in this process.
-  
-  
- You should modify the `input_path` and `output_path` of the config file. 
+The Nudged Elastic Band method is to find the Minimum Energy Path between a given initial and final state of a transition. It is neccessary to construct a set of images between the initial and final state by interpolation to find MEP. And to optimize this path, we have to minimize the force acting on the image.
+So we can run Cl-NEB on reaction path to optimize this.
 
- `input_path` should contain XYZ files of generated coordinates(seeds).
+### 5. Filtering NEB
+Filter out NEB jobs and sample geometries for refinement.
 
- `output_path` will be the directory where filtered coordinates(seeds) will be stored.
- 
-## 2. Nudged Elastic Band 
-- 1_neb_xtb.py
-- 
-```python
-$ python 2_run_gsm_jobs.py --input_path INPUT_PATH --max_workers MAX_WORKERS
-```
-- 2_make_rxns_json.ipynb
-- 3_compile_xtb_h5.py
+## 3. Database Generation
 
-## 3. wB97X/6-31g(d) refinement
-- 1_wb97x_on_xtb_h5.py
-- 2_compile_wb97x_h5.ipynb
+### 6. Compiling samples
+Calculate DFT forces on samples and compile as a database
 
