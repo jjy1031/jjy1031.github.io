@@ -1,11 +1,11 @@
 ---
 layout: default
-title: User guide
+title: Userguide
 nav_order: 2
 has_children: true
 ---
 
-# User guide
+# Userguide
 This is a broad outline on how the software is used. 
 
 
