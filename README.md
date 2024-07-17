@@ -35,10 +35,10 @@ pip install -e .
 Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instructions or simply use:
 
 ```python
-git clone git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
+git clone https://github.com/ZimmermanGroup/pyGSM
 pip install -e .
 ```
-By executing `gsm`, you can verify that the program has been successfully downloaded.
+By executing `gsm` in terminal, you can verify that the program has been successfully downloaded.
 
 ### Install Orca
 
@@ -48,6 +48,7 @@ To extract a tar.xz file, you can use the following command.
 ```python
 tar -xf orca.tar.xz
 ```
+By executing `orca` in terminal, you can verify that the program has been successfully downloaded.
 
 ### Setup environment variables in `.bashrc`
 
