@@ -14,7 +14,7 @@ We will focus on how to expand dataset from several mother structures.
 
 First, we have to prepare some mother structures to initiate. This is achieved through
 9 geometry optimization using the GFN2-xTB level of theory on the PES, providing stable molecular
-10 configurations as a starting point. Make sure that all of your prepared mother structures are in specific `input_path`.
+10 configurations as a starting point. Make sure that all of your prepared mother structures are in specific `input_path`. 
 
 ```
 ├── Cl7138
@@ -38,9 +38,9 @@ To run dandelion, your current conda environment should be **ts**, and you shoul
 
 You can enter this in terminal for more information:
 ``` python
-$ python dandelion_sample.py -h
+$ dandelion_sample -h
 
-usage: dandelion_sample.py [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
+usage: dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
 Do SEGSM and NEB from mother structures, Other parameters can be set in each
 modules
@@ -57,12 +57,13 @@ options:
 
 If you enter this:
 ```python
-python dandelion_sample.py -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
+python dandelion_sample -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
 ```
 
 Total 6 steps below will be executed automatically.
 
 ```
+
 
                                                      `;:`  BREAK 1 2
                                          .;:;         /    BREAK 3 4
@@ -75,7 +76,9 @@ Total 6 steps below will be executed automatically.
 
                    Chemical compound space sampling
            near transition state using xTB, SE-GSM and NEB
-                          Ver. 0.6.0 by mlee
+                          Ver. 0.6.2 by mlee
+
+
 
 ```
 
@@ -107,7 +110,7 @@ Arguments provided:
 Creating GSM finished!
 
 ```
-The `ISOMERS.txt` in created output folder will store some information about where bonds should be added or broken to generate possible driving coordinates from mother structures.
+The file `ISOMERS.txt` in created output folder will store some information about where bonds should be added or broken to generate possible driving coordinates from mother structures.
 
 ```
 BREAK 5 6
@@ -123,15 +126,15 @@ Second step is to run GSM.
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/outputs/1_gsm
-  max_workers: 10
+  input_path: /home/jjy1031/example/output/1_gsm
+  max_workers: 30
 
-GSM on seeds: 100%|███████████████████████▉| 1401/1406 [1:35:42<00:20]
+GSM on seeds: 100%|████████████████████████| 1406/1406 [4:57:13<00:00]
 GSM finished!
 
 ```
 
-Third step is to filter GSM. 
+Third step is to filter GSM. In this step, dandelion excludes some trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible structures, or those that are repetitive.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -145,89 +148,121 @@ Arguments provided:
   barrier_max: 200
   delta_e_min: 5
 
-
 ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
    mother: ClGeom-m7138-i1-c1-opt
 Initial seeds:                   280
-GSM success reactions:             0
-Profile filtered reactions:        0
-Structure filtered reactions:      0
-Unique reactions:                  0
+GSM success reactions:           115
+Profile filtered reactions:       41
+Structure filtered reactions:     38
+Unique reactions:                 28
 
 ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
    mother: ClGeom-m7164-i1-c1-opt
 Initial seeds:                   276
-GSM success reactions:             0
-Profile filtered reactions:        0
-Structure filtered reactions:      0
-Unique reactions:                  0
+GSM success reactions:           111
+Profile filtered reactions:       42
+Structure filtered reactions:     38
+Unique reactions:                 32
 
 ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
    mother: ClGeom-m7166-i1-c1-opt
 Initial seeds:                   275
-GSM success reactions:             0
-Profile filtered reactions:        0
-Structure filtered reactions:      0
-Unique reactions:                  0
+GSM success reactions:            96
+Profile filtered reactions:       31
+Structure filtered reactions:     28
+Unique reactions:                 25
 
 ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
    mother: ClGeom-m7168-i1-c1-opt
 Initial seeds:                   276
-GSM success reactions:             0
-Profile filtered reactions:        0
-Structure filtered reactions:      0
-Unique reactions:                  0
+GSM success reactions:            87
+Profile filtered reactions:       37
+Structure filtered reactions:     35
+Unique reactions:                 29
 
 ◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
    mother: ClGeom-m7188-i1-c1-opt
 Initial seeds:                   299
-GSM success reactions:             0
-Profile filtered reactions:        0
-Structure filtered reactions:      0
-Unique reactions:                  0
+GSM success reactions:           102
+Profile filtered reactions:       40
+Structure filtered reactions:     33
+Unique reactions:                 30
 
 Filtering GSM finished!
+
 ```
 
-Fourth step is to:
+The output generated from each mother structure is stored in `2_gsm_filtered`
+
+```
+├── ClGeom-m7138-i1-c1-opt
+│   ├── gsm0019
+│   │   ├── product.png
+│   │   ├── product.xyz
+│   │   ├── reactant.png
+│   │   ├── reactant.xyz
+│   │   ├── string.png
+│   │   ├── string.xyz
+│   │   ├── ts.png
+│   │   └── ts.xyz
+│   ├── gsm0043
+│   │   ├── product.png
+│   │   ├── product.xyz
+│   │   ├── reactant.png
+│   │   ├── reactant.xyz
+│   │   ├── string.png
+│   │   ├── string.xyz
+│   │   ├── ts.png
+│   │   └── ts.xyz
+...
+
+```
+
+Fourth step is to run NEB. We can optimize some energy path using the concept of maximum force.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
 ║                           4. Running NEB                           ║
 ╚════════════════════════════════════════════════════════════════════╝
+
 Arguments provided:
-  input_path: /home/jjy1031/example/outputs/2_gsm_filtered
-  output_path: /home/jjy1031/example/outputs/3_neb
-  max_workers: 10
+  input_path: /home/jjy1031/example/output/2_gsm_filtered
+  output_path: /home/jjy1031/example/output/3_neb
+  max_workers: 30
   n_images: 10
   neb_fmax: 0.5
   cineb_fmax: 0.05
   steps: 500
 
-Seeds: |                                               | 0/0 [00:00<?]
+Seeds: 100%|███████████████████████████████████| 144/144 [04:34<00:00]
 xTB-NEB completed!
-```
-
-Fifth step is to :
 
 ```
+
+Fifth step is to filter some data. For example, the reaction that doesn't converge, 너무 붙어있는 데이터, 전이상태가 아닌 데이터 
+
+```
+
 ╔════════════════════════════════════════════════════════════════════╗
 ║                          5. Filtering NEB                          ║
 ╚════════════════════════════════════════════════════════════════════╝
 
 
+
 Arguments provided:
-  input_path: /home/jjy1031/example/outputs/3_neb
-  output_path: /home/jjy1031/example/outputs/4_neb_filtered
+  input_path: /home/jjy1031/example/output/3_neb
+  output_path: /home/jjy1031/example/output/4_neb_filtered
 
-Mothers: |                                             | 0/0 [00:00<?]
+Mothers: 100%|█████████████████████████████████████| 5/5 [00:20<00:00]
 
-0/0 rxns were saved to /home/jjy1031/example/outputs/4_neb_filtered/reactions.js
+40/53 rxns were saved to /home/jjy1031/example/output/4_neb_filtered/reactions.json
 Filtering NEB finished!
+
 ```
 
 Sixth step is to :
 ```
+
 ╔════════════════════════════════════════════════════════════════════╗
 ║                        6. Compiling samples                        ║
 ╚════════════════════════════════════════════════════════════════════╝
@@ -235,12 +270,13 @@ Sixth step is to :
 
 
 Arguments provided:
-  input_path: /home/jjy1031/example/outputs/4_neb_filtered/reactions.json
-  output_path: /home/jjy1031/example/outputs/xtb.h5
+  input_path: /home/jjy1031/example/output/4_neb_filtered/reactions.json
+  output_path: /home/jjy1031/example/output/xtb.h5
   fmax_threshold: 0.1
 
-Compiling reactions: |                                 | 0/0 [00:00<?]
+Compiling reactions: 100%|███████████████████████| 40/40 [00:03<00:00]
 Compiling finished!
+
 ```
 
 And there will be generated files in your output path.
@@ -295,12 +331,12 @@ In outputs/4_neb_filtered :
   └── reactions.json
 ```
 
-Next step is to execute dandelion_refine.py
-
+Next step is to execute dandelion_refine.
 You can enter -h or --help if u want more information:
+
 ```
-(ts) [jjy1031@ne00 dandelion]$ python dandelion_refine.py -h
-usage: dandelion_refine.py [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
+(ts) [jjy1031@ne00 dandelion]$ dandelion_refine -h
+usage: dandelion_refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 
 Refine force on obtained samples, Other parameters can be set in each modules
 
@@ -313,9 +349,10 @@ options:
   --orca ORCA           Path of the orca binary file
 ```
 
+~~Make sure that the path of orca should be an executable file~~
 If you enter like this:
 ```
-(ts) [jjy1031@ne00 dandelion]$ python dandelion_refine.py -i /home/jjy1031/example/outputs -n 10 --orca ORCA
+(ts) [jjy1031@ne00 dandelion]$ dandelion_refine -i /home/jjy1031/example/outputs -n 10 --orca path/to/your/orca/executable/file
 ```
 
 2 steps below will be executed automatically !
