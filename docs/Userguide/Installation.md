@@ -1,7 +1,7 @@
 ---
 layout: default
 title: Installation
-parent: User guide
+parent: Userguide
 nav_order: 1
 ---
 
