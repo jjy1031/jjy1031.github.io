@@ -27,6 +27,8 @@ have total 650 points, 3 directions , 11 atoms force information
 <img width="468" alt="forces" src="https://github.com/user-attachments/assets/168d4347-851c-4e49-9975-c3d770d6fcdd">
 
 position xyz info
+
+
 <img width="453" alt="positions" src="https://github.com/user-attachments/assets/f124621d-08fa-4650-b627-becfc3b37d36">
 
 
