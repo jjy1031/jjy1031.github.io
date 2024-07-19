@@ -15,5 +15,8 @@ product, reactant, transition state
 
 atomic numbers are equal
 
+![xtb_vs_wb97x_old](https://github.com/user-attachments/assets/a00aa85c-b6ee-466d-989f-60683dd487d8)
+
+
 
 
