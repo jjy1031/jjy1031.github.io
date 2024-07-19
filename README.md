@@ -83,11 +83,7 @@ ulimit -s unlimited\
 Apply the changes:
 ```python
 source ~/.bashrc
-```
-
-### Verifying Installation
-
-By executing `python dandelion_sample.py -h`, 
+``` 
 
 ## References 
 - Grambow, Colin A. et al., Scientific Data, 7.1, 137 (2020)
