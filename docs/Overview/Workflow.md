@@ -87,3 +87,12 @@ Filter out NEB jobs and sample geometries for refinement.
 ### 6. Compiling samples
 Calculate DFT forces on samples and compile as a database
 
+
+## About xtb.h5 file
+It is consist of possible reactions for each molecules.
+For each reaction, it contains information of 
+energy, forces, atomic numbers, positions and
+product, reactant, transition state
+
+atomic numbers are equal
+
