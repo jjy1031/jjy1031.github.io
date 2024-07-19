@@ -12,7 +12,7 @@ Documentation : <https://jjy1031.github.io>
 
 ### Download Dandelion
 
-You can install the code from our repository:
+You can install the code from [our repository](https://github.com/mhyeok1/dandelion_test):
 
 ```python
 git clone https://github.com/mhyeok1/dandelion_test.git
