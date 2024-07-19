@@ -35,7 +35,8 @@ pip install -e .
 Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instructions or simply use:
 
 ```python
-pip install -e git+https://github.com/ZimmermanGroup/pyGSM.git#egg=pyGSM
+git clone https://github.com/ZimmermanGroup/pyGSM
+pip install -e .
 ```
 
 ## Install Orca
