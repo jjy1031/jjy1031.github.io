@@ -345,6 +345,34 @@ wB97X calculation finished!
 
 ```
 
+You can check your compiled database using ASE:
+```
+$ ase db wb97x.db
+id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
+ 1| 5d|jjy1031|C4ClH4NO|orca      |-20266.198|    11|5.874|FFF| 0.000|117.532
+ 2| 5d|jjy1031|C4ClH4NO|orca      |-20269.074|    11|0.470|FFF| 0.000|117.532
+ 3| 5d|jjy1031|C4ClH4NO|orca      |-20268.333|    11|5.994|FFF| 0.000|117.532
+ 4| 5d|jjy1031|C4ClH4NO|orca      |-20268.047|    11|1.195|FFF| 0.000|117.532
+ 5| 5d|jjy1031|C4ClH4NO|orca      |-20266.059|    11|3.630|FFF| 0.000|117.532
+ 6| 5d|jjy1031|C4ClH4NO|orca      |-20266.920|    11|4.553|FFF| 0.000|117.532
+ 7| 5d|jjy1031|C4ClH4NO|orca      |-20266.081|    11|1.022|FFF| 0.000|117.532
+ 8| 5d|jjy1031|C4ClH4NO|orca      |-20265.240|    11|4.314|FFF| 0.000|117.532
+ 9| 5d|jjy1031|C4ClH4NO|orca      |-20265.014|    11|7.924|FFF| 0.000|117.532
+10| 5d|jjy1031|C4ClH4NO|orca      |-20268.711|    11|3.512|FFF| 0.000|117.532
+11| 5d|jjy1031|C4ClH4NO|orca      |-20266.886|    11|5.938|FFF| 0.000|117.532
+12| 5d|jjy1031|C4ClH4NO|orca      |-20266.322|    11|3.704|FFF| 0.000|117.532
+13| 5d|jjy1031|C4ClH4NO|orca      |-20266.081|    11|1.021|FFF| 0.000|117.532
+14| 5d|jjy1031|C4ClH4NO|orca      |-20265.532|    11|3.059|FFF| 0.000|117.532
+15| 5d|jjy1031|C4ClH4NO|orca      |-20267.115|    11|3.885|FFF| 0.000|117.532
+16| 5d|jjy1031|C4ClH4NO|orca      |-20262.912|    11|6.171|FFF| 0.000|117.532
+17| 5d|jjy1031|C4ClH4NO|orca      |-20268.863|    11|1.657|FFF| 0.000|117.532
+18| 5d|jjy1031|C4ClH4NO|orca      |-20265.663|    11|4.222|FFF| 0.000|117.532
+19| 5d|jjy1031|C4ClH4NO|orca      |-20263.405|    11|5.723|FFF| 0.000|117.532
+20| 5d|jjy1031|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
+Rows: 53842 (showing first 20)
+```
+
+Finally, compile our wb97x.db sample :
 ```
 ╔════════════════════════════════════════════════════════════════════╗
 ║                     8. Compiling final samples                     ║
@@ -355,6 +383,8 @@ Arguments provided:
 
 Compiled successfully!
 ```
+
+
 
 
 
