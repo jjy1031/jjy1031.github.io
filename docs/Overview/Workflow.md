@@ -42,8 +42,23 @@ Dandelion can provide automated generation of possible driving coordinates from 
   This process consists of three submodules below.
 
   ### 2.1 create_gsm.py
-  In this procedure, you can make possible GSM jobs - seeds - from mother structures. Overall algorithm calculates the number of bonds to be broken or added, decides possible rxn and generate all possible driving coordinates.
- In `your/mother/structure/path/1_gsm/.../ISOMERS.TXT`, you can get some information about caclulated reactions.
+In this procedure, dandelion makes possible GSM jobs - seeds - from mother structures. Overall algorithm calculates the number of bonds to be broken or added, decides possible rxn and generate all possible driving coordinates.
+
+  ```
+  ├── ClGeom-m7138-i1-c1-opt
+  │   ├── gsm0000
+  │   ├── gsm0001
+  │   ├── gsm0002
+  ...
+  ├── ClGeom-m7164-i1-c1-opt
+  │   ├── gsm0000
+  │   ├── gsm0001
+  │   ├── gsm0002
+  ...
+  ```
+
+  You can check that all the possible gsm jobs are generated from your optimized mother structures.
+  In `ISOMERS.TXT`, you can get some information about caclulated reactions.
 
   ```
   BREAK 5 6
@@ -52,16 +67,38 @@ Dandelion can provide automated generation of possible driving coordinates from 
   ```
 
   ### 2.2 run_gsm.py
-  gsm 실행하고 이결과에따라 파일여러개생긴다 설명하고
-  여기서 png 안생기고 .. 등등에따라 filter하는거아닌가
-  outputpath 1_gsm
-  num node 30개면... 30개안넘으면 png생겨도 다 filtering하는건가???
-  이게말이되? ㅜㅜㅜ
-  이거여쭤봐야겠는데
-  
+  Dandelion runs SEGSM using this module, and output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
+
+  ```
+  ├── 0000_string.png
+  ├── grown_string_000.xyz
+  ├── grown_string1_000.xyz
+  ├── gsm_log
+  ├── gsm.sh
+  ├── IC_data_0000.txt
+  ├── initial.xyz
+  ├── ISOMERS.txt
+  ├── lot_jobs_0.txt
+  ├── lot_jobs_1.txt
+  ├── lot_jobs_2.txt
+  ├── lot_jobs_3.txt
+  ├── lot_jobs_4.txt
+  ├── lot_jobs_5.txt
+  ├── lot_jobs_6.txt
+  ├── lot_jobs_7.txt
+  ├── lot_jobs_8.txt
+  ├── opt_converged_000.xyz
+  ├── scratch
+  │   └── 000
+  └── TSnode_0.xyz
+  ```
+  By generated `.png` file, you can check whether a GSM job has converged.
+
+  ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
+
+  Because this job has successfully converged before max_node = 30, it will be survived in filtering process.
   
   ### 2.3 filter_gsm.py
-
   Through this process, you can get filtered structures. This filtering algorithm excludes trivial    pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
   2 structures, or those that are repetitive.
   
