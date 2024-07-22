@@ -141,10 +141,11 @@ Also, `mep.gif` can show you how the reaction occurs.
 ![KakaoTalk_20240722_153538363](https://github.com/user-attachments/assets/361928e3-a4a5-412e-b5c9-12afbcc55a8a)
 
 ### 3.2 filter_neb.py
-Filter out NEB jobs and sample geometries for refinement.
+Filter out NEB jobs and sample geometries for refinement. This algorithm extracts caculated energy, and checks if the reaction is valid. Also, it counts the number of significant imaginary frequencies below the threshold and determines whether a given structure is a proper transition state or not. 
 
 ### 3.3 compile_neb.py
-Calculate DFT forces on samples and compile as a database using [Atomic Simulation Environment](https://wiki.fysik.dtu.dk/ase/).
+Calculate DFT forces on samples and compile as a database using Atomic Simulation Environment.
+If you want to effectively use the database, please refer to [this page](https://wiki.fysik.dtu.dk/ase/).
 
 ## 4. Database Generation
 
@@ -152,6 +153,6 @@ Calculate DFT forces on samples and compile as a database using [Atomic Simulati
 
 
 ### 4.2 compile_refined.py
-
+This module extracts data from ASE database generated before, and save these to an h5 file. Using h5 visualization program, you can easily check the calculated result of sampled chemical points including energy, force, positions and atomic numbers.
 
 
