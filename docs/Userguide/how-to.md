@@ -9,7 +9,7 @@ nav_order: 2
 
 This page provides a general overview of dandelion, which can efficiently create extensive database with sampling chemical compound space near transition state from the example of 5 mother structures below.
 We will focus on how to expand dataset from several mother structures.
-<img width="1024" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
+<img width="1300" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 
 
 First, we have to prepare some mother structures to initiate. This is achieved through
