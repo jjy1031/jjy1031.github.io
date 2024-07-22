@@ -67,7 +67,7 @@ Total 6 steps below will be executed automatically.
 
                                                      `;:`  BREAK 1 2
                                          .;:;         /    BREAK 3 4
-         _____                   _      _;::;         `     ADD 1 3
+        _____                   _      _;::;         `     ADD 1 3
         |  __ \                | |    | |';:;'
         | |  | | __ _ _ __   __| | ___| |  _  ___  _ __
         | |  | |/ _` | '_ \ / _` |/ _ \ | | |/ _ \| '_ \
