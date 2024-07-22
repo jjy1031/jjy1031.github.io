@@ -41,7 +41,7 @@ Dandelion can provide automated generation of possible driving coordinates from 
 
   This process consists of three submodules below.
 
-  ### 2.1 create_gsm.py
+### 2.1 create_gsm.py
 In this procedure, dandelion makes possible GSM jobs - seeds - from mother structures. Overall algorithm calculates the number of bonds to be broken or added, decides possible rxn and generate all possible driving coordinates.
 
   ```
@@ -66,7 +66,7 @@ In this procedure, dandelion makes possible GSM jobs - seeds - from mother struc
   ADD 3 6
   ```
 
-  ### 2.2 run_gsm.py
+### 2.2 run_gsm.py
   Dandelion runs SEGSM using this module, and output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
 
   ```
@@ -96,44 +96,62 @@ In this procedure, dandelion makes possible GSM jobs - seeds - from mother struc
 
   ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
 
-  Because this job has successfully converged before max_node = 30, it will be survived in filtering process.
+  Because this job has successfully converged before `max_node = 30`, it will be survived in filtering process.
   
-  ### 2.3 filter_gsm.py
-  Through this process, you can get filtered structures. This filtering algorithm excludes trivial    pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible
-  2 structures, or those that are repetitive.
+### 2.3 filter_gsm.py
+  Through this process, you can get filtered structures. This filtering algorithm excludes trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible 2 structures, or those that are repetitive.
   
-  There are some cases to be filtered :
-  
-  - **No png file is generated**
-    - xTB didn't converge: This means that the xTB calculations did not converge.
-    - pyGSM suicide on its criteria: This indicates that pyGSM terminated the execution based on its predefined criteria.
-    
-  - **If a png file is generated:**
-    - Exiting early: These cases should be filtered out.
-      ![image](https://github.com/user-attachments/assets/ca9f0367-4274-4a9b-8ab5-d3e36eb5eb99)
-    - Ran out of iterations: These cases may include potential reactions.      
-    - Converged : Very rare case
-   
-![image](https://github.com/user-attachments/assets/ca9f0367-4274-4a9b-8ab5-d3e36eb5eb99)
+There are some cases to be filtered :
+  If xTB didn't converged or pyGSM terminated the execution based on its criteria, there will be no png file is generated.
 
-~~The png file includes some~~ 
-
-  Then the submodule `profile_filter` filters the cases which have wrong ts, too high or low barrier height, too small delta_e. 
+Then the submodule `profile_filter` filters the cases which have wrong ts, too high or low barrier height, too small delta_e. 
 `structure_filter ` can filter chemically absurd products, followed by unique filter which filters duplicates based on smiles. If there are more than one of same SMILES, pick the lowest barrier reaction.
 
-  
-## 2. Landscape Search
+## 3. Landscape Search
 
-### 4. run_neb.py
+### 3.1 run_neb.py
 
-The Nudged Elastic Band method is to find the Minimum Energy Path between a given initial and final state of a transition. It is neccessary to construct a set of images between the initial and final state by interpolation to find MEP. And to optimize this path, we have to minimize the force acting on the image.
-So we can run Cl-NEB on reaction path to optimize this.
+The Nudged Elastic Band method is to find the Minimum Energy Path between a given initial and final state of a transition. It is neccessary to construct a set of images between the initial and final state by interpolation to find MEP. And to optimize this path, we have to minimize the force acting on the image. So, dandelion runs Cl-NEB on reaction path to optimize this.
 
-### 5. filter_neb.py
+The generated output files have some information about Minimum Energy Path(MEP).
+
+```
+ClGeom-m7138-i1-c1-opt-gsm0019
+├── converged
+├── fitlist.npy
+├── fmaxs.json
+├── mep.gif
+├── mep.png
+├── mep.xyz
+├── neb.db
+├── product.png
+├── product.xyz
+├── reactant.png
+├── reactant.xyz
+├── transition_state.png
+└── transition_state.xyz
+```
+
+You can see the process of path optimization in `mep.png`
+
+![mep](https://github.com/user-attachments/assets/ea3af721-54a0-482b-b42f-efa8d2d38512)
+
+Also, `mep.gif` can show you how the reaction occurs.
+
+![KakaoTalk_20240722_153538363](https://github.com/user-attachments/assets/361928e3-a4a5-412e-b5c9-12afbcc55a8a)
+
+### 3.2 filter_neb.py
 Filter out NEB jobs and sample geometries for refinement.
 
-## 3. Database Generation
+### 3.3 compile_neb.py
+Calculate DFT forces on samples and compile as a database using [Atomic Simulation Environment](https://wiki.fysik.dtu.dk/ase/).
 
-### 6. compile_neb.py
-Calculate DFT forces on samples and compile as a database
+## 4. Database Generation
+
+### 4.1 refine_forces.py
+
+
+### 4.2 compile_refined.py
+
+
 
