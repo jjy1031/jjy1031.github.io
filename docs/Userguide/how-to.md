@@ -277,7 +277,7 @@ Compiling finished!
 And there will be newly generated file in your output path, `xtb.h5` file.
 
 Next step is to execute dandelion_refine.
-You can enter -h or --help if u want more information:
+You can enter -h or --help for more information:
 
 ```
 $ dandelion_refine -h
