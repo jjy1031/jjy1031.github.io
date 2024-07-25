@@ -7,8 +7,7 @@ nav_order: 2
 
 # Workflow
 
-Dandelion provides integrated streamlined process to create extensive database using sampled chemical spaces along the reaction pathways with efficient computational cost.
-This method consists of four stages: the preparation of mother structures, product search, landscape exploration and database generation.
+Dandelion provides an integrated and streamlined process to create an extensive database by sampling chemical spaces along the reaction pathways. This method consists of four stages: the preparation of mother structures, product search, landscape exploration and database generation.
 
 ![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
 
@@ -20,26 +19,7 @@ For your crude input structures, this module performs geometry optimization usin
 
 ## 2. Product Search
 
-Dandelion can provide automated generation of possible driving coordinates from mother structures in this process. The available commands of sampling chemical spaces can be queried with `-h` or `--help` arguments : 
-
-  ``` python
-
-  usage: dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
-
-  Do SEGSM and NEB from mother structures, Other parameters can be set in each modules
-
-  options:
-    -h, --help            show this help message and exit
-    -i INPUT_PATH, --input_path INPUT_PATH
-                          Input path of mother structures
-    -o OUTPUT_PATH, --output_path OUTPUT_PATH
-                          Output path of dandelion
-    -n MAX_WORKERS, --max_workers MAX_WORKERS
-                          Number of worker processes
-
-  ```
-
-  This process consists of three submodules below.
+Dandelion can provide automated generation of possible driving coordinates from mother structures in this process, consists of three submodules below. For detailed information, see [immerman, P. M. Single-ended transition state finding with the growing string method. Journal of computational chemistry 36, 601–611 (2015)](https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.23833?casa_token=7ZtVQGleOwIAAAAA%3AMCrI2MzV0_3cjRuEof_e_uoNE5egitdBSl_p9k_ZkqTeTbaVBzjS7I7AnF20ttyBuhRKS5AHzW2yeVE)
 
 ### 2.1 create_gsm.py
 In this procedure, dandelion makes possible GSM jobs - seeds - from mother structures. Overall algorithm calculates the number of bonds to be broken or added, decides possible rxn and generate all possible driving coordinates.
