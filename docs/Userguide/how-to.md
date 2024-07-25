@@ -54,12 +54,11 @@ options:
                         Number of worker processes
 ```
 
-If you enter this:
+If you enter the following command:
 ```python
 python dandelion_sample -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
 ```
-
-Total 6 steps below will be executed automatically.
+The following 6 steps will be executed automatically:
 
 ```
 
@@ -107,14 +106,6 @@ Arguments provided:
 299 Seeds were generated from ClGeom-m7188-i1-c1-opt
 
 Creating GSM finished!
-
-```
-The file `ISOMERS.txt` in created output folder will store some information about where bonds should be added or broken to generate possible driving coordinates from mother structures.
-
-```
-BREAK 5 6
-ADD 4 6
-ADD 3 6
 ```
 
 Second step is to run GSM. In this step, GSM is performed depending on the predefined max node, and results are derived for each driving coordinate. Based on these results, the coordinates to be filtered can determined.
