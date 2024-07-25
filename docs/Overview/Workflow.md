@@ -49,7 +49,7 @@ You can verify that all possible GSM jobs are generated from your optimized moth
 
 ### 2.2. run_gsm.py
 
-Dandelion runs SEGSM using this module, and output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
+When Dandelion runs SEGSM using this module, output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
 
   ```
   ├── 0000_string.png
@@ -74,7 +74,7 @@ Dandelion runs SEGSM using this module, and output files will be generated. Base
   │   └── 000
   └── TSnode_0.xyz
   ```
-  You can observe the process of a GSM job through the generated .png file.
+  You can observe the process of a GSM job through the generated `.png` file.
 
   ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
 
