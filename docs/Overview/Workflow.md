@@ -13,7 +13,7 @@ Dandelion provides an integrated and streamlined process to create an extensive 
 
 ## 1. Initial Structures Preparation
 
-### 1.1 opt_mothers.py
+### 1.1. opt_mothers.py
 
 For your crude input structures, this module performs geometry optimization using GFN2-xTB. This can provide stable molecular configurations as a starting point.
 
@@ -23,7 +23,7 @@ For detailed information, see [Journal of computational chemistry 36, 601–611 
 
 Dandelion uses the SE-GSM to explore PES and provides automated generation of viable driving coordinates from mother structures. This process consists of the following three submodules :
 
-### 2.1 create_gsm.py
+### 2.1. create_gsm.py
 
 In this procedure, dandelion generates possible GSM jobs, or seeds, from each optimized mother structure. The overall algorithm calculates the number of bonds to be broken or added, determines possible reactions, and generates all viable driving coordinates.
 
@@ -39,7 +39,7 @@ In this procedure, dandelion generates possible GSM jobs, or seeds, from each op
   │   ├── gsm0002
   ...
   ```
-  You can verify that all possible GSM jobs are generated from your optimized mother structures. In `ISOMERS.TXT` file, you can get some information about calculated reactions.
+You can verify that all possible GSM jobs are generated from your optimized mother structures. In `ISOMERS.TXT` file, you can get some information about calculated reactions.
 
   ```
   BREAK 5 6
@@ -47,8 +47,9 @@ In this procedure, dandelion generates possible GSM jobs, or seeds, from each op
   ADD 3 6
   ```
 
-### 2.2 run_gsm.py
-  Dandelion runs SEGSM using this module, and output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
+### 2.2. run_gsm.py
+
+Dandelion runs SEGSM using this module, and output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
 
   ```
   ├── 0000_string.png
@@ -79,7 +80,7 @@ In this procedure, dandelion generates possible GSM jobs, or seeds, from each op
 
   Because this job has successfully converged before `max_node = 30`, it will be survived in filtering process.
   
-### 2.3 filter_gsm.py
+### 2.3. filter_gsm.py
   Through this process, you can get filtered structures. This filtering algorithm excludes trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible 2 structures, or those that are repetitive.
   
 There are some cases to be filtered :
@@ -121,19 +122,19 @@ Also, `mep.gif` can show you how the reaction occurs.
 
 ![KakaoTalk_20240722_153538363](https://github.com/user-attachments/assets/361928e3-a4a5-412e-b5c9-12afbcc55a8a)
 
-### 3.2 filter_neb.py
+### 3.2. filter_neb.py
 Filter out NEB jobs and sample geometries for refinement. This algorithm extracts caculated energy, and checks if the reaction is valid. Also, it counts the number of significant imaginary frequencies below the threshold and determines whether a given structure is a proper transition state or not. 
 
-### 3.3 compile_neb.py
+### 3.3. compile_neb.py
 Calculate DFT forces on samples and compile as a database using Atomic Simulation Environment.
 If you want to effectively use the database, please refer to [this page](https://wiki.fysik.dtu.dk/ase/).
 
 ## 4. Database Generation
 
-### 4.1 refine_forces.py
+### 4.1. refine_forces.py
 
 
-### 4.2 compile_refined.py
+### 4.2. compile_refined.py
 This module extracts data from ASE database generated before, and save these to an h5 file. Using h5 visualization program, you can easily check the calculated result of sampled chemical points including energy, force, positions and atomic numbers.
 
 
