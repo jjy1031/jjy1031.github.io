@@ -7,16 +7,13 @@ nav_order: 2
 
 # Example
 
-This page provides a general overview of dandelion, which can efficiently create extensive database with sampling chemical compound space near transition state from the example of 5 mother structures below.
-We will focus on how to expand dataset from several mother structures.
+This page provides a guide for using Dandelion, which efficiently create an extensive database by sampling chemical compound space near transition state.
 
 <div align="center">
   <img width="1500" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
 
-First, we have to prepare some mother structures to initiate. This is achieved through
-9 geometry optimization using the GFN2-xTB level of theory on the PES, providing stable molecular
-10 configurations as a starting point. Make sure that all of your prepared mother structures are in specific `input_path`. 
+Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize these mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in the specific input_path, provided in `.xyz` file format.  
 
 ```
 ├── Cl7138
