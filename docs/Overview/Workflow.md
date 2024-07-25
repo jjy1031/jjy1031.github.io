@@ -74,7 +74,7 @@ Dandelion runs SEGSM using this module, and output files will be generated. Base
   │   └── 000
   └── TSnode_0.xyz
   ```
-  By generated `.png` file, you can check whether a GSM job has converged.
+  You can observe the process of a GSM job through the generated .png file.
 
   ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
 
