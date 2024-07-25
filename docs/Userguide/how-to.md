@@ -12,7 +12,6 @@ This page provides a guide for using Dandelion, which efficiently create an exte
 <div align="center">
   <img width="1500" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
-
 Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize these mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in the specific input_path, provided in `.xyz` file format.  
 
 ```
@@ -55,6 +54,7 @@ options:
 ```
 
 If you enter the following command:
+
 ```python
 python dandelion_sample -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
 ```
@@ -80,7 +80,7 @@ The following 6 steps will be executed automatically:
 
 ```
 
-First step is to create GSM. In this process, dandelion generates possible driving coordinates(seeds) from each mother structures.
+Dandelion generates possible driving coordinates(seeds) from each mother structures.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -108,7 +108,7 @@ Arguments provided:
 Creating GSM finished!
 ```
 
-Second step is to run GSM. In this step, GSM is performed depending on the predefined max node, and results are derived for each driving coordinate. Based on these results, the coordinates to be filtered can determined.
+Based on the generated viable GSM jobs, GSM can be performed. There are jobs that do not converge or fail to reach the product within the predefined maximum node.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
