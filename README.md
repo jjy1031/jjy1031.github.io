@@ -22,7 +22,7 @@ If you run into an authentification error, you should get [personal access token
 
 ### Setup conda environment
 
-This command is used to create a new Conda environment using the specifications provided in an `environment.yml` file.
+This creates a new Conda environment using the specifications provided in an `environment.yml` file.
 
 ```python
 conda env create -f environment.yml
@@ -38,12 +38,12 @@ Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instru
 git clone https://github.com/ZimmermanGroup/pyGSM
 pip install -e .
 ```
-By executing `gsm` in terminal, you can verify that the program has been successfully downloaded.
+By executing `gsm` in terminal, you can verify that the program has been successfully installed.
 
 ### Install Orca
 
 You can install ORCA [here](https://orcaforum.kofo.mpg.de/app.php/portal).
-To extract a tar.xz file, you can use the following command.
+This extracts a tar.xz file.
 
 ```python
 tar -xf orca.tar.xz
