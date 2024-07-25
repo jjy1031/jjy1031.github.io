@@ -5,6 +5,9 @@ parent: Userguide
 nav_order: 2
 ---
 
+# path가 jjy1031로 되어있는데 이것을 어떻게 해야할지 고민해보고
+# segsm 공부 조금 더 해서 정확히 어떤것을 필터링하는지, run 과정은 어떻게되는지 파악악
+
 # Example
 
 This page provides a guide for using Dandelion, which efficiently create an extensive database by sampling chemical compound space near transition state.
@@ -124,7 +127,7 @@ GSM finished!
 
 ```
 
-Third step is to filter GSM. In this step, dandelion excludes some trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible structures, or those that are repetitive.
+Dandelion excludes some trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible structures, or those that are repetitive.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -179,32 +182,6 @@ Structure filtered reactions:     33
 Unique reactions:                 30
 
 Filtering GSM finished!
-
-```
-
-The output generated from each driving coordinate will be stored in `2_gsm_filtered`
-
-```
-├── ClGeom-m7138-i1-c1-opt
-│   ├── gsm0019
-│   │   ├── product.png
-│   │   ├── product.xyz
-│   │   ├── reactant.png
-│   │   ├── reactant.xyz
-│   │   ├── string.png
-│   │   ├── string.xyz
-│   │   ├── ts.png
-│   │   └── ts.xyz
-│   ├── gsm0043
-│   │   ├── product.png
-│   │   ├── product.xyz
-│   │   ├── reactant.png
-│   │   ├── reactant.xyz
-│   │   ├── string.png
-│   │   ├── string.xyz
-│   │   ├── ts.png
-│   │   └── ts.xyz
-...
 
 ```
 
