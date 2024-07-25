@@ -4,7 +4,7 @@ title : Home
 nav_order: 1
 ---
 
-# Welcome to the documentation site of Dandelion
+# Welcome to the documentation site of Dandelion !
 
 <!-- 이 부분은 주석입니다. 나중에 설명을 추가할 예정입니다. -->
 <img src="https://github.com/jjy1031/jjy1031.github.io/assets/160209859/5e541d6d-94b6-4c69-a452-bbac4cb2c26f" alt="Dandelion" width="500">
