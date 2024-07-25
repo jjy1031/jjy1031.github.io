@@ -6,7 +6,7 @@ nav_order: 1
 
 # Welcome to documentation of Dandelion !
 <div align="center">
-  <img src="https://github.com/jjy1031/jjy1031.github.io/assets/160209859/5e541d6d-94b6-4c69-a452-bbac4cb2c26f" alt="Dandelion", width="800">
+  <img src="https://github.com/jjy1031/jjy1031.github.io/assets/160209859/5e541d6d-94b6-4c69-a452-bbac4cb2c26f" alt="Dandelion" width="800">
 </div>
 
 # Introduction
