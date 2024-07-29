@@ -5,8 +5,6 @@ parent: Userguide
 nav_order: 2
 ---
 
-segsm 공부 조금 더 해서 정확히 어떤것을 필터링하는지, run 과정은 어떻게되는지 파악
-
 # Example
 
 This page provides a guide for using Dandelion, which efficiently create an extensive database by sampling chemical compound space near transition state.
@@ -17,6 +15,7 @@ This page provides a guide for using Dandelion, which efficiently create an exte
 Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize these mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in the specific input_path, provided in `.xyz` file format.  
 
 ```
+mother_strucs
 ├── Cl7138
 │   └── ClGeom-m7138-i1-c1-opt
 │       └── struc.xyz
@@ -184,7 +183,7 @@ Filtering GSM finished!
 
 ```
 
-Fourth step is to run NEB or Climbing-Image NEB using the outputs of gsm. NEB can optimize some energy path using the concept of maximum force.
+Using the outputs of gsm, Dandelion runs NEB or Climbing-Image NEB. NEB can optimize some energy path using the concept of maximum force.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
