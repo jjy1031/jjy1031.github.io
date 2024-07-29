@@ -1,13 +1,11 @@
 ---
 layout: default
-title: Submodule
+title: opt_mothers.py
 parent: Modules
-nav_order: 2
+nav_order: 1
 ---
 
-## 1. Initial Structures Preparation
-
-### 1.1. opt_mothers.py
+# 1.1. opt_mothers.py
 
 For your crude input structures, this module performs geometry optimization using GFN2-xTB. This can provide stable molecular configurations as a starting point.
 
