@@ -5,7 +5,6 @@ parent: Userguide
 nav_order: 2
 ---
 
-path가 jjy1031로 되어있는데 이것을 어떻게 해야할지 고민해보고
 segsm 공부 조금 더 해서 정확히 어떤것을 필터링하는지, run 과정은 어떻게되는지 파악
 
 # Example
@@ -59,7 +58,7 @@ options:
 If you enter the following command:
 
 ```python
-python dandelion_sample -i /path/to/your/prepared/mother/structures -o /path/to/the/output/you/want -n workers
+python dandelion_sample -i /home/hachiware/example/mother_strucs -o /home/hachiware/example/outputs -n 30
 ```
 The following 6 steps will be executed automatically:
 
@@ -91,8 +90,8 @@ Dandelion generates possible driving coordinates(seeds) from each mother structu
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/mother_strucs
-  output_path: /home/jjy1031/example/outputs/1_gsm
+  input_path: /home/hachiware/example/mother_strucs
+  output_path: /home/hachiware/example/outputs/1_gsm
   maxbreak: 2
   maxform: 2
   maxchange: 3
@@ -119,7 +118,7 @@ Based on the generated viable GSM jobs, GSM can be performed. There are jobs tha
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/output/1_gsm
+  input_path: /home/hachiware/example/output/1_gsm
   max_workers: 30
 
 GSM on seeds: 100%|████████████████████████| 1406/1406 [4:57:13<00:00]
@@ -135,8 +134,8 @@ Dandelion excludes some trivial pathways with strictly uphill energy trajectorie
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/outputs/1_gsm
-  output_path: /home/jjy1031/example/outputs/2_gsm_filtered
+  input_path: /home/hachiware/example/outputs/1_gsm
+  output_path: /home/hachiware/example/outputs/2_gsm_filtered
   barrier_min: 5
   barrier_max: 200
   delta_e_min: 5
@@ -193,8 +192,8 @@ Fourth step is to run NEB or Climbing-Image NEB using the outputs of gsm. NEB ca
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/output/2_gsm_filtered
-  output_path: /home/jjy1031/example/output/3_neb
+  input_path: /home/hachiware/example/output/2_gsm_filtered
+  output_path: /home/hachiware/example/output/3_neb
   max_workers: 30
   n_images: 10
   neb_fmax: 0.5
@@ -215,12 +214,12 @@ In the fifth step, data is filtered based on specific criteria. For example, non
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/output/3_neb
-  output_path: /home/jjy1031/example/output/4_neb_filtered
+  input_path: /home/hachiware/example/output/3_neb
+  output_path: /home/hachiware/example/output/4_neb_filtered
 
 Mothers: 100%|█████████████████████████████████████| 5/5 [00:20<00:00]
 
-40/53 rxns were saved to /home/jjy1031/example/output/4_neb_filtered/reactions.json
+40/53 rxns were saved to /home/hachiware/example/output/4_neb_filtered/reactions.json
 Filtering NEB finished!
 
 ```
@@ -233,8 +232,8 @@ Sixth step is to compile samples:
 ╚════════════════════════════════════════════════════════════════════╝
 
 Arguments provided:
-  input_path: /home/jjy1031/example/output/4_neb_filtered/reactions.json
-  output_path: /home/jjy1031/example/output/xtb.h5
+  input_path: /home/hachiware/example/output/4_neb_filtered/reactions.json
+  output_path: /home/hachiware/example/output/xtb.h5
   fmax_threshold: 0.1
 
 Compiling reactions: 100%|███████████████████████| 40/40 [00:03<00:00]
@@ -265,7 +264,7 @@ Make sure that the path of the orca should point an orca **executable file**.
 
 If you enter like this:
 ```
-$ dandelion_refine -i /home/jjy1031/example/outputs -n 10 --orca path/to/your/orca/executable/file
+$ dandelion_refine -i /home/hachiware/example/outputs -n 15 --orca /home/hachiware/package/orca/orca_5_0_4/orca
 ```
 
 2 steps below will be executed automatically !
@@ -299,12 +298,12 @@ In this phase, we use DFT calculations with Orca 5.0. The default setting uses w
 ║                         7. Refining forces                         ║
 ╚════════════════════════════════════════════════════════════════════╝
 Arguments provided:
-  input_path: /home/jjy1031/example/output/xtb.h5
-  output_path: /home/jjy1031/example/output/wb97x.db
+  input_path: /home/hachiware/example/output/xtb.h5
+  output_path: /home/hachiware/example/output/wb97x.db
   max_workers: 15
-  orca: /home/jjy1031/package/orca/orca_5_0_4/orca
+  orca: /home/hachiware/package/orca/orca_5_0_4/orca
 
-Restarting calculation from /home/jjy1031/example/output/wb97x.db
+Restarting calculation from /home/hachiware/example/output/wb97x.db
 640 points are skipped.
 
 Formulas: 100%|██████████████████████| 2/2 [85:50:01<00:00, ? hour/it]
@@ -316,26 +315,26 @@ You can check your compiled database using ASE:
 ```
 $ ase db wb97x.db
 id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
- 1| 5d|jjy1031|C4ClH4NO|orca      |-20266.198|    11|5.874|FFF| 0.000|117.532
- 2| 5d|jjy1031|C4ClH4NO|orca      |-20269.074|    11|0.470|FFF| 0.000|117.532
- 3| 5d|jjy1031|C4ClH4NO|orca      |-20268.333|    11|5.994|FFF| 0.000|117.532
- 4| 5d|jjy1031|C4ClH4NO|orca      |-20268.047|    11|1.195|FFF| 0.000|117.532
- 5| 5d|jjy1031|C4ClH4NO|orca      |-20266.059|    11|3.630|FFF| 0.000|117.532
- 6| 5d|jjy1031|C4ClH4NO|orca      |-20266.920|    11|4.553|FFF| 0.000|117.532
- 7| 5d|jjy1031|C4ClH4NO|orca      |-20266.081|    11|1.022|FFF| 0.000|117.532
- 8| 5d|jjy1031|C4ClH4NO|orca      |-20265.240|    11|4.314|FFF| 0.000|117.532
- 9| 5d|jjy1031|C4ClH4NO|orca      |-20265.014|    11|7.924|FFF| 0.000|117.532
-10| 5d|jjy1031|C4ClH4NO|orca      |-20268.711|    11|3.512|FFF| 0.000|117.532
-11| 5d|jjy1031|C4ClH4NO|orca      |-20266.886|    11|5.938|FFF| 0.000|117.532
-12| 5d|jjy1031|C4ClH4NO|orca      |-20266.322|    11|3.704|FFF| 0.000|117.532
-13| 5d|jjy1031|C4ClH4NO|orca      |-20266.081|    11|1.021|FFF| 0.000|117.532
-14| 5d|jjy1031|C4ClH4NO|orca      |-20265.532|    11|3.059|FFF| 0.000|117.532
-15| 5d|jjy1031|C4ClH4NO|orca      |-20267.115|    11|3.885|FFF| 0.000|117.532
-16| 5d|jjy1031|C4ClH4NO|orca      |-20262.912|    11|6.171|FFF| 0.000|117.532
-17| 5d|jjy1031|C4ClH4NO|orca      |-20268.863|    11|1.657|FFF| 0.000|117.532
-18| 5d|jjy1031|C4ClH4NO|orca      |-20265.663|    11|4.222|FFF| 0.000|117.532
-19| 5d|jjy1031|C4ClH4NO|orca      |-20263.405|    11|5.723|FFF| 0.000|117.532
-20| 5d|jjy1031|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
+ 1| 5d|hachiware|C4ClH4NO|orca      |-20266.198|    11|5.874|FFF| 0.000|117.532
+ 2| 5d|hachiware|C4ClH4NO|orca      |-20269.074|    11|0.470|FFF| 0.000|117.532
+ 3| 5d|hachiware|C4ClH4NO|orca      |-20268.333|    11|5.994|FFF| 0.000|117.532
+ 4| 5d|hachiware|C4ClH4NO|orca      |-20268.047|    11|1.195|FFF| 0.000|117.532
+ 5| 5d|hachiware|C4ClH4NO|orca      |-20266.059|    11|3.630|FFF| 0.000|117.532
+ 6| 5d|hachiware|C4ClH4NO|orca      |-20266.920|    11|4.553|FFF| 0.000|117.532
+ 7| 5d|hachiware|C4ClH4NO|orca      |-20266.081|    11|1.022|FFF| 0.000|117.532
+ 8| 5d|hachiware|C4ClH4NO|orca      |-20265.240|    11|4.314|FFF| 0.000|117.532
+ 9| 5d|hachiware|C4ClH4NO|orca      |-20265.014|    11|7.924|FFF| 0.000|117.532
+10| 5d|hachiware|C4ClH4NO|orca      |-20268.711|    11|3.512|FFF| 0.000|117.532
+11| 5d|hachiware|C4ClH4NO|orca      |-20266.886|    11|5.938|FFF| 0.000|117.532
+12| 5d|hachiware|C4ClH4NO|orca      |-20266.322|    11|3.704|FFF| 0.000|117.532
+13| 5d|hachiware|C4ClH4NO|orca      |-20266.081|    11|1.021|FFF| 0.000|117.532
+14| 5d|hachiware|C4ClH4NO|orca      |-20265.532|    11|3.059|FFF| 0.000|117.532
+15| 5d|hachiware|C4ClH4NO|orca      |-20267.115|    11|3.885|FFF| 0.000|117.532
+16| 5d|hachiware|C4ClH4NO|orca      |-20262.912|    11|6.171|FFF| 0.000|117.532
+17| 5d|hachiware|C4ClH4NO|orca      |-20268.863|    11|1.657|FFF| 0.000|117.532
+18| 5d|hachiware|C4ClH4NO|orca      |-20265.663|    11|4.222|FFF| 0.000|117.532
+19| 5d|hachiware|C4ClH4NO|orca      |-20263.405|    11|5.723|FFF| 0.000|117.532
+20| 5d|hachiware|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
 Rows: 53842 (showing first 20)
 ```
 
@@ -345,8 +344,8 @@ Finally, compile our wb97x.db sample :
 ║                     8. Compiling final samples                     ║
 ╚════════════════════════════════════════════════════════════════════╝
 Arguments provided:
-  input_path: /home/jjy1031/example/output/wb97x.db
-  output_path: /home/jjy1031/example/output/wb97x.h5
+  input_path: /home/hachiware/example/output/wb97x.db
+  output_path: /home/hachiware/example/output/wb97x.h5
 
 Compiled successfully!
 ```
