@@ -1,10 +1,10 @@
 ---
 layout: default
-title: Overview
+title: Modules
 nav_order: 2
 has_children: true
 ---
 
-# Overview
-The following pages contain some background information about Dandelion. 
+# Modules
+The following pages contain some information of submodules in Dandelion. 
 
