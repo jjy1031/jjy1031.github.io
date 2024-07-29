@@ -1,7 +1,7 @@
 ---
 layout: default
-title: Workflow
-parent: Overview
+title: Submodule
+parent: Modules
 nav_order: 2
 ---
 
