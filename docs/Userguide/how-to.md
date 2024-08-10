@@ -5,6 +5,10 @@ parent: Userguide
 nav_order: 2
 ---
 
+
+opt_mother.py 파일이 있는데 소스코드를 보면 dandelion_sample.py에는 이를 import하는 부분이 없음
+opt_mother.py 어디에쓰는지........ 아니 헐 설마 잠깐만 내가 하나를 빼먹엇는것같은데
+
 # Example
 
 
@@ -12,7 +16,26 @@ This page provides a guide for Dandelion, which efficiently generate an extensiv
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
-Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific `input_path`, provided in `.xyz` file format.  
+Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific `input_path`, provided in `.xyz` file format. 
+
+You can enter this in terminal for more information:
+
+```python
+
+$ python opt_mothers.py -h:
+
+usage: opt_mothers.py [-h] -i INPUT_PATH -o OUTPUT_PATH
+
+Optimize crude structures to generate mother structures
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_PATH, --input_path INPUT_PATH
+                        Input path of crude sturctures
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        Output path of mother structures
+```
+
 
 ```
 mother_strucs
