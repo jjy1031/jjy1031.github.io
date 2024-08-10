@@ -12,7 +12,7 @@ This page provides a guide for Dandelion, which efficiently generate an extensiv
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
-Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific input_path, provided in `.xyz` file format.  
+Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific `input_path`, provided in `.xyz` file format.  
 
 ```
 mother_strucs
@@ -54,12 +54,13 @@ options:
                         Number of worker processes
 ```
 
-If you enter the following command:
+Assuming your mother structures are in `/home/pekora/example`, sampling can be initiated from the command via:
 
 ```python
 python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
 ```
-The following 6 steps will be executed automatically:
+
+Then the following 6 steps will be executed automatically:
 
 ```
 
@@ -81,7 +82,7 @@ The following 6 steps will be executed automatically:
 
 ```
 
-Dandelion generates possible driving coordinates(seeds) from each mother structures.
+Dandelion first generates possible driving coordinates(seeds) from each mother structures.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
