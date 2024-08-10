@@ -7,8 +7,8 @@ nav_order: 2
 
 # Example
 
-This page provides a guide for Dandelion, which efficiently generate an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
 
+This page provides a guide for Dandelion, which efficiently generate an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
