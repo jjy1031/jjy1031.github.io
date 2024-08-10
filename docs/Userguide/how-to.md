@@ -54,7 +54,7 @@ options:
                         Number of worker processes
 ```
 
-Assuming your mother structures are in `/home/pekora/example`, sampling can be initiated from the command via:
+Assuming your mother structures given in 'struc.xyz' are in `/home/pekora/example/mother_strucs`, sampling can be initiated from the command via:
 
 ```python
 python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
