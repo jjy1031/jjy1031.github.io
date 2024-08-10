@@ -7,7 +7,7 @@ nav_order: 2
 
 
 opt_mother.py 파일이 있는데 소스코드를 보면 dandelion_sample.py에는 이를 import하는 부분이 없음
-opt_mother.py 어디에쓰는지........ 아니 헐 설마 잠깐만 내가 하나를 빼먹엇는것같은데
+opt_mother.py 어디에쓰는지........ 아니 헐 설마 잠깐만 내가 하나를 빼먹엇는것같은데 아니이거뭐지
 
 # Example
 
@@ -18,6 +18,7 @@ This page provides a guide for Dandelion, which efficiently generate an extensiv
 </div>
 Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific `input_path`, provided in `.xyz` file format. 
 
+----------------------------------------------------------------
 You can enter this in terminal for more information:
 
 ```python
@@ -36,6 +37,33 @@ options:
                         Output path of mother structures
 ```
 
+
+```
+Arguments provided:
+  input_path: /home/jjy1031/example/0_mothers
+  output_path: /home/jjy1031/example/opt_strucs
+
+Handling /home/jjy1031/example/0_mothers/Cl7138/ClGeom-m7138-i1-c1-opt/struc.xyz
+/home/jjy1031/example/0_mothers/Cl7138/ClGeom-m7138-i1-c1-opt/struc.xyz converged.
+saved to /home/jjy1031/example/opt_strucs/struc.xyz
+
+Handling /home/jjy1031/example/0_mothers/Cl7164/ClGeom-m7164-i1-c1-opt/struc.xyz
+/home/jjy1031/example/0_mothers/Cl7164/ClGeom-m7164-i1-c1-opt/struc.xyz converged.
+saved to /home/jjy1031/example/opt_strucs/struc.xyz
+
+Handling /home/jjy1031/example/0_mothers/Cl7166/ClGeom-m7166-i1-c1-opt/struc.xyz
+/home/jjy1031/example/0_mothers/Cl7166/ClGeom-m7166-i1-c1-opt/struc.xyz converged.
+saved to /home/jjy1031/example/opt_strucs/struc.xyz
+
+Handling /home/jjy1031/example/0_mothers/Cl7168/ClGeom-m7168-i1-c1-opt/struc.xyz
+/home/jjy1031/example/0_mothers/Cl7168/ClGeom-m7168-i1-c1-opt/struc.xyz converged.
+saved to /home/jjy1031/example/opt_strucs/struc.xyz
+
+Handling /home/jjy1031/example/0_mothers/Cl7188/ClGeom-m7188-i1-c1-opt/struc.xyz
+/home/jjy1031/example/0_mothers/Cl7188/ClGeom-m7188-i1-c1-opt/struc.xyz converged.
+saved to /home/jjy1031/example/opt_strucs/struc.xyz
+```
+--------------------------------------------------
 
 ```
 mother_strucs
