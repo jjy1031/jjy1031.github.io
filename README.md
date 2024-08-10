@@ -1,5 +1,5 @@
 # Dandelion 
-Dandelion is a code for Automated and Efficient Sampling of Chemical Reaction Space.
+Dandelion is a code for generating datasets that contain both equilibrium and reactive regions of potential energy surfaces, using automated and efficient sampling of chemical reaction space.
 
 ![dandelion (1000 x 500 px) (2)](https://github.com/user-attachments/assets/e2dec9d2-b750-4db2-89aa-abb9f16f45f2)
 
@@ -22,7 +22,7 @@ If you run into an authentification error, you should get [personal access token
 
 ### Setup conda environment
 
-This creates a new Conda environment using the specifications provided in an `environment.yml` file.
+This creates a new Conda environment using the specifications provided in `environment.yml` file.
 
 ```python
 conda env create -f environment.yml
@@ -87,7 +87,6 @@ source ~/.bashrc
 
 ## References 
 - Grambow, Colin A. et al., Scientific Data, 7.1, 137 (2020)
-
 - Schreiner, Mathias et al., Scientific Data, 9.1, 779 (2022)
 
 ## Citation
