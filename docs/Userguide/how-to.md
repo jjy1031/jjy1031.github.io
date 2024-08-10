@@ -36,7 +36,8 @@ options:
   -o OUTPUT_PATH, --output_path OUTPUT_PATH
                         Output path of mother structures
 ```
-
+같은디렉토리에 저장됨(덮어쓰기같은느낌)
+내가어디서부터잘못쓴거지?
 
 ```
 Arguments provided:
