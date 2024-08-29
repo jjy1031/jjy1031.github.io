@@ -3,3 +3,11 @@ title: Dandelion
 description : An Efficient And Fully Automated Approach To Sample Chemical Reaction Space
 url : "https://jjy1031.github.io"
 logo : "docs/dandelion.svg"
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: default
+      nav_order: 1
