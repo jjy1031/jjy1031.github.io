@@ -4,5 +4,10 @@ title: About and Contact
 nav_order: 5 
 ---
 
-# Authors
+# About and Contact
 
+<div class="author-container">
+  <span class="author-name">Minhyeok Lee</span>
+  <br>
+  <a href="mlee@yonsei.ac.kr" class="author-email">mlee@yonsei.ac.kr</a>
+</div>
