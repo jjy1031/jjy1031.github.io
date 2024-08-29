@@ -11,3 +11,6 @@ defaults:
     values:
       layout: default
       nav_order: 1
+
+sass:
+  custom_css: "assets/css/custom.css"
