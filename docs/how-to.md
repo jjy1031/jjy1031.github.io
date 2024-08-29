@@ -1,7 +1,6 @@
 ---
 layout: default
 title: How-to-use
-parent: Userguide
 nav_order: 2
 ---
 
