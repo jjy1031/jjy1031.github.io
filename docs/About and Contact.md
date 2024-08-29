@@ -9,5 +9,5 @@ nav_order: 5
 <div class="author-container">
   <span class="author-name">Minhyeok Lee</span>
   <br>
-  <a href="mlee@yonsei.ac.kr" class="author-email">mlee@yonsei.ac.kr</a>
+  <a href="mailto:mlee@yonsei.ac.kr" class="author-email">mlee@yonsei.ac.kr</a>
 </div>
