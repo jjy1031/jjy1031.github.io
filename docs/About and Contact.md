@@ -6,8 +6,8 @@ nav_order: 5
 
 # About and Contact
 
-<div class="author-container">
-  <span class="author-name">Minhyeok Lee</span>
-  <br>
-  <a href="mailto:mlee@yonsei.ac.kr" class="author-email">mlee@yonsei.ac.kr</a>
+<div style="border: 1px solid #e1e4e8; padding: 15px; border-radius: 5px; background-color: #f5f5f5;">
+  **Minhyeok Lee**  
+  [Email: mlee@yonsei.ac.kr](mailto:mlee@yonsei.ac.kr)
 </div>
+
