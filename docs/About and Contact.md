@@ -1,10 +1,10 @@
 ---
 layout: default
-title: About and Contact
+title: About
 nav_order: 5 
 ---
 
-# About and Contact
+# About
 
 ## License
 
