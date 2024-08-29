@@ -1,7 +1,7 @@
 ---
 layout: default
 title: How-to-use
-nav_order: 4
+nav_order: 3
 ---
 
 # Example
