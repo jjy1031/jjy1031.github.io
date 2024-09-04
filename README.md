@@ -18,7 +18,6 @@ You can install the code from [our repository](https://github.com/mhyeok1/dandel
 git clone https://github.com/mhyeok1/dandelion_test.git
 cd dandelion_test
 ```
-If you run into an authentification error, you should get [personal access token](https://docs.github.com/en/authentication/keeping-your-account-and-data-secure/managing-your-personal-access-tokens#creating-a-personal-access-token-classic).
 
 ### Setup conda environment
 
