@@ -1,7 +1,7 @@
 ---
 layout: default
 title: create_gsm.py
-parent: Modules
+parent: SE-GSM
 nav_order: 2
 ---
 
