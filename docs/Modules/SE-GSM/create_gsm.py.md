@@ -7,11 +7,6 @@ nav_order: 1
 
 # Create GSM jobs
 
-
-For detailed information, please see [Journal of computational chemistry 36, 601–611 (2015)](https://onlinelibrary.wiley.com/doi/full/10.1002/jcc.23833?casa_token=7ZtVQGleOwIAAAAA%3AMCrI2MzV0_3cjRuEof_e_uoNE5egitdBSl_p9k_ZkqTeTbaVBzjS7I7AnF20ttyBuhRKS5AHzW2yeVE)
-
-Dandelion uses the SE-GSM to explore PES and provides automated generation of viable driving coordinates from mother structures.
-
 In this procedure, Dandelion generates possible GSM jobs, or seeds, from each optimized mother structure. The overall algorithm calculates the number of bonds to be broken or added, determines possible reactions, and generates all viable driving coordinates.
 
   ```
