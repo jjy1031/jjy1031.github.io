@@ -1,8 +1,8 @@
 ---
 layout: default
 title: compile_neb.py
-parent: Modules
-nav_order: 7
+parent: NEB
+nav_order: 3
 ---
 
 # compile_neb.py
