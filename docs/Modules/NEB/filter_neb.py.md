@@ -1,8 +1,8 @@
 ---
 layout: default
 title: filter_neb.py
-parent: Modules
-nav_order: 6
+parent: NEB
+nav_order: 2
 ---
 
 # filter_neb.py
