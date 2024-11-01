@@ -25,9 +25,7 @@ nav_order: 5
 > Islambek Ashyrmamatov
 
 [ashyrmamatov01@gmail.com](mailto:ashyrmamatov01@gmail.com)
-
-secondary
-[ashyrmamatov@snu.ac.kr](mailto:ashyrmamatov@snu.ac.kr)
+[ashyrmamatov@snu.ac.kr](mailto:ashyrmamatov@snu.ac.kr) (secondary)
 
 {: .note-title }
 > Jinyoung Jeong
