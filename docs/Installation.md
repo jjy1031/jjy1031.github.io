@@ -20,7 +20,7 @@ cd dandelion_test
 
 ## Setup conda environment
 
-This creates a new Conda environment using the specifications provided in an `environment.yml` file.
+This creates a new conda environment according to the specifications in the `environment.yml` file.
 
 ```python
 conda env create -f environment.yml
@@ -30,7 +30,7 @@ pip install -e .
 
 ## Install pyGSM
 
-Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for instructions or simply use:
+Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for more detailed instructions, or simply use:
 
 ```python
 git clone https://github.com/ZimmermanGroup/pyGSM
@@ -40,8 +40,8 @@ By executing `gsm` in terminal, you can verify that the program has been success
 
 ## Install Orca
 
-You can install ORCA [here](https://orcaforum.kofo.mpg.de/app.php/portal).
-This extracts a tar.xz file.
+You can install ORCA from [here](https://orcaforum.kofo.mpg.de/app.php/portal).
+The following command extracts a `tar.xz` file.
 
 ```python
 tar -xf orca.tar.xz
@@ -78,7 +78,7 @@ export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
 ```
 
-Apply the changes:
+Apply changes:
 ```python
 source ~/.bashrc
 ``` 
