@@ -19,16 +19,20 @@ nav_order: 5
 {: .note-title }
 > Umit V. Ucak
 
-[braket@snu.ac.kr](mailto:braket@snu.ac.kr)
+[azpisruh@gmail.com](mailto:azpisruh@gmail.com)
 
 {: .note-title }
 > Islambek Ashyrmamatov
+
+[ashyrmamatov01@gmail.com](mailto:ashyrmamatov01@gmail.com)
+
+secondary
+[ashyrmamatov@snu.ac.kr](mailto:ashyrmamatov@snu.ac.kr)
 
 {: .note-title }
 > Jinyoung Jeong
 
 [2021133035@yonsei.ac.kr](mailto:2021133035@yonsei.ac.kr)
-
 
 {: .note-title }
 > Juyong Lee
