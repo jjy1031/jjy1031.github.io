@@ -7,11 +7,11 @@ nav_order: 3
 # Example
 
 
-This page provides a guide for Dandelion, which efficiently generate an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
+This page provides a guide for using Dandelion, which efficiently generates an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
-Let's assume that we are interested in expanding dataset from given 5 mother structures. First, we need to optimize each mother structures to serve as a good starting point for GSM. This can be achieved through geometry optimization using GFN2-xTB. Ensure that all of your prepared mother structures are in specific `input_path`, provided in `.xyz` file format. 
+Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
 ```
 mother_strucs
@@ -33,7 +33,7 @@ mother_strucs
 ```
 
 To run dandelion, your current conda environment should be **ts**.
-You can enter this in terminal for more information:
+You can enter the following command in terminal for more information:
 
 ``` python
 $ dandelion_sample -h
@@ -53,7 +53,7 @@ options:
                         Number of worker processes
 ```
 
-Assuming your mother structures given in 'struc.xyz' are in `/home/pekora/example/mother_strucs`, sampling can be initiated from the command via:
+Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/example/mother_strucs`, you can initiate sampling with the following command:
 
 ```python
 python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
@@ -109,7 +109,7 @@ Arguments provided:
 Creating GSM finished!
 ```
 
-Based on the generated viable GSM jobs, GSM can be performed. There are jobs that do not converge or fail to reach the product within the predefined maximum node.
+Based on generated GSM jobs, GSM can be executed. Some jobs can fail to converge or reach the product within the predefined maximum number of nodes and should be filtered out.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
