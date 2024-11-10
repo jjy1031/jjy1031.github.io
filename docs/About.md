@@ -25,6 +25,8 @@ nav_order: 5
 > Islambek Ashyrmamatov
 
 [ashyrmamatov01@gmail.com](mailto:ashyrmamatov01@gmail.com)
+
+
 [ashyrmamatov@snu.ac.kr](mailto:ashyrmamatov@snu.ac.kr) (secondary)
 
 {: .note-title }
