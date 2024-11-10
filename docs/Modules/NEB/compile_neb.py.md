@@ -6,5 +6,5 @@ nav_order: 3
 ---
 
 # compile_neb.py
-Calculate DFT forces on samples and compile as a database using Atomic Simulation Environment.
-If you want to effectively use the database, please refer to [this page](https://wiki.fysik.dtu.dk/ase/).
+This compiles reaction data into '.h5' file. It reads input paths, extracts information on  reactants, transition states, and products, including positions, energies, and forces. The data is stored in the .h5 file. This process can help organize and prepare NEB path data for further analysis efficiently.
+
