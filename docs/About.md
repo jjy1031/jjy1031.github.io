@@ -11,15 +11,20 @@ nav_order: 5
 
 ## Authors
 
+
 {: .note-title }
 > Minhyeok Lee
 
 [mlee@yonsei.ac.kr](mailto:mlee@yonsei.ac.kr)
 
+
+
 {: .note-title }
 > Umit V. Ucak
 
 [azpisruh@gmail.com](mailto:azpisruh@gmail.com)
+
+
 
 {: .note-title }
 > Islambek Ashyrmamatov
@@ -29,15 +34,21 @@ nav_order: 5
 
 [ashyrmamatov@snu.ac.kr](mailto:ashyrmamatov@snu.ac.kr) (secondary)
 
+
+
 {: .note-title }
 > Jinyoung Jeong
 
 [2021133035@yonsei.ac.kr](mailto:2021133035@yonsei.ac.kr)
 
+
+
 {: .note-title }
 > Juyong Lee
 
 [nicole23@snu.ac.kr](mailto:nicole23@snu.ac.kr)
+
+
 
 {: .note-title }
 > Eunji Sim
