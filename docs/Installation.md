@@ -11,11 +11,11 @@ nav_order: 2
 
 ## Download Dandelion
 
-You can install the code from [our repository](https://github.com/mhyeok1/dandelion_test):
+You can install the code from [our repository](https://github.com/mhyeok1/dand):
 
 ```python
-git clone https://github.com/mhyeok1/dandelion_test.git
-cd dandelion_test
+git clone https://github.com/mhyeok1/dand.git
+cd dand
 ```
 
 ## Setup conda environment
