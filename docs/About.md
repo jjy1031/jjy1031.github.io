@@ -17,26 +17,10 @@ nav_order: 5
 
 
 
-{: .note-title }
-> Umit V. Ucak
-
-
-
-
-{: .note-title }
-> Islambek Ashyrmamatov
-
-
-
 
 {: .note-title }
 > Jinyoung Jeong
 
-
-
-
-{: .note-title }
-> Juyong Lee
 
 
 
