@@ -14,42 +14,66 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 
 
 
-```html
 <style>
-  .tab-buttons {
+  .tab-container {
     display: flex;
-    border-bottom: 2px solid #ccc;
-    margin-bottom: 10px;
+    gap: 5px;
+    padding: 10px 0;
   }
+
   .tab-button {
     background-color: #f1f1f1;
     border: none;
-    padding: 10px 15px;
+    padding: 8px 12px;
     cursor: pointer;
     font-weight: bold;
-    border-radius: 5px 5px 0 0;
-    margin-right: 5px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
   }
+
+  .tab-button:hover {
+    background-color: #ddd;
+  }
+
   .tab-button.active {
-    background-color: #0078D4;
-    color: white;
+    background-color: #d1d5db;
+    color: #333;
   }
+
   .tab-content {
     display: none;
-    padding: 10px;
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 5px;
     background-color: #f9f9f9;
+    font-family: monospace;
+  }
+
+  .tab-content.active {
+    display: block;
+  }
+
+  .icon {
+    width: 16px;
+    height: 16px;
   }
 </style>
 
-<div class="tab-buttons">
-  <button class="tab-button active" onclick="showTab('command', this)">Command</button>
-  <button class="tab-button" onclick="showTab('struc', this)">struc.xyz</button>
-  <button class="tab-button" onclick="showTab('output', this)">Output</button>
+<div class="tab-container">
+  <button class="tab-button active" onclick="showTab('command', this)">
+    <span>💻</span> Command
+  </button>
+  <button class="tab-button" onclick="showTab('struc', this)">
+    <span>📂</span> struc.xyz
+  </button>
+  <button class="tab-button" onclick="showTab('output', this)">
+    <span>📄</span> Output
+  </button>
 </div>
 
-<div id="command" class="tab-content" style="display: block;">
+<div id="command" class="tab-content active">
   <pre><code>crest struc.xyz --gfn2 --gbsa h2o -T 4</code></pre>
 </div>
 
@@ -63,16 +87,13 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 
 <script>
   function showTab(tabName, button) {
-    document.querySelectorAll('.tab-content').forEach(div => div.style.display = 'none');
-    document.getElementById(tabName).style.display = 'block';
+    document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
+    document.getElementById(tabName).classList.add('active');
 
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
   }
 </script>
-
-
-
 
 
 
