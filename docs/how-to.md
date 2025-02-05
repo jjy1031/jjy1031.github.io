@@ -12,31 +12,15 @@ This page provides a guide for using Dandelion, which efficiently generates an e
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
 
-
-<div>
-  <button onclick="showTab('command')">Command</button>
-  <button onclick="showTab('input')">struc.xyz</button>
-  <button onclick="showTab('output')">Output</button>
+<div class="nav-tabs">
+  <a href="#tab-command" class="nav-link active">Command</a>
+  <a href="#tab-struc" class="nav-link">struc.xyz</a>
+  <a href="#tab-output" class="nav-link">Output</a>
 </div>
 
-<div id="command" class="tab-content">
-  <pre><code>crest struc.xyz --gfn2 --gbsa h2o -T 4</code></pre>
-</div>
-
-<div id="input" class="tab-content" style="display:none;">
-  <pre><code>[Insert XYZ file content here]</code></pre>
-</div>
-
-<div id="output" class="tab-content" style="display:none;">
-  <pre><code>[Insert output here]</code></pre>
-</div>
-
-<script>
-  function showTab(tabName) {
-    document.querySelectorAll('.tab-content').forEach(div => div.style.display = 'none');
-    document.getElementById(tabName).style.display = 'block';
-  }
-</script>
+<div id="tab-command" class="tab-content" markdown="1">
+```bash
+crest struc.xyz --gfn2 --gbsa h2o -T 4
 
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
