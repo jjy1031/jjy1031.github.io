@@ -62,9 +62,6 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 </style>
 
 <div class="tab-container">
-  <button class="tab-button active" onclick="showTab('command', this)">
-    <span>💻</span> Command
-  </button>
   <button class="tab-button" onclick="showTab('struc', this)">
     <span>📂</span> struc.xyz
   </button>
