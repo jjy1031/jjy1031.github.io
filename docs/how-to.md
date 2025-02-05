@@ -12,15 +12,69 @@ This page provides a guide for using Dandelion, which efficiently generates an e
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
 
-<div class="nav-tabs">
-  <a href="#tab-command" class="nav-link active">Command</a>
-  <a href="#tab-struc" class="nav-link">struc.xyz</a>
-  <a href="#tab-output" class="nav-link">Output</a>
+
+
+```html
+<style>
+  .tab-buttons {
+    display: flex;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 10px;
+  }
+  .tab-button {
+    background-color: #f1f1f1;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
+    margin-right: 5px;
+  }
+  .tab-button.active {
+    background-color: #0078D4;
+    color: white;
+  }
+  .tab-content {
+    display: none;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+</style>
+
+<div class="tab-buttons">
+  <button class="tab-button active" onclick="showTab('command', this)">Command</button>
+  <button class="tab-button" onclick="showTab('struc', this)">struc.xyz</button>
+  <button class="tab-button" onclick="showTab('output', this)">Output</button>
 </div>
 
-<div id="tab-command" class="tab-content" markdown="1">
-```bash
-crest struc.xyz --gfn2 --gbsa h2o -T 4
+<div id="command" class="tab-content" style="display: block;">
+  <pre><code>crest struc.xyz --gfn2 --gbsa h2o -T 4</code></pre>
+</div>
+
+<div id="struc" class="tab-content">
+  <pre><code>[Insert XYZ file content here]</code></pre>
+</div>
+
+<div id="output" class="tab-content">
+  <pre><code>[Insert output here]</code></pre>
+</div>
+
+<script>
+  function showTab(tabName, button) {
+    document.querySelectorAll('.tab-content').forEach(div => div.style.display = 'none');
+    document.getElementById(tabName).style.display = 'block';
+
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  }
+</script>
+
+
+
+
+
 
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
