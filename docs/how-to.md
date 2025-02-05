@@ -70,10 +70,6 @@ This page provides a guide for using Dandelion, which efficiently generates an e
   </button>
 </div>
 
-<div id="command" class="tab-content active">
-  <pre><code>crest struc.xyz --gfn2 --gbsa h2o -T 4</code></pre>
-</div>
-
 <div id="struc" class="tab-content">
   <pre><code>[Insert XYZ file content here]</code></pre>
 </div>
