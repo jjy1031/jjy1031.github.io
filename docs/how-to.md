@@ -117,7 +117,7 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
   </div>
 
   <div id="Cl7138" class="tab-content active">
-    <img src="assets/molecules/Cl7138.png" alt="Cl7138 Structure" class="molecule-img">
+    <img src="assets/Cl7138.png" alt="Cl7138 Structure" class="molecule-img">
   </div>
   <div id="Cl7164" class="tab-content">
     <img src="assets/molecules/Cl7164.png" alt="Cl7164 Structure" class="molecule-img">
