@@ -12,7 +12,9 @@ This page provides a guide for using Dandelion, which efficiently generates an e
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
 
+You can download these structures from [HERE](https://github.com/mhyeok1/dand_docs/blob/docs/assets/mother_structures_for_tut.Zip){:download}
 
+Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
 <style>
   .tab-container {
@@ -55,69 +57,92 @@ This page provides a guide for using Dandelion, which efficiently generates an e
     display: block;
   }
 
-  .icon {
-    width: 16px;
-    height: 16px;
+  .molecule-img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
   }
 </style>
 
+<!-- 🔹 메인 탭 (두 개) -->
 <div class="tab-container">
-  <button class="tab-button" onclick="showTab('struc', this)">
-    <span>📂</span> Cl7138
+  <button class="tab-button active" onclick="switchMainTab('molecule-view', this)">
+    🧪 Molecule Structure
   </button>
-  <button class="tab-button" onclick="showTab('output', this)">
-    <span>📄</span> Cl7164
-  <button class="tab-button" onclick="showTab('struc', this)">
-    <span>📂</span> Cl7166
-  </button>
-  <button class="tab-button" onclick="showTab('struc', this)">
-    <span>📂</span> Cl7168
-  </button>
-  <button class="tab-button" onclick="showTab('struc', this)">
-    <span>📂</span> Cl7188
+  <button class="tab-button" onclick="switchMainTab('file-structure', this)">
+    📂 File Structure
   </button>
 </div>
 
-<div id="struc" class="tab-content">
-  <pre><code>[Insert XYZ file content here]</code></pre>
+<!-- 🔹 Molecule Structure 탭 -->
+<div id="molecule-view" class="tab-content active">
+  <h3>🔬 Select a molecule:</h3>
+  <div class="tab-container">
+    <button class="tab-button active" onclick="showMolecule('Cl7138', this)">Cl7138</button>
+    <button class="tab-button" onclick="showMolecule('Cl7164', this)">Cl7164</button>
+    <button class="tab-button" onclick="showMolecule('Cl7166', this)">Cl7166</button>
+    <button class="tab-button" onclick="showMolecule('Cl7168', this)">Cl7168</button>
+    <button class="tab-button" onclick="showMolecule('Cl7188', this)">Cl7188</button>
+  </div>
+
+  <div id="Cl7138" class="tab-content active">
+    <img src="assets/molecules/Cl7138.png" alt="Cl7138 Structure" class="molecule-img">
+  </div>
+  <div id="Cl7164" class="tab-content">
+    <img src="assets/molecules/Cl7164.png" alt="Cl7164 Structure" class="molecule-img">
+  </div>
+  <div id="Cl7166" class="tab-content">
+    <img src="assets/molecules/Cl7166.png" alt="Cl7166 Structure" class="molecule-img">
+  </div>
+  <div id="Cl7168" class="tab-content">
+    <img src="assets/molecules/Cl7168.png" alt="Cl7168 Structure" class="molecule-img">
+  </div>
+  <div id="Cl7188" class="tab-content">
+    <img src="assets/molecules/Cl7188.png" alt="Cl7188 Structure" class="molecule-img">
+  </div>
 </div>
 
-<div id="output" class="tab-content">
-  <pre><code>[Insert output here]</code></pre>
+<!-- 🔹 File Structure 탭 -->
+<div id="file-structure" class="tab-content">
+  <h3>📁 Project File Structure</h3>
+  <pre><code>
+📂 mother_strucs
+ ├── 📂 Cl7138
+ │   └── 📂 ClGeom-m7138-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7164
+ │   └── 📂 ClGeom-m7164-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7166
+ │   └── 📂 ClGeom-m7166-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7168
+ │   └── 📂 ClGeom-m7168-i1-c1-opt
+ │       └── 📄 struc.xyz
+ └── 📂 Cl7188
+     └── 📂 ClGeom-m7188-i1-c1-opt
+         └── 📄 struc.xyz
+  </code></pre>
 </div>
 
 <script>
-  function showTab(tabName, button) {
+  function switchMainTab(tabName, button) {
     document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
     document.getElementById(tabName).classList.add('active');
 
     document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
   }
+
+  function showMolecule(molecule, button) {
+    document.querySelectorAll('#molecule-view .tab-content').forEach(div => div.classList.remove('active'));
+    document.getElementById(molecule).classList.add('active');
+
+    document.querySelectorAll('#molecule-view .tab-button').forEach(btn => btn.classList.remove('active'));
+    button.classList.add('active');
+  }
 </script>
-
-You can download these structures from [HERE](https://github.com/mhyeok1/dand_docs/blob/docs/assets/mother_structures_for_tut.Zip){:download}
-
-Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
-
-```
-mother_strucs
-├── Cl7138
-│   └── ClGeom-m7138-i1-c1-opt
-│       └── struc.xyz
-├── Cl7164
-│   └── ClGeom-m7164-i1-c1-opt
-│       └── struc.xyz
-├── Cl7166
-│   └── ClGeom-m7166-i1-c1-opt
-│       └── struc.xyz
-├── Cl7168
-│   └── ClGeom-m7168-i1-c1-opt
-│       └── struc.xyz
-└── Cl7188
-    └── ClGeom-m7188-i1-c1-opt
-        └── struc.xyz
-```
 
 To run dandelion, your current conda environment should be **ts**.
 You can enter the following command in terminal for more information:
