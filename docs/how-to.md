@@ -63,10 +63,18 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 
 <div class="tab-container">
   <button class="tab-button" onclick="showTab('struc', this)">
-    <span>📂</span> struc.xyz
+    <span>📂</span> Cl7138
   </button>
   <button class="tab-button" onclick="showTab('output', this)">
-    <span>📄</span> Output
+    <span>📄</span> Cl7164
+  <button class="tab-button" onclick="showTab('struc', this)">
+    <span>📂</span> Cl7166
+  </button>
+  <button class="tab-button" onclick="showTab('struc', this)">
+    <span>📂</span> Cl7168
+  </button>
+  <button class="tab-button" onclick="showTab('struc', this)">
+    <span>📂</span> Cl7188
   </button>
 </div>
 
