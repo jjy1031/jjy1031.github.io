@@ -77,7 +77,6 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
 
 <!-- 🔹 Molecule Structure 탭 -->
 <div id="molecule-view" class="tab-content active">
-  <h3>🔬 Select a molecule:</h3>
   <div class="tab-container">
     <button class="tab-button active" onclick="showMolecule('Cl7138', this)">Cl7138</button>
     <button class="tab-button" onclick="showMolecule('Cl7164', this)">Cl7164</button>
@@ -105,7 +104,6 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
 
 <!-- 🔹 File Structure 탭 -->
 <div id="file-structure" class="tab-content">
-  <h3>📁 Project File Structure</h3>
   <pre><code>
 📂 mother_strucs
  ├── 📂 Cl7138
