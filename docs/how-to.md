@@ -17,53 +17,84 @@ You can download these structures from [HERE](https://github.com/mhyeok1/dand_do
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
 <style>
+  /* Just the Docs 기본 폰트 유지 */
+  body {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  }
+
+  /* 탭 버튼 스타일 */
   .tab-container {
     display: flex;
-    gap: 5px;
+    gap: 6px;
     padding: 10px 0;
   }
 
   .tab-button {
-    background-color: #f1f1f1;
-    border: none;
-    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border: 1px solid #d1d5db;
+    padding: 8px 14px;
     cursor: pointer;
-    font-weight: bold;
-    border-radius: 5px;
+    font-weight: 500;
+    font-size: 14px;
+    border-radius: 4px;
     display: flex;
     align-items: center;
-    gap: 5px;
+    gap: 6px;
+    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
   }
 
   .tab-button:hover {
-    background-color: #ddd;
+    background-color: #e2e6ea;
+    border-color: #adb5bd;
   }
 
   .tab-button.active {
     background-color: #d1d5db;
+    border-color: #adb5bd;
     color: #333;
   }
 
+  /* 탭 콘텐츠 스타일 */
   .tab-content {
     display: none;
     padding: 15px;
     border: 1px solid #ddd;
-    border-radius: 5px;
+    border-radius: 4px;
     background-color: #f9f9f9;
-    font-family: monospace;
+    font-size: 14px;
   }
 
   .tab-content.active {
     display: block;
   }
 
+  /* 버튼 스타일 - Just the Docs 버튼 스타일 반영 */
+  .btn {
+    display: inline-block;
+    font-weight: 500;
+    color: #fff;
+    background-color: #007bff;
+    border: 1px solid #007bff;
+    padding: 6px 12px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.2s ease-in-out;
+  }
+
+  .btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* 이미지 스타일 */
   .molecule-img {
     max-width: 100%;
     height: auto;
     display: block;
-    margin: 0 auto;
+    margin: 10px auto;
   }
 </style>
+
 
 <!-- 🔹 메인 탭 (두 개) -->
 <div class="tab-container">
