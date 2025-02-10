@@ -25,7 +25,7 @@ This work builds upon two pioneering papers that should also be cited:
 - Schreiner et al. *Sci. Data* **9**, 779 (2022) [LINK](https://doi.org/10.1038/s41597-022-01870-w)
 
 ## Research Funding
-National Research Foundation of Korea. Grant Numbers: 2020R1A2C2007468, 2022M3E5F3081268, 2022R1C1C1005080, 2020M3A9G7103933, RS-2023-00256320
-Korea Environmental Industry and Technology Institute. Grant Number: RS-2023-00219144
-Institute of Information & communications Technology Planning & Evaluation. Grant Number: RS-2023-00220628
+- National Research Foundation of Korea. Grant Numbers: 2020R1A2C2007468, 2022M3E5F3081268, 2022R1C1C1005080, 2020M3A9G7103933, RS-2023-00256320
+- Korea Environmental Industry and Technology Institute. Grant Number: RS-2023-00219144
+- Institute of Information & communications Technology Planning & Evaluation. Grant Number: RS-2023-00220628
 
