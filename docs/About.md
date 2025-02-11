@@ -39,9 +39,8 @@ This work builds upon two pioneering papers that should also be cited:
 
 ## Special Thanks
 <a href="https://www.youtube.com/@usadapekora">
-  <img src="https://github.com/user-attachments/assets/51c3c62e-b912-4b3f-94d7-8a4c87c452c8" alt="image" width="100" height="auto">
+  <img src="https://github.com/user-attachments/assets/0da4604a-62da-439b-b044-616d40d9da10" alt="image" width="100" height="auto">
 </a>
-
 <a href="https://chiikawamarket.jp/">
 <img src="https://github.com/user-attachments/assets/cce11461-09e2-443e-9569-d6252af5f960" alt="image" width="100" height="auto">
 </a>
