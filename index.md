@@ -8,7 +8,7 @@ nav_order: 1
 # Dandelion Docs
 Welcome to the documentation site of Dandelion.
 <div align="center">
-  <img src="docs/img/front.png" alt="Dandelion" width="750">
+  <img src="docs/img/front.png" alt="Dandelion" width="700">
 </div>
 
 # Introduction
