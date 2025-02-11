@@ -16,78 +16,87 @@ You can download these structures from [HERE](https://github.com/mhyeok1/dand_do
 
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
-<style>
-  /* 전체 폰트 스타일 유지 */
-  body {
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-  }
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>XYZ 파일 포맷 보기</title>
+  <style>
+    /* 전체 폰트 스타일 유지 */
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
 
-  /* 탭 버튼 스타일 */
-  .tab-container {
-    display: flex;
-    gap: 6px;
-    padding: 10px 0;
-  }
+    /* 탭 버튼 스타일 */
+    .tab-container {
+      display: flex;
+      gap: 6px;
+      padding: 10px 0;
+    }
 
-  .tab-button {
-    background-color: #f8f9fa;
-    border: 1px solid #d1d5db;
-    padding: 8px 14px;
-    cursor: pointer;
-    font-weight: 500;
-    font-size: 14px;
-    border-radius: 4px;
-    transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
-  }
+    .tab-button {
+      background-color: #f8f9fa;
+      border: 1px solid #d1d5db;
+      padding: 8px 14px;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 14px;
+      border-radius: 4px;
+      transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
+    }
 
-  .tab-button:hover {
-    background-color: #e2e6ea;
-    border-color: #adb5bd;
-  }
+    .tab-button:hover {
+      background-color: #e2e6ea;
+      border-color: #adb5bd;
+    }
 
-  .tab-button.active {
-    background-color: #d1d5db;
-    border-color: #adb5bd;
-    color: #333;
-  }
+    .tab-button.active {
+      background-color: #d1d5db;
+      border-color: #adb5bd;
+      color: #333;
+    }
 
-  /* 📌 큰 회색 박스 유지 (텍스트가 들어갈 영역) */
-  #molecule-container {
-    background-color: #f9f9f9; /* 회색 박스 */
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    width: fit-content;
-    max-width: 100%;
-    overflow-x: auto; /* 가로 스크롤 가능 */
-  }
+    /* 큰 회색 박스 (텍스트가 들어갈 영역) */
+    #molecule-container {
+      background-color: #f9f9f9; /* 회색 박스 */
+      padding: 15px;
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      width: fit-content;
+      max-width: 100%;
+      overflow-x: auto; /* 가로 스크롤 가능 */
+    }
 
-  /* 📌 원자 좌표 데이터 스타일 (흰 배경 제거 + 포맷 유지) */
-  #molecule-data {
-    font-family: monospace;
-    font-size: 13px;
-    white-space: pre-wrap; /* 줄바꿈 유지 */
-    margin: 0;
-    padding: 0;
-    border: none;
-    background: none;
-  }
-</style>
+    /* 원자 좌표 데이터 스타일 (흰 배경 제거 + 포맷 유지) */
+    #molecule-data {
+      font-family: monospace;
+      font-size: 13px;
+      white-space: pre; /* 정확한 공백과 줄바꿈 유지 */
+      margin: 0;
+      padding: 0;
+      border: none;
+      background: none;
+    }
+  </style>
+</head>
+<body>
 
-<!-- 🔹 메인 탭 -->
-<div class="tab-container">
-  <button class="tab-button active" onclick="showMolecule('Cl7138', this)">Cl7138</button>
-  <button class="tab-button" onclick="showMolecule('Cl7164', this)">Cl7164</button>
-  <button class="tab-button" onclick="showMolecule('Cl7166', this)">Cl7166</button>
-  <button class="tab-button" onclick="showMolecule('Cl7168', this)">Cl7168</button>
-  <button class="tab-button" onclick="showMolecule('Cl7188', this)">Cl7188</button>
-</div>
+  <!-- 메인 탭 -->
+  <div class="tab-container">
+    <button class="tab-button active" onclick="showMolecule('Cl7138', this)">Cl7138</button>
+    <button class="tab-button" onclick="showMolecule('Cl7164', this)">Cl7164</button>
+    <button class="tab-button" onclick="showMolecule('Cl7166', this)">Cl7166</button>
+    <button class="tab-button" onclick="showMolecule('Cl7168', this)">Cl7168</button>
+    <button class="tab-button" onclick="showMolecule('Cl7188', this)">Cl7188</button>
+  </div>
 
-<!-- 📌 원자 좌표 데이터 표시 (큰 회색 박스 유지) -->
-<div id="molecule-container">
-  <pre id="molecule-data">
+  <!-- 원자 좌표 데이터 표시 (큰 회색 박스) -->
+  <div id="molecule-container">
+    <pre id="molecule-data">
+11
+
 Cl          -2.26279631     0.43247998    -0.04641091
 C           -0.53339796     0.40058085    -0.02301215
 C            0.27488623     1.56165626    -0.05319137
@@ -99,22 +108,27 @@ H           -0.12640769     2.55744176    -0.08718073
 H            2.43239654     1.93559234    -0.05293046
 H            0.29134973    -2.78353992    -0.19312943
 H           -1.28066134    -2.14438544    -0.13694928
-  </pre>
-</div>
+    </pre>
+  </div>
 
-<script>
-  function showMolecule(molecule, button) {
-    const moleculeData = {
-      "Cl7138": `Cl          -2.26279631     0.43247998    -0.04641091
+  <script>
+    function showMolecule(molecule, button) {
+      const moleculeData = {
+        "Cl7138": `11
+
+Cl          -2.26279631     0.43247998    -0.04641091
 C           -0.53339796     0.40058085    -0.02301215
 C            0.27488623     1.56165626    -0.05319137
 C            1.59527547     1.26911727    -0.03881976
 S            1.87989529    -0.43724943     0.01532471
 C            0.17575256    -0.76865423     0.01684597
-N           -0.31260451    -2.04617746     0.13293541`,
-      "Cl7164": `24
+N           -0.31260451    -2.04617746     0.13293541
+H           -0.12640769     2.55744176    -0.08718073
+H            2.43239654     1.93559234    -0.05293046
+H            0.29134973    -2.78353992    -0.19312943
+H           -1.28066134    -2.14438544    -0.13694928`,
+        "Cl7164": `11
 
-(in this line a comment or an energy can be placed)
 O  0.470000   2.568800   0.000600
 O -3.127100  -0.443600  -0.000300
 N -0.968600  -1.312500   0.000000
@@ -126,17 +140,28 @@ C  0.389700  -1.025400  -0.000400
 C  0.030700   1.422000  -0.000600
 C -1.906100  -0.249500  -0.000400
 C  2.503200  -1.199800   0.000300`,
-      "Cl7166": `좌표 데이터 없음`,
-      "Cl7168": `좌표 데이터 없음`,
-      "Cl7188": `좌표 데이터 없음`
-    };
+        "Cl7166": `0
+Cl7166 molecule
+(좌표 데이터 없음)`,
+        "Cl7168": `0
+Cl7168 molecule
+(좌표 데이터 없음)`,
+        "Cl7188": `0
+Cl7188 molecule
+(좌표 데이터 없음)`
+      };
 
-    document.getElementById("molecule-data").innerText = moleculeData[molecule];
+      // 템플릿 리터럴 앞뒤 공백 제거 및 textContent 할당으로 공백/줄바꿈 유지
+      document.getElementById("molecule-data").textContent = moleculeData[molecule].trim();
 
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  }
-</script>
+      // 활성 탭 스타일 업데이트
+      document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
+      button.classList.add('active');
+    }
+  </script>
+</body>
+</html>
+
 
 To run dandelion, your current conda environment should be **ts**.
 You can enter the following command in terminal for more information:
