@@ -5,7 +5,8 @@ nav_order: 1
 ---
 
 
-# Welcome to Dandelion documentation !
+# Dandelion Docs
+Welcome to the documentation site of Dandelion.
 <div align="center">
   <img src="https://github.com/user-attachments/assets/263ea92e-9bf7-4f4c-81a1-026434de812c" alt="Dandelion" width="800">
 </div>
