@@ -116,9 +116,9 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
     <button class="tab-button" onclick="showMolecule('Cl7188', this)">Cl7188</button>
   </div>
 
-  <div id="Cl7138" class="tab-content active">
-    <img src="assets/Cl7138.png" alt="Cl7138 Structure" class="molecule-img">
-  </div>
+  <div id="Cl7138" class="tab-content">
+  <img src="https://raw.githubusercontent.com/mhyeok1/dand_docs/docs/assets/Cl7138.png" alt="Cl7138 Structure" class="molecule-img">
+</div>
   <div id="Cl7164" class="tab-content">
     <img src="assets/molecules/Cl7164.png" alt="Cl7164 Structure" class="molecule-img">
   </div>
@@ -132,6 +132,8 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
     <img src="assets/molecules/Cl7188.png" alt="Cl7188 Structure" class="molecule-img">
   </div>
 </div>
+
+
 
 <!-- 🔹 File Structure 탭 -->
 <div id="file-structure" class="tab-content">
