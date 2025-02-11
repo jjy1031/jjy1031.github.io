@@ -37,7 +37,7 @@ This work builds upon two pioneering papers that should also be cited:
 - Institute of Information & communications Technology Planning & Evaluation. Grant Number: RS-2023-00220628
 
 
-## Special Thanks
+##
 <a href="https://www.youtube.com/@usadapekora">
   <img src="https://github.com/user-attachments/assets/0da4604a-62da-439b-b044-616d40d9da10" alt="image" width="100" height="auto">
 </a>
