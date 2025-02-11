@@ -136,6 +136,7 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
   <img src="https://raw.githubusercontent.com/mhyeok1/dand_docs/docs/assets/molecules/Cl7188.png" 
        alt="Cl7188 Structure" class="molecule-img">
 </div>
+</div>
 
 
 <!-- 🔹 File Structure 탭 -->
