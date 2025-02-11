@@ -17,9 +17,11 @@ You can download these structures from [HERE](https://github.com/mhyeok1/dand_do
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
 <style>
-  /* Just the Docs 기본 폰트 유지 */
+  /* 전체 폰트 스타일 유지 */
   body {
     font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    margin: 0;
+    padding: 0;
   }
 
   /* 탭 버튼 스타일 */
@@ -51,12 +53,26 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
     color: #333;
   }
 
-  /* 원자 좌표 데이터 스타일 (흰 박스 없애기) */
+  /* 📌 큰 회색 박스 유지 (텍스트가 들어갈 영역) */
+  #molecule-container {
+    background-color: #f9f9f9; /* 회색 박스 */
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: fit-content;
+    max-width: 100%;
+    overflow-x: auto; /* 가로 스크롤 가능 */
+  }
+
+  /* 📌 원자 좌표 데이터 스타일 (흰 배경 제거 + 포맷 유지) */
   #molecule-data {
     font-family: monospace;
     font-size: 13px;
-    white-space: pre;
-    margin-top: 10px;
+    white-space: pre-wrap; /* 줄바꿈 유지 */
+    margin: 0;
+    padding: 0;
+    border: none;
+    background: none;
   }
 </style>
 
@@ -69,8 +85,9 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
   <button class="tab-button" onclick="showMolecule('Cl7188', this)">Cl7188</button>
 </div>
 
-<!-- 원자 좌표 데이터 표시 영역 -->
-<pre id="molecule-data">
+<!-- 📌 원자 좌표 데이터 표시 (큰 회색 박스 유지) -->
+<div id="molecule-container">
+  <pre id="molecule-data">
 Cl          -2.26279631     0.43247998    -0.04641091
 C           -0.53339796     0.40058085    -0.02301215
 C            0.27488623     1.56165626    -0.05319137
@@ -82,7 +99,8 @@ H           -0.12640769     2.55744176    -0.08718073
 H            2.43239654     1.93559234    -0.05293046
 H            0.29134973    -2.78353992    -0.19312943
 H           -1.28066134    -2.14438544    -0.13694928
-</pre>
+  </pre>
+</div>
 
 <script>
   function showMolecule(molecule, button) {
@@ -119,7 +137,6 @@ C  2.503200  -1.199800   0.000300`,
     button.classList.add('active');
   }
 </script>
-
 
 To run dandelion, your current conda environment should be **ts**.
 You can enter the following command in terminal for more information:
