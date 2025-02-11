@@ -37,9 +37,6 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
     font-weight: 500;
     font-size: 14px;
     border-radius: 4px;
-    display: flex;
-    align-items: center;
-    gap: 6px;
     transition: background-color 0.2s ease-in-out, border 0.2s ease-in-out;
   }
 
@@ -68,33 +65,15 @@ Let's assume that we are interested in expanding dataset from 5 given mother str
     display: block;
   }
 
-  /* 버튼 스타일 - Just the Docs 버튼 스타일 반영 */
-  .btn {
-    display: inline-block;
-    font-weight: 500;
-    color: #fff;
-    background-color: #007bff;
-    border: 1px solid #007bff;
-    padding: 6px 12px;
-    text-align: center;
-    text-decoration: none;
+  /* 원자 좌표 데이터 스타일 */
+  #molecule-data {
+    font-family: monospace;
+    background-color: #fff;
+    padding: 10px;
     border-radius: 4px;
-    transition: background-color 0.2s ease-in-out;
-  }
-
-  .btn:hover {
-    background-color: #0056b3;
-  }
-
-  /* 이미지 스타일 */
-  .molecule-img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 10px auto;
+    white-space: pre-wrap;
   }
 </style>
-
 
 <!-- 🔹 메인 탭 (두 개) -->
 <div class="tab-container">
@@ -133,64 +112,9 @@ H           -1.28066134    -2.14438544    -0.13694928
   </pre>
 </div>
 
-<script>
-  function switchMainTab(tabName, button) {
-    document.querySelectorAll('.tab-content').forEach(div => div.classList.remove('active'));
-    document.getElementById(tabName).classList.add('active');
-
-    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  }
-
-  function showMolecule(molecule, button) {
-    // 각 분자의 원자 좌표 데이터 매핑
-    const moleculeData = {
-      "Cl7138": `
-Cl          -2.26279631     0.43247998    -0.04641091
-C           -0.53339796     0.40058085    -0.02301215
-C            0.27488623     1.56165626    -0.05319137
-C            1.59527547     1.26911727    -0.03881976
-S            1.87989529    -0.43724943     0.01532471
-C            0.17575256    -0.76865423     0.01684597
-N           -0.31260451    -2.04617746     0.13293541
-H           -0.12640769     2.55744176    -0.08718073
-H            2.43239654     1.93559234    -0.05293046
-H            0.29134973    -2.78353992    -0.19312943
-H           -1.28066134    -2.14438544    -0.13694928
-      `,
-      "Cl7164": `
-11
-
-Cl          -2.39258127     0.28231570    -0.01385005
-C           -0.68310066     0.20635979    -0.00403803
-C            0.16552497     1.27600708     0.00026502
-N            1.44362678     0.77431569     0.00784403
-C            1.39365231    -0.58454810     0.00826508
-C            0.08349707    -0.98200816     0.00096948
-O            2.50361977    -1.35609092     0.01501512
-H           -0.03190061     2.32693767    -0.00140328
-H            2.27812655     1.33804774     0.01230499
-H           -0.28142194    -1.98626313    -0.00060125
-H            3.29566201    -0.80722536     0.01951589
-      `,
-      "Cl7166": `좌표 데이터 없음`,
-      "Cl7168": `좌표 데이터 없음`,
-      "Cl7188": `좌표 데이터 없음`
-    };
-
-    // 원자 좌표 정보 변경
-    document.getElementById("molecule-data").innerText = moleculeData[molecule];
-
-    // 버튼 스타일 변경
-    document.querySelectorAll('#molecule-view .tab-button').forEach(btn => btn.classList.remove('active'));
-    button.classList.add('active');
-  }
-</div>
-
-
 <!-- 🔹 File Structure 탭 -->
 <div id="file-structure" class="tab-content">
-  <pre><code>
+  <pre>
 📂 mother_strucs
  ├── 📂 Cl7138
  │   └── 📂 ClGeom-m7138-i1-c1-opt
@@ -207,7 +131,7 @@ H            3.29566201    -0.80722536     0.01951589
  └── 📂 Cl7188
      └── 📂 ClGeom-m7188-i1-c1-opt
          └── 📄 struc.xyz
-  </code></pre>
+  </pre>
 </div>
 
 <script>
@@ -220,10 +144,33 @@ H            3.29566201    -0.80722536     0.01951589
   }
 
   function showMolecule(molecule, button) {
-    document.querySelectorAll('#molecule-view .tab-content').forEach(div => div.classList.remove('active'));
-    document.getElementById(molecule).classList.add('active');
+    const moleculeData = {
+      "Cl7138": `11
+      
+Cl          -2.26279631     0.43247998    -0.04641091
+C           -0.53339796     0.40058085    -0.02301215
+C            0.27488623     1.56165626    -0.05319137
+C            1.59527547     1.26911727    -0.03881976
+S            1.87989529    -0.43724943     0.01532471
+C            0.17575256    -0.76865423     0.01684597
+N           -0.31260451    -2.04617746     0.13293541`,
+      "Cl7164": `11
 
-    document.querySelectorAll('#molecule-view .tab-button').forEach(btn => btn.classList.remove('active'));
+Cl          -2.39258127     0.28231570    -0.01385005
+C           -0.68310066     0.20635979    -0.00403803
+C            0.16552497     1.27600708     0.00026502
+N            1.44362678     0.77431569     0.00784403
+C            1.39365231    -0.58454810     0.00826508
+C            0.08349707    -0.98200816     0.00096948
+O            2.50361977    -1.35609092     0.01501512`,
+      "Cl7166": `좌표 데이터 없음`,
+      "Cl7168": `좌표 데이터 없음`,
+      "Cl7188": `좌표 데이터 없음`
+    };
+
+    document.getElementById("molecule-data").innerText = moleculeData[molecule];
+
+    document.querySelectorAll('.tab-button').forEach(btn => btn.classList.remove('active'));
     button.classList.add('active');
   }
 </script>
