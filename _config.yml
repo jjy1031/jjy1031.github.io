@@ -24,6 +24,9 @@ nav_external_links:
     hide_icon: false
     opens_in_new_tab: false
 
+sass:
+  load_paths:
+    - _sass
 
 
 back_to_top: true
