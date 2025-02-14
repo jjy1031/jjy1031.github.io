@@ -50,4 +50,4 @@ This work builds upon two pioneering papers that should also be cited:
   <img src="https://github.com/user-attachments/assets/0da4604a-62da-439b-b044-616d40d9da10" alt="image" width="100" height="auto">
 </a>
 
-You've been blessed with cute rabbit's luck!
+✨**You've been blessed with cute rabbit's luck!** ✨
