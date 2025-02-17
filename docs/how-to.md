@@ -16,7 +16,7 @@ You can download these structures from [HERE](https://github.com/mhyeok1/dand_do
 
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
-{% include tabs1.html %}
+{% include tabs.html %}
 
 To run dandelion, your current conda environment should be **ts**.
 You can enter the following command in terminal for more information:
