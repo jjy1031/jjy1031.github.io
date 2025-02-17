@@ -1,3 +1,8 @@
+---
+layout: default
+title: About
+nav_order: 6
+---
 <!DOCTYPE html>
 <html lang="en-US">
     <head>
