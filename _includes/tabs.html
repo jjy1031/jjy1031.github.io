@@ -63,6 +63,14 @@
   .nested-tabs input[type="radio"]:checked + label + .nested-tab {
     display: block;
   }
+
+  /* 트리 구조 전체에 폰트를 강제 적용하는 예시 */
+  .tree-structure {
+    font-family: "Courier New", Courier, monospace;
+    white-space: pre; /* 트리 구조 줄맞춤 유지 */
+    font-size: 14px;  /* 필요에 따라 조정 */
+  }
+
 </style>
 
 <div class="outer-tabs">
@@ -188,7 +196,7 @@ H           -1.10380593    -1.61309521    -0.00634078
   <input type="radio" name="outer-tabs" id="outer-tab-file">
   <label for="outer-tab-file">File Structure</label>
   <div class="outer-tab">
-    <pre>
+    <pre class="tree-structure">
 📂 mother_strucs
  ├── 📂 Cl7138
  │   └── 📂 ClGeom-m7138-i1-c1-opt
