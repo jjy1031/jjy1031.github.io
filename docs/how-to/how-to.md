@@ -50,7 +50,7 @@ nav_order: 6
                                 display: none;
                                 z-index:2;
                                 left:20px;
-                                top: 675px;
+                                top: 670px;
                                 width: 100%;
                                 position:absolute;
                                 margin: 0; 
@@ -58,7 +58,7 @@ nav_order: 6
                                 padding: 1rem;
                                 border-radius: 0 5px 5px 5px;
                                 background: #f9f9f9;
-                                height:500px;
+                                height:470px;
                             }
                             .next{
                                 position:relative;
