@@ -3,7 +3,10 @@
   /* 외부 탭 (상위 탭) CSS */
   .outer-tabs {
     display: flex;
-    flex-wrap: wrap;
+    flex-wrap: nowrap !important;    /* 절대 줄바꿈 X */
+    width: 100% !important;          /* 부모 너비만큼 확장 */
+    max-width: none !important;      /* 테마의 max-width 제한 해제 */
+    overflow-x: auto !important;
     margin-bottom: 1rem;
   }
   .outer-tabs input[type="radio"] {
