@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: How-to-use
 nav_order: 6
 ---
 
@@ -50,7 +50,7 @@ nav_order: 6
                                 display: none;
                                 z-index:2;
                                 left:20px;
-                                top: 650px;
+                                top: 700px;
                                 width: 100%;
                                 position:absolute;
                                 margin: 0; 
