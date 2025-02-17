@@ -50,7 +50,7 @@ nav_order: 6
                                 display: none;
                                 z-index:2;
                                 left:20px;
-                                top: 670px;
+                                top: 700px;
                                 width: 100%;
                                 position:absolute;
                                 margin: 0; 
