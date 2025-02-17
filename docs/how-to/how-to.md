@@ -1,6 +1,6 @@
 ---
 layout: default
-title: About
+title: How-to-use
 nav_order: 6
 ---
 
