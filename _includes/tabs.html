@@ -1,14 +1,10 @@
-<!-- _includes/tabs1.html -->
+<!-- 파일명: _includes/tabs1.html -->
 <style>
   /* 외부 탭 (상위 탭) CSS */
   .outer-tabs {
     display: flex;
-    /* wrap 대신 nowrap으로 설정 */
-    flex-wrap: nowrap;
-    /* 탭이 많아도 한 줄에 고정하고, 넘칠 경우 스크롤 */
-    overflow-x: auto;
+    flex-wrap: wrap;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
   }
   .outer-tabs input[type="radio"] {
     display: none;
@@ -18,23 +14,18 @@
     padding: 0.5rem 1rem;
     margin-right: 0.2rem;
     cursor: pointer;
-    border-top-left-radius: 5px;
-    border-top-right-radius: 5px;
-    white-space: nowrap; /* 탭 제목이 줄바꿈되지 않도록 */
+    border-radius: 5px 5px 0 0;
   }
   .outer-tabs .outer-tab {
     display: none;
     width: 100%;
     border: 1px solid #ccc;
-    border-top: none; /* 탭과 겹치는 라인 제거 */
     padding: 1rem;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 0 5px 5px 5px;
     background: #f9f9f9;
   }
   .outer-tabs input[type="radio"]:checked + label {
     background: #ddd;
-    border-bottom: 1px solid #f9f9f9; /* 탭 클릭 시, 아래쪽 경계 맞추기 */
   }
   .outer-tabs input[type="radio"]:checked + label + .outer-tab {
     display: block;
@@ -42,12 +33,9 @@
 
   /* 내부(하위) 탭 CSS */
   .nested-tabs {
-    display: inline-block !important; 
     display: flex;
-    flex-wrap: nowrap;   /* 하위 탭들도 한 줄에 고정 */
-    overflow-x: auto;    /* 넘칠 경우 가로 스크롤 */
+    flex-wrap: wrap;
     margin-bottom: 1rem;
-    border-bottom: 1px solid #ccc;
   }
   .nested-tabs input[type="radio"] {
     display: none;
@@ -57,25 +45,20 @@
     padding: 0.4rem 0.8rem;
     margin-right: 0.2rem;
     cursor: pointer;
-    border-top-left-radius: 3px;
-    border-top-right-radius: 3px;
+    border-radius: 3px 3px 0 0;
     font-size: 0.9rem;
-    white-space: nowrap; /* 줄바꿈 방지 */
   }
   .nested-tabs .nested-tab {
     display: none;
     width: 100%;
     border: 1px solid #ccc;
-    border-top: none;
     padding: 1rem;
-    border-bottom-left-radius: 3px;
-    border-bottom-right-radius: 3px;
+    border-radius: 0 3px 3px 3px;
     background: #f9f9f9;
     font-size: 0.9rem;
   }
   .nested-tabs input[type="radio"]:checked + label {
     background: #ddd;
-    border-bottom: 1px solid #f9f9f9;
   }
   .nested-tabs input[type="radio"]:checked + label + .nested-tab {
     display: block;
@@ -83,42 +66,45 @@
 </style>
 
 <div class="outer-tabs">
-  <!-- 상위 탭 1: molecular structure -->
+  <!-- 상위 탭 1: Structure -->
   <input type="radio" name="outer-tabs" id="outer-tab-structure" checked>
-  <label for="outer-tab-structure">molecular structure</label>
+  <label for="outer-tab-structure">Molecular Structure</label>
   <div class="outer-tab">
-    <!-- 내부 탭: CI7138 ~ CI7188 -->
+    <!-- 내부 탭: Structure 1 ~ 5 -->
     <div class="nested-tabs">
-      <input type="radio" name="nested-tabs" id="tab-CI7138" checked>
-      <label for="tab-CI7138">CI7138</label>
+      <!-- Structure 1 탭 -->
+      <input type="radio" name="nested-tabs" id="nested-tab-1" checked>
+      <label for="nested-tab-1">Cl7138</label>
       <div class="nested-tab">
         <pre>
 5
 Structure 1 Example
-S   0.000   0.000   0.000
-O   1.200   0.000   0.000
-O  -1.200   0.000   0.000
-O   0.000   1.200   0.000
-O   0.000  -1.200   0.000
+C   0.000   0.000   0.000
+H   0.000   0.000   1.089
+H   1.026   0.000  -0.363
+H  -0.513  -0.889  -0.363
+H  -0.513   0.889  -0.363
         </pre>
       </div>
 
-      <input type="radio" name="nested-tabs" id="tab-CI7164">
-      <label for="tab-CI7164">CI7164</label>
+      <!-- Structure 2 탭 -->
+      <input type="radio" name="nested-tabs" id="nested-tab-2">
+      <label for="nested-tab-2">Cl7164</label>
       <div class="nested-tab">
         <pre>
 5
 Structure 2 Example
-C   0.000   0.000   0.000
-C   1.400   0.000   0.000
-H   1.800   1.000   0.000
-H   1.800  -1.000   0.000
-O   2.800   0.000   0.000
+O   0.000   0.000   0.000
+H   0.758   0.000   0.584
+H  -0.758   0.000   0.584
+C   1.500   1.500   1.500
+N   2.000   2.000   2.000
         </pre>
       </div>
 
-      <input type="radio" name="nested-tabs" id="tab-CI7166">
-      <label for="tab-CI7166">CI7166</label>
+      <!-- Structure 3 탭 -->
+      <input type="radio" name="nested-tabs" id="nested-tab-3">
+      <label for="nested-tab-3">Cl7166</label>
       <div class="nested-tab">
         <pre>
 5
@@ -131,31 +117,33 @@ H   4.200   0.500   0.000
         </pre>
       </div>
 
-      <input type="radio" name="nested-tabs" id="tab-CI7168">
-      <label for="tab-CI7168">CI7168</label>
+      <!-- Structure 4 탭 -->
+      <input type="radio" name="nested-tabs" id="nested-tab-4">
+      <label for="nested-tab-4">Cl7168</label>
       <div class="nested-tab">
         <pre>
 5
 Structure 4 Example
-O   0.000   0.000   0.000
-H   0.758   0.000   0.584
-H  -0.758   0.000   0.584
-C   1.500   1.500   1.500
-N   2.000   2.000   2.000
+C   0.000   0.000   0.000
+C   1.400   0.000   0.000
+H   1.800   1.000   0.000
+H   1.800  -1.000   0.000
+O   2.800   0.000   0.000
         </pre>
       </div>
 
-      <input type="radio" name="nested-tabs" id="tab-CI7188">
-      <label for="tab-CI7188">CI7188</label>
+      <!-- Structure 5 탭 -->
+      <input type="radio" name="nested-tabs" id="nested-tab-5">
+      <label for="nested-tab-5">Cl7188</label>
       <div class="nested-tab">
         <pre>
 5
 Structure 5 Example
-C   0.000   0.000   0.000
-H   0.000   0.000   1.089
-H   1.026   0.000  -0.363
-H  -0.513  -0.889  -0.363
-H  -0.513   0.889  -0.363
+S   0.000   0.000   0.000
+O   1.200   0.000   0.000
+O  -1.200   0.000   0.000
+O   0.000   1.200   0.000
+O   0.000  -1.200   0.000
         </pre>
       </div>
     </div>
@@ -167,13 +155,22 @@ H  -0.513   0.889  -0.363
   <div class="outer-tab">
     <pre>
 # File Structure Example
-.
-├── index.md
-├── _includes
-│   └── tabs1.html
-├── _layouts
-│   └── default.html
-└── _config.yml
+📂 mother_strucs
+ ├── 📂 Cl7138
+ │   └── 📂 ClGeom-m7138-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7164
+ │   └── 📂 ClGeom-m7164-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7166
+ │   └── 📂 ClGeom-m7166-i1-c1-opt
+ │       └── 📄 struc.xyz
+ ├── 📂 Cl7168
+ │   └── 📂 ClGeom-m7168-i1-c1-opt
+ │       └── 📄 struc.xyz
+ └── 📂 Cl7188
+     └── 📂 ClGeom-m7188-i1-c1-opt
+         └── 📄 struc.xyz
     </pre>
   </div>
 </div>
