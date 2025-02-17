@@ -58,7 +58,7 @@ nav_order: 6
                                 padding: 1rem;
                                 border-radius: 0 5px 5px 5px;
                                 background: #f9f9f9;
-                                height:470px;
+                                height:450px;
                             }
                             .next{
                                 position:relative;
