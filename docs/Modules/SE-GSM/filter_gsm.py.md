@@ -7,7 +7,8 @@ nav_order: 3
 
 # filter_gsm.py
 
-  Through this process, filtered structures can be obtained. This filtering algorithm excludes trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible structures, as well as redundant pathways.
+  Through this process, filtered structures can be obtained. This filtering algorithm excludes trivial pathways with strictly uphill energy trajectories, negligible energy variations, unfeasible structures, as well as redundant pathways. At first, this module reads gsm job files to parse the energy of each node, transition state (TS) energy or the indexes of the reactant/product/TS nodes.
+
 
  Certain cases need to be filtered :
 If the xTB calculations fail to converge or pyGSM terminated the execution due to its criteria, no png file will be generated.
