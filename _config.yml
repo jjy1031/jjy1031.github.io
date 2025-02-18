@@ -28,6 +28,9 @@ sass:
   load_paths:
     - _sass
 
+just_the_docs:
+  extras_scss:
+    - "custom/custom.scss"
 
 back_to_top: true
 back_to_top_text: "Back to top"
