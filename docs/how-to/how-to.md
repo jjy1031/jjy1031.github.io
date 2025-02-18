@@ -249,6 +249,39 @@ H           -1.10380593    -1.61309521    -0.00634078
     </pre></div> </div><p class="next"><pre>
 
 
+# Example
+
+To run dandelion, your current conda environment should be **ts**.  
+You can enter the following command in the terminal for more information:
+
+```console
+$ dandelion_sample -h
+
+usage: dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
+
+Do SEGSM and NEB from mother structures, Other parameters can be set in each
+modules
+
+options:
+  -h, --help            show this help message and exit
+  -i INPUT_PATH, --input_path INPUT_PATH
+                        Input path of mother structures
+  -o OUTPUT_PATH, --output_path OUTPUT_PATH
+                        Output path of dandelion
+  -n MAX_WORKERS, --max_workers MAX_WORKERS
+                        Number of worker processes
+```
+
+Assuming your mother structures are saved as struc.xyz in /home/pekora/example/mother_strucs, you can initiate sampling with the following command:
+
+```
+$ python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
+```
+
+Then the following 6 steps will be executed automatically:
+
+
+
 
 
 
