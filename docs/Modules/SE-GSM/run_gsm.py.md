@@ -7,7 +7,7 @@ nav_order: 2
 
 # run_gsm.py
 
-When Dandelion runs SEGSM using this module, output files will be generated. Based on these results, the coordinates to be filtered in the next stage are determined.
+This module executes Bash script `gsm.sh` which exists in every GSM job and generates the corresponding outputs. This uses `ProcessPoolExecutor` to run the script in parallel for each gsm job directory.
 
   ```
   ├── 0000_string.png
@@ -36,5 +36,5 @@ When Dandelion runs SEGSM using this module, output files will be generated. Bas
 
   ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
 
-  Because this job has successfully converged before `max_node = 30`, it will be survived in filtering process.
+
   
