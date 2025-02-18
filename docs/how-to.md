@@ -33,27 +33,22 @@ mother_strucs
 ```
 
 To run dandelion, your current conda environment should be **ts**.
-You can enter the following command in terminal for more information:
+You can enter the following command in terminal:
 
 ``` python
-$ dandelion_sample -h
-
-usage: dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
-
-Do SEGSM and NEB from mother structures, Other parameters can be set in each
-modules
+$ dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 ```
 
-| Command           | Description |
-|------------------|-------------|
-| `-h, --help`     |  Show this help message and exit. |
-| `-i`    | Input path of mother structures. |
-| `-o`    | Output path of dandelion. |
-| `-n`    | Number of worker processes. |
+| Parameter                                      | Description                                                               |
+|------------------------------------------------|---------------------------------------------------------------------------|
+| `-h`, `--help`                                 | Displays the help message and exits the program.                           |
+| `-i INPUT_PATH`, `--input_path INPUT_PATH`     | Specifies the path where the mother structures are stored.                 |
+| `-o OUTPUT_PATH`, `--output_path OUTPUT_PATH`  | Specifies the directory where Dandelion output will be saved.              |
+| `-n MAX_WORKERS`, `--max_workers MAX_WORKERS`    | Specifies the number of worker processes for parallel execution.          |
 
                         
 
-Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/example/mother_strucs`, you can initiate sampling with the following command:
+Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/example/mother_strucs`, you can initiate sampling process with the following command:
 
 ```python
 python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
