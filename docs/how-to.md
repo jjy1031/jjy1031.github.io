@@ -250,22 +250,18 @@ Compiling finished!
 And there will be newly generated file in your output path, `xtb.h5` file.
 
 Next step is to execute dandelion_refine.
-You can enter -h or --help for more information:
+You can enter this command:
 
+``` python
+$ dandelion_refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 ```
-$ dandelion_refine -h
-usage: dandelion_refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 
-Refine force on obtained samples, Other parameters can be set in each modules
-
-options:
-  -h, --help            show this help message and exit
-  -i INPUT_PATH, --input_path INPUT_PATH
-                        Input path of working directory containing xtb.h5
-  -n MAX_WORKERS, --max_workers MAX_WORKERS
-                        Number of worker processes
-  --orca ORCA           Path of the orca binary file
-```
+| Parameter                                      | Description                                                               |
+|------------------------------------------------|---------------------------------------------------------------------------|
+| `-h`, `--help`           | Displays the help message and exits the program.                           |
+| `-i`, `--input_path`     | Specifies the path of working directory containing `xtb.h5`.             |
+| `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
+| `--orca`                 | Specifies the path of the orca binary file             |
 
 Make sure that the path of the orca should point an orca **executable file**.
 
