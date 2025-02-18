@@ -7,7 +7,7 @@ nav_order: 1
 
 # Create GSM jobs
 
-In this procedure, Dandelion generates possible GSM jobs, or seeds, from each optimized mother structure. The overall algorithm calculates the number of bonds to be broken or added, determines possible reactions, and generates all viable driving coordinates.
+In this procedure, Dandelion generates possible GSM jobs or seeds, from each optimized mother structure. The overall algorithm calculates the number of bonds to be broken or added, determines possible reactions, and generates all viable driving coordinates. 
 
   ```
   ├── ClGeom-m7138-i1-c1-opt
@@ -23,7 +23,16 @@ In this procedure, Dandelion generates possible GSM jobs, or seeds, from each op
   ```
 You can verify that all possible GSM jobs are generated from your optimized mother structures. 
 
-Generated `params.log` file contains used parameter and connection limits.
+Each GSM job is organized into a directory containing three files:
+
+| File          | Description                                                         |
+|---------------|---------------------------------------------------------------------|
+| `gsm.sh`      | A Bash script to run the GSM calculation.                           |
+| `params.log ` | Information about used parameters and connection limits.            |
+| `ISOMERS.txt` | Bond breaking and formation about the calculated reactions.         |
+
+
+## params.log
 
 ```
 Connection limits:
@@ -48,11 +57,12 @@ minchange = 1
 
 
 
-
-In `ISOMERS.TXT` file, you can get some information about calculated reactions.
+## ISOMERS.TXT
 
   ```
   BREAK 5 6
   ADD 4 6
   ADD 3 6
   ```
+
+
