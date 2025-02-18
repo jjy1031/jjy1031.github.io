@@ -44,10 +44,10 @@ $ dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
 | Parameter                                      | Description                                                               |
 |------------------------------------------------|---------------------------------------------------------------------------|
-| `-h`, `--help`                                 | Displays the help message and exits the program.                           |
-| `-i INPUT_PATH`, `--input_path INPUT_PATH`     | Specifies the path where the mother structures are stored.                 |
-| `-o OUTPUT_PATH`, `--output_path OUTPUT_PATH`  | Specifies the directory where Dandelion output will be saved.              |
-| `-n MAX_WORKERS`, `--max_workers MAX_WORKERS`    | Specifies the number of worker processes for parallel execution.          |
+| `-h`, `--help`           | Displays the help message and exits the program.                           |
+| `-i`, `--input_path`     | Specifies the path where the mother structures are stored.                 |
+| `-o`, `--output_path`    | Specifies the directory where Dandelion output will be saved.              |
+| `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
 
 
 
@@ -63,7 +63,9 @@ python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/ex
 
 
 
-Then the following 6 steps will be executed automatically:
+Output files will be stored in `/home/pekora/example/outputs`.
+
+The following 6 steps will be executed automatically:
 
 
 
