@@ -55,6 +55,19 @@ minchange = 1
 
 ```
 
+| Parameter        | Description                                                |
+|------------------|------------------------------------------------------------|
+| Connection Limits | Minimum and maximum bonds allowed for each atom.          |                            
+| maxbreak     | Maximum number of bonds that can be broken in a reaction.      |
+| maxform      | Maximum number of bonds that can be formed in a reaction.      |
+| maxchange     | Maximum number of total bond changes allowed in a reaction.   |
+| single_change | Consider single bond changes (e.g., nbreak=1, nform=0) or not.|
+| equiv_Hs    | Treat equivalent hydrogen atoms as unique or not.               |
+| minbreak    | Minimum number of bonds that can be broken in a reaction.       |
+| minform     | Minimum number of bonds that can be formed in a reaction.       |
+| minchange   | Minimum number of total bond changes allowed in a reaction.     |
+
+
 
 
 ## ISOMERS.TXT
