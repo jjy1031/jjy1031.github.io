@@ -11,6 +11,9 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
+
+You can download the structures from [Here](https://github.com/mhyeok1/dand_docs/raw/refs/heads/docs/assets/mother_structures_for_tut.Zip)
+
 Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
 
 ```
