@@ -32,6 +32,20 @@ This module executes Bash script `gsm.sh` which exists in every GSM job and gene
   │   └── 000
   └── TSnode_0.xyz
   ```
+| File/Directory         | Description                                                                  |
+|------------------------|------------------------------------------------------------------------------|
+| `string.png`           | Diagram showing the energy for every node during the reaction.               |
+| `gsm_log`              | Log file containing details of the GSM calculation.                          |
+| `IC_data.txt`          | File with internal coordinate data.                                          |
+| `initial.xyz`          | Represents the geometry of the initial structure.                            |
+| `lot_jobs.txt`         | Lot job details containing the optimization process for each node.           |
+| `opt_converged.xyz`    | File with optimized and converged geometry.                                  |
+| `scratch`              | Directory for storing temporary files or data generated during calculations. |
+| `TSnode.xyz`           | Represents the geometry of the transition state node.                        |
+
+
+## string.png
+
   You can observe the process of a GSM job through the generated `.png` file.
 
   ![0000_string](https://github.com/user-attachments/assets/bd4aab1e-9679-4b8c-ba67-412fec56b5aa)
