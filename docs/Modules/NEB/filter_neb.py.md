@@ -12,7 +12,7 @@ This module filters NEB job directories to identify valid chemical reactions bas
 | Method         | Description                                                               |
 |-----------------|---------------------------------------------------------------------------|
 |    `is_valid_rxn`      |  Check if the reaction is valid based on energy.  |
-|   ` is_transition_state`  |   Ensures the transition state has exactly one significant imaginary frequency. |
+|   `is_transition_state`  |   Ensures the transition state has exactly one significant imaginary frequency. |
 
 ## is_valid_rxn
 Reactions with energy differences below 5 kcal/mol or insufficient activation energy are excluded.
