@@ -32,6 +32,8 @@ This module executes Bash script `gsm.sh` which exists in every GSM job and gene
   │   └── 000
   └── TSnode_0.xyz
   ```
+
+
 | File/Directory         | Description                                                                  |
 |------------------------|------------------------------------------------------------------------------|
 | `string.png`           | Diagram showing the energy for every node during the reaction.               |
