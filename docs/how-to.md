@@ -40,7 +40,7 @@ To run dandelion, your current conda environment should be **ts**.
 $ conda activate ts
 ```
 
-# dand sample
+# Sampling the reaction pathways
 
 The grammar is like this:
 
@@ -171,29 +171,7 @@ Profile filtered reactions:       42
 Structure filtered reactions:     38
 Unique reactions:                 32
 
-◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
-   mother: ClGeom-m7166-i1-c1-opt
-Initial seeds:                   275
-GSM success reactions:            96
-Profile filtered reactions:       31
-Structure filtered reactions:     28
-Unique reactions:                 25
-
-◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
-   mother: ClGeom-m7168-i1-c1-opt
-Initial seeds:                   276
-GSM success reactions:            87
-Profile filtered reactions:       37
-Structure filtered reactions:     35
-Unique reactions:                 29
-
-◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
-   mother: ClGeom-m7188-i1-c1-opt
-Initial seeds:                   299
-GSM success reactions:           102
-Profile filtered reactions:       40
-Structure filtered reactions:     33
-Unique reactions:                 30
+...
 
 Filtering GSM finished!
 
@@ -261,7 +239,7 @@ And there will be a newly generated file in your output path, the `xtb.h5` file.
 
 
 
-# dand sample
+# Refine the energy and force labels
 
 Structure sampling is now finished. The next step is to refine the energy and force labels at the DFT level.
 You can enter this command:
@@ -337,22 +315,7 @@ id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
  2| 5d|pekora|C4ClH4NO|orca      |-20269.074|    11|0.470|FFF| 0.000|117.532
  3| 5d|pekora|C4ClH4NO|orca      |-20268.333|    11|5.994|FFF| 0.000|117.532
  4| 5d|pekora|C4ClH4NO|orca      |-20268.047|    11|1.195|FFF| 0.000|117.532
- 5| 5d|pekora|C4ClH4NO|orca      |-20266.059|    11|3.630|FFF| 0.000|117.532
- 6| 5d|pekora|C4ClH4NO|orca      |-20266.920|    11|4.553|FFF| 0.000|117.532
- 7| 5d|pekora|C4ClH4NO|orca      |-20266.081|    11|1.022|FFF| 0.000|117.532
- 8| 5d|pekora|C4ClH4NO|orca      |-20265.240|    11|4.314|FFF| 0.000|117.532
- 9| 5d|pekora|C4ClH4NO|orca      |-20265.014|    11|7.924|FFF| 0.000|117.532
-10| 5d|pekora|C4ClH4NO|orca      |-20268.711|    11|3.512|FFF| 0.000|117.532
-11| 5d|pekora|C4ClH4NO|orca      |-20266.886|    11|5.938|FFF| 0.000|117.532
-12| 5d|pekora|C4ClH4NO|orca      |-20266.322|    11|3.704|FFF| 0.000|117.532
-13| 5d|pekora|C4ClH4NO|orca      |-20266.081|    11|1.021|FFF| 0.000|117.532
-14| 5d|pekora|C4ClH4NO|orca      |-20265.532|    11|3.059|FFF| 0.000|117.532
-15| 5d|pekora|C4ClH4NO|orca      |-20267.115|    11|3.885|FFF| 0.000|117.532
-16| 5d|pekora|C4ClH4NO|orca      |-20262.912|    11|6.171|FFF| 0.000|117.532
-17| 5d|pekora|C4ClH4NO|orca      |-20268.863|    11|1.657|FFF| 0.000|117.532
-18| 5d|pekora|C4ClH4NO|orca      |-20265.663|    11|4.222|FFF| 0.000|117.532
-19| 5d|pekora|C4ClH4NO|orca      |-20263.405|    11|5.723|FFF| 0.000|117.532
-20| 5d|pekora|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
+...
 Rows: 53842 (showing first 20)
 ```
 
