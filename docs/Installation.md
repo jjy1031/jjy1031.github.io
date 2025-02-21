@@ -27,12 +27,17 @@ This creates a new conda environment according to the specifications in the `env
 
 ```shell
 $ conda env create -f environment.yml
+```
+
+Activate the 'ts' environment, and then install the dandelion.
+
+```shell
 $ conda activate ts
 $ pip install -e .
 ```
 
 {: .important }
-> Double-check that you are working in the 'ts' environment!
+> Double-check that you are working in the 'ts' environment whenever use dandelion!
 
 
 ## Install pyGSM
