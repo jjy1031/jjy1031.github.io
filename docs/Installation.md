@@ -6,11 +6,11 @@ nav_order: 2
 
 # Installation
 - Prerequisites
-  - conda
-  - openmpi
+  - [miniconda](https://docs.anaconda.com/miniconda/install/)
+  - [OpenMPI 4.1.1](https://www.open-mpi.org/software/ompi/v4.1/)
 
 {: .important }
-> A paragraph
+> OpenMPI 4.1.1 is required for ORCA 5.0.4.
 
 ## Download Dandelion
 
@@ -31,6 +31,10 @@ conda activate ts
 pip install -e .
 ```
 
+{: .important }
+> Double-check that you are working in the 'ts' environment!
+
+
 ## Install pyGSM
 
 Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for more detailed instructions, or simply use:
@@ -39,17 +43,18 @@ Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for more d
 git clone https://github.com/ZimmermanGroup/pyGSM
 pip install -e .
 ```
-By executing `gsm` in terminal, you can verify that the program has been successfully installed.
+By executing `gsm` in the terminal, you can verify that the program has been successfully installed.
+
+
 
 ## Install Orca
 
-You can install ORCA from [here](https://orcaforum.kofo.mpg.de/app.php/portal).
+You can install ORCA 5.0.4 from [here](https://orcaforum.kofo.mpg.de/app.php/portal).
 The following command extracts a `tar.xz` file.
 
 ```python
 tar -xf orca.tar.xz
 ```
-By executing `orca` in terminal, you can verify that the program has been successfully downloaded.
 
 ## Setup environment variables in `.bashrc`
 
@@ -60,23 +65,10 @@ vi ~/.bashrc
 
 Add the following lines to your `.bashrc` file:
 
-1. Add ORCA to your path :
 ```python
 export PATH="/path/to/your/orca/directory:$PATH" \
-```
-
-2. Set the `PYTHONPATH` for pyGSM:
-```python
 export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
-```
-
-3. Adjust the `OMP_NUM_THREADS`:
-```python
 export OMP_NUM_THREADS=1
-```
-
-4. Set the xtb configuration:
-```python
 export OMP_STACKSIZE=16G \
 ulimit -s unlimited\
 ```
