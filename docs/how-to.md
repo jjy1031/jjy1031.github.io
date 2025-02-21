@@ -355,8 +355,11 @@ id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
 20| 5d|pekora|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
 Rows: 53842 (showing first 20)
 ```
+
+
 {: .note }
 You can learn how to use the ase db file at https://wiki.fysik.dtu.dk/ase/ase/db/db.html.
+
 
 Finally, it compiles our wb97x.db sample in Hierarchical Data Format :
 ```
