@@ -358,6 +358,7 @@ Rows: 53842 (showing first 20)
 
 
 {: .note }
+
 You can learn how to use the ase db file at https://wiki.fysik.dtu.dk/ase/ase/db/db.html.
 
 
