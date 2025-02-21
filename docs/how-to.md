@@ -358,7 +358,7 @@ Rows: 53842 (showing first 20)
 
 
 {: .note }
-> You can learn how to use the ase db file at https://wiki.fysik.dtu.dk/ase/ase/db/db.html.
+> You can learn how to use the ase db file at [HERE](https://wiki.fysik.dtu.dk/ase/ase/db/db.html)
 
 
 Finally, it compiles our wb97x.db sample in Hierarchical Data Format :
