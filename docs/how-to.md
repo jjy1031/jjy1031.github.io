@@ -361,6 +361,12 @@ Rows: 53842 (showing first 20)
 > You can check how to use the ase db file in the ase manual.
 >
 > <https://wiki.fysik.dtu.dk/ase/ase/db/db.html>
+> 
+> For example, you can access the database through the web interface.
+> ```shell
+> $ ase db wb97x.db -w
+> ```
+> <img src="https://github.com/user-attachments/assets/5ea3be3b-a7e1-409a-a878-73d842e922e2" width="400">
 
 
 Finally, it compiles our wb97x.db sample in Hierarchical Data Format :
@@ -375,11 +381,12 @@ Arguments provided:
 Compiled successfully!
 ```
 
+
+
 {: .highlight }
 > The data structure of h5 files can be easily visualized using VS Code extension [H5Web](https://github.com/silx-kit/h5web)
 >
-> 
-> ![image](https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad)
+> <img src="https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad" width="400">
 
 
 
