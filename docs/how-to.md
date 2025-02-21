@@ -66,7 +66,7 @@ Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/exampl
 
 
 ```shell
-dand sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
+$ dand sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
 ```
 
 
