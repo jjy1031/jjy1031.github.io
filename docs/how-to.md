@@ -14,7 +14,7 @@ This page provides a guide for using Dandelion, which efficiently generates an e
 
 You can download the structures from [Here](https://github.com/mhyeok1/dand_docs/raw/refs/heads/docs/assets/mother_structures_for_tut.Zip)
 
-Let's assume that we are interested in expanding dataset from 5 given mother structures. First,  each mother structures needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path`, and saved in `.xyz` file format. 
+Let's assume we are interested in expanding the dataset from 5 given mother structures. First,  each mother structure needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path` and saved in `.xyz` file format. 
 
 ```
 mother_strucs
@@ -36,11 +36,17 @@ mother_strucs
 ```
 
 To run dandelion, your current conda environment should be **ts**.
-You can enter the following command in terminal:
+``` python
+$ conda activate ts
+```
+
+# dand sample
+
+The grammar is like this:
 
 
 ``` python
-$ dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
+$ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 ```
 
 
@@ -54,21 +60,20 @@ $ dandelion_sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
 
 
-                        
-
+                      
 Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/example/mother_strucs`, you can initiate sampling process with the following command:
 
 
 
 ```python
-python dandelion_sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
+dand sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
 ```
 
 
 
 Output files will be stored in `/home/pekora/example/outputs`.
 
-The following 6 steps will be executed automatically:
+The following six steps will be executed automatically:
 
 
 
@@ -92,7 +97,7 @@ The following 6 steps will be executed automatically:
 
 ```
 
-Dandelion first generates possible driving coordinates(seeds) from each mother structures.
+Dandelion first generates possible driving coordinates(seeds) from each mother structure.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -194,7 +199,7 @@ Filtering GSM finished!
 
 ```
 
-Using the outputs of gsm, Dandelion runs NEB or Climbing-Image NEB. NEB can optimize some energy path using the concept of maximum force.
+Using the outputs of gsm, Dandelion runs climbing-image NEB. NEB optimizes the reaction pathways, relaxing the force of the bands of structures.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -234,7 +239,7 @@ Filtering NEB finished!
 
 ```
 
-Sixth step is to compile samples:
+Sixth step is to compile samples in Hierarchical Data Format:
 ```
 
 ╔════════════════════════════════════════════════════════════════════╗
@@ -250,13 +255,19 @@ Compiling reactions: 100%|██████████████████
 Compiling finished!
 
 ```
-And there will be newly generated file in your output path, `xtb.h5` file.
+And there will be a newly generated file in your output path, the `xtb.h5` file.
 
-Next step is to execute dandelion_refine.
+
+
+
+
+# dand sample
+
+Structure sampling is now finished. The next step is to refine the energy and force labels at the DFT level.
 You can enter this command:
 
 ``` python
-$ dandelion_refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
+$ dand refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 ```
 
 | Parameter                                      | Description                                                               |
@@ -266,14 +277,15 @@ $ dandelion_refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 | `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
 | `--orca`                 | Specifies the path of the orca binary file             |
 
-Make sure that the path of the orca should point an orca **executable file**.
+
+{: .important }
+Ensure that the path of the orca should point to an orca **executable file**.
 
 If you enter like this:
 ```
-$ dandelion_refine -i /home/pekora/example/outputs -n 15 --orca /home/pekora/package/orca/orca_5_0_4/orca
+$ dand refine -i /home/pekora/example/outputs -n 15 --orca /home/pekora/package/orca/orca_5_0_4/orca
 ```
-
-2 steps below will be executed automatically !
+The two steps below will be executed automatically!
 
 ```
          ⢀⣀⣀⣀⣀⣀⡀       ⢀⢀⣀⢀⠞⠖⠁⠡⡂⡆ ⡠⢀⡀
@@ -297,7 +309,7 @@ $ dandelion_refine -i /home/pekora/example/outputs -n 15 --orca /home/pekora/pac
                           Ver. 0.6.2 by mlee
 ```
 
-In this phase, we use DFT calculations with Orca 5.0. The default setting uses wB97X functional and 6-31(d) basis set, but these settings can be adjusted as needed.
+In this phase, we use DFT calculations with Orca 5.0.4. The default setting uses wB97X functional and 6-31(d) basis set, but these settings can be adjusted as needed.
 
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -317,7 +329,7 @@ wB97X calculation finished!
 
 ```
 
-You can check your compiled database using ASE:
+You can check your compiled database wb97x.db using ASE:
 ```
 $ ase db wb97x.db
 id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
@@ -343,8 +355,10 @@ id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
 20| 5d|pekora|C4ClH4NO|orca      |-20267.567|    11|5.143|FFF| 0.000|117.532
 Rows: 53842 (showing first 20)
 ```
+{: .note }
+You can learn how to use the ase db file at https://wiki.fysik.dtu.dk/ase/ase/db/db.html.
 
-Finally, compile our wb97x.db sample :
+Finally, it compiles our wb97x.db sample in Hierarchical Data Format :
 ```
 ╔════════════════════════════════════════════════════════════════════╗
 ║                     8. Compiling final samples                     ║
