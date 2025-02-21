@@ -10,7 +10,7 @@ nav_order: 2
   - [OpenMPI 4.1.1](https://www.open-mpi.org/software/ompi/v4.1/)
 
 {: .highlight }
-> OpenMPI 4.1.1 is required for ORCA 5.0.4.
+> OpenMPI **4.1.1** is required for ORCA 5.0.4.
 
 ## Download Dandelion
 
