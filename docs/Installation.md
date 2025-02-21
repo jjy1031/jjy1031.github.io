@@ -9,7 +9,7 @@ nav_order: 2
   - [miniconda](https://docs.anaconda.com/miniconda/install/)
   - [OpenMPI 4.1.1](https://www.open-mpi.org/software/ompi/v4.1/)
 
-{: .important }
+{: .highlight }
 > OpenMPI 4.1.1 is required for ORCA 5.0.4.
 
 ## Download Dandelion
