@@ -36,7 +36,7 @@ mother_strucs
 ```
 
 To run dandelion, your current conda environment should be **ts**.
-``` python
+```shell
 $ conda activate ts
 ```
 
@@ -45,7 +45,7 @@ $ conda activate ts
 The grammar is like this:
 
 
-``` python
+```shell
 $ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 ```
 
@@ -65,7 +65,7 @@ Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/exampl
 
 
 
-```python
+```shell
 dand sample -i /home/pekora/example/mother_strucs -o /home/pekora/example/outputs -n 30
 ```
 
@@ -266,7 +266,7 @@ And there will be a newly generated file in your output path, the `xtb.h5` file.
 Structure sampling is now finished. The next step is to refine the energy and force labels at the DFT level.
 You can enter this command:
 
-``` python
+```shell
 $ dand refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 ```
 
@@ -282,7 +282,7 @@ $ dand refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 Ensure that the path of the orca should point to an orca **executable file**.
 
 If you enter like this:
-```
+```shell
 $ dand refine -i /home/pekora/example/outputs -n 15 --orca /home/pekora/package/orca/orca_5_0_4/orca
 ```
 The two steps below will be executed automatically!
@@ -330,7 +330,7 @@ wB97X calculation finished!
 ```
 
 You can check your compiled database wb97x.db using ASE:
-```
+```shell
 $ ase db wb97x.db
 id|age|user   |formula |calculator|    energy|natoms| fmax|pbc|charge|   mass
  1| 5d|pekora|C4ClH4NO|orca      |-20266.198|    11|5.874|FFF| 0.000|117.532
