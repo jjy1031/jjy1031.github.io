@@ -357,7 +357,7 @@ Rows: 53842 (showing first 20)
 ```
 
 
-{: .note }
+{: .highlight }
 > You can check how to use the ase db file in the ase manual.
 >
 > <https://wiki.fysik.dtu.dk/ase/ase/db/db.html>
@@ -375,7 +375,7 @@ Arguments provided:
 Compiled successfully!
 ```
 
-{: .note }
+{: .highlight }
 > The data structure of h5 files can be easily visualized using VS Code extension [H5Web](https://github.com/silx-kit/h5web)
 > ![image](https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad)
 
