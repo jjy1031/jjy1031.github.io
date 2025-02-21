@@ -16,19 +16,19 @@ nav_order: 2
 
 You can install the code from [our repository](https://github.com/mhyeok1/dand):
 
-```python
-git clone https://github.com/mhyeok1/dand.git
-cd dand
+```shell
+$ git clone https://github.com/mhyeok1/dand.git
+$ cd dand
 ```
 
 ## Setup conda environment
 
 This creates a new conda environment according to the specifications in the `environment.yml` file.
 
-```python
-conda env create -f environment.yml
-conda activate ts
-pip install -e .
+```shell
+$ conda env create -f environment.yml
+$ conda activate ts
+$ pip install -e .
 ```
 
 {: .important }
@@ -39,9 +39,9 @@ pip install -e .
 
 Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for more detailed instructions, or simply use:
 
-```python
-git clone https://github.com/ZimmermanGroup/pyGSM
-pip install -e .
+```shell
+$ git clone https://github.com/ZimmermanGroup/pyGSM
+$ pip install -e .
 ```
 By executing `gsm` in the terminal, you can verify that the program has been successfully installed.
 
@@ -52,20 +52,20 @@ By executing `gsm` in the terminal, you can verify that the program has been suc
 You can install ORCA 5.0.4 from [here](https://orcaforum.kofo.mpg.de/app.php/portal).
 The following command extracts a `tar.xz` file.
 
-```python
-tar -xf orca.tar.xz
+```shell
+$ tar -xf orca.tar.xz
 ```
 
 ## Setup environment variables in `.bashrc`
 
 You can open your `.bashrc` file using:
-```python
-vi ~/.bashrc
+```shell
+$ vi ~/.bashrc
 ```
 
 Add the following lines to your `.bashrc` file:
 
-```python
+```shell
 export PATH="/path/to/your/orca/directory:$PATH" \
 export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
 export OMP_NUM_THREADS=1
@@ -74,6 +74,6 @@ ulimit -s unlimited\
 ```
 
 Apply changes:
-```python
-source ~/.bashrc
+```shell
+$ source ~/.bashrc
 ``` 
