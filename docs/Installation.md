@@ -82,3 +82,5 @@ Apply changes:
 ```shell
 $ source ~/.bashrc
 ``` 
+
+[Continue: How-to-use](https://mhyeok1.github.io/dand_docs/docs/how-to.html){: .btn .btn-purple }
