@@ -4,83 +4,99 @@ title: Installation
 nav_order: 2
 ---
 
-# Installation
-- Prerequisites
-  - [miniconda](https://docs.anaconda.com/miniconda/install/)
-  - [OpenMPI 4.1.1](https://www.open-mpi.org/software/ompi/v4.1/)
+# Installation Guide
+
+## Prerequisites
+- [Miniconda](https://docs.anaconda.com/miniconda/install/)
+- [OpenMPI 4.1.1](https://www.open-mpi.org/software/ompi/v4.1/)
 
 {: .highlight }
-> OpenMPI **4.1.1** is required for ORCA 5.0.4.
+> ORCA 5.0.4 specifically requires OpenMPI version **4.1.1**
 
-## Download Dandelion
 
-You can install the code from [our repository](https://github.com/mhyeok1/dand):
+
+## Step-by-Step Installation
+
+Clone the repository and navigate to the directory:
 
 ```shell
 $ git clone https://github.com/mhyeok1/dand.git
 $ cd dand
 ```
 
-## Setup conda environment
+## Set Up Conda Environment
 
-This creates a new conda environment according to the specifications in the `environment.yml` file.
+Create and activate the environment:
 
 ```shell
+# Create environment from configuration file
 $ conda env create -f environment.yml
+
+# Activate the environment
+conda activate ts
+
+# Install Dandelion
+pip install -e .
 ```
 
-Activate the 'ts' environment, and then install the dandelion.
 
-```shell
-$ conda activate ts
-$ pip install -e .
-```
 
 {: .important }
-> Double-check that you are working in the 'ts' environment whenever use dandelion!
+> Always ensure you are in the 'ts' environment when using Dandelion
+
 
 
 ## Install pyGSM
 
-Visit the [pyGSM repository](https://github.com/ZimmermanGroup/pyGSM) for more detailed instructions, or simply use:
+Install the [Growing String Method implementation](https://github.com/ZimmermanGroup/pyGSM):
 
 ```shell
 $ git clone https://github.com/ZimmermanGroup/pyGSM
+$ cd pyGSM
 $ pip install -e .
 ```
-By executing `gsm` in the terminal, you can verify that the program has been successfully installed.
+
+Test the installation by running:
+
+```shell
+$ gsm
+```
 
 
+## Install ORCA
 
-## Install Orca
-
-You can install ORCA 5.0.4 from [here](https://orcaforum.kofo.mpg.de/app.php/portal).
-The following command extracts a `tar.xz` file.
-
+1. Download ORCA 5.0.4 from the [ORCA portal](https://orcaforum.kofo.mpg.de/app.php/portal).
+1. Extract the downloaded file:
+   
 ```shell
 $ tar -xf orca.tar.xz
 ```
 
-## Setup environment variables in `.bashrc`
+## Configure Environment Variables
 
-You can open your `.bashrc` file using:
-```shell
-$ vi ~/.bashrc
-```
-
-Add the following lines to your `.bashrc` file:
+Add these settings to your .bashrc file:
 
 ```shell
-export PATH="/path/to/your/orca/directory:$PATH" \
-export PYTHONPATH=/path/to/your/pyGSM/directory:$PYTHONPATH \
+# Open .bashrc
+vi ~/.bashrc
+
+# Add these lines:
+export PATH="/path/to/orca:$PATH"
+export PYTHONPATH=/path/to/pyGSM:$PYTHONPATH
 export OMP_NUM_THREADS=1
-export OMP_STACKSIZE=16G \
-ulimit -s unlimited\
+export OMP_STACKSIZE=16G
+ulimit -s unlimited
 ```
 
 Apply changes:
 ```shell
 $ source ~/.bashrc
 ``` 
+
+## Verification
+After installation, verify that all components are working:
+
+1. Ensure you're in the 'ts' environment
+1. Check if commands `dand`, `gsm`, and `orca` work
 
 [Continue: How-to-use](https://mhyeok1.github.io/dand_docs/docs/how-to.html){: .btn .btn-purple }
