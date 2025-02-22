@@ -4,21 +4,16 @@ title: How-to-use
 nav_order: 3
 ---
 
-# How to Use Dandelion
 
+# Getting Started
 
-This page provides a guide for using Dandelion, which efficiently generates an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
-
-
-## Getting Started
-
-### Prerequisites
+## Prerequisites
 - Activate the conda environment:
 ```shell
 conda activate ts
 ```
 
-### Sample Data
+## Sample Data
 
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
@@ -42,9 +37,9 @@ mother_strucs/
 ```
 
 
-## Command Reference
+# Command Reference
 
-### 1. Sampling the reaction pathways
+## 1. Sampling the reaction pathways
 
 Basic command structure:
 ```shell
@@ -210,7 +205,7 @@ And there will be a newly generated file in your output path, the `xtb.h5` file.
 
 
 
-### 2. Refining Energy and Force Labels
+## 2. Refining Energy and Force Labels
 
 Structure sampling is now finished. The next step is to refine the energy and force labels at the DFT level.
 
@@ -281,9 +276,9 @@ Compiled successfully!
 ```
 
 
-## Checking Results
+# Checking Results
 
-### ase db file
+## ase db file
 
 You can check how to access the ase db file in the [ase manual](https://wiki.fysik.dtu.dk/ase/ase/db/db.html).
 
@@ -297,7 +292,7 @@ ase db wb97x.db -w
 
 
 
-### h5 file
+## h5 file
 
 You can check how to access the h5 file in the [hdfgroup webpage](https://www.hdfgroup.org/download-hdfview/)
 
