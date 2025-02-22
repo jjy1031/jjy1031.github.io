@@ -17,7 +17,7 @@ Welcome to the documentation site of Dandelion.
 
 
 
-<div align="justify"> 
+
 Dandelion is a code designed to build comprehensive chemical databases by efficiently sampling reactive chemical space. Our approach combines fast tight-binding calculations with selective high-level refinement to generate high-quality datasets for Machine Learning Interatomic Potentials (MLIPs). The workflow consists of four phases:
 
 1. **Reactant Preparation**: Generate diverse 3D structures from GDB-13 database
@@ -26,7 +26,6 @@ Dandelion is a code designed to build comprehensive chemical databases by effici
 4. **Refinement**: Perform high-level DFT calculations using ORCA
 
 This documentation guides the installation, setup, and usage of Dandelion.
-</div>
 
 
 ## Git repository
