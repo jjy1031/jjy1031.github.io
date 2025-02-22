@@ -4,57 +4,59 @@ title: How-to-use
 nav_order: 3
 ---
 
-# Example
+# How to Use Dandelion
 
 
 This page provides a guide for using Dandelion, which efficiently generates an extensive database by sampling both equilibrium and reactive regions of chemical compound space.
+
+
+## Getting Started
+
+### Prerequisites
+- Activate the conda environment:
+```shell
+conda activate ts
+```
+
+### Sample Data
+
 <div align="center">
   <img width="1600" alt="all" src="https://github.com/user-attachments/assets/6ff5bf37-7ce5-4980-a268-ee0f1d2c185d">
 </div>
 
-You can download the structures from [Here](https://github.com/mhyeok1/dand_docs/raw/refs/heads/docs/assets/mother_structures_for_tut.Zip)
+Download the example structures [Here](https://github.com/mhyeok1/dand_docs/raw/refs/heads/docs/assets/mother_structures_for_tut.Zip)
 
 Let's assume we are interested in expanding the dataset from 5 given mother structures. First,  each mother structure needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path` and saved in `.xyz` file format. 
 
+Your input structures should be organized as follows:
+
 ```
-mother_strucs
-├── Cl7138
-│   └── ClGeom-m7138-i1-c1-opt
+mother_strucs/
+├── Cl7138/
+│   └── ClGeom-m7138-i1-c1-opt/
 │       └── struc.xyz
-├── Cl7164
-│   └── ClGeom-m7164-i1-c1-opt
+├── Cl7164/
+│   └── ClGeom-m7164-i1-c1-opt/
 │       └── struc.xyz
-├── Cl7166
-│   └── ClGeom-m7166-i1-c1-opt
-│       └── struc.xyz
-├── Cl7168
-│   └── ClGeom-m7168-i1-c1-opt
-│       └── struc.xyz
-└── Cl7188
-    └── ClGeom-m7188-i1-c1-opt
-        └── struc.xyz
+├── ...
 ```
 
-To run dandelion, your current conda environment should be **ts**.
-```shell
-$ conda activate ts
-```
 
-# Sampling the reaction pathways
+## Command Reference
 
-The grammar is like this:
+### 1. Sampling the reaction pathways
 
-
+Basic command structure:
 ```shell
 $ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 ```
 
 
-
+Parameters:
 | Parameter                                      | Description                                                               |
 |------------------------------------------------|---------------------------------------------------------------------------|
-| `-h`, `--help`           | Displays the help message and exits the program.                           |
-| `-i`, `--input_path`     | Specifies the path where the mother structures are stored.                 |
+| `-h`, `--help`           | Displays the help message and exits the program. 
+| `-i`, `--input_path`     | Specifies the directory where the mother structures are stored.                 |
 | `-o`, `--output_path`    | Specifies the directory where Dandelion output will be saved.              |
 | `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
 
@@ -62,7 +64,6 @@ $ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
                       
 Assuming your mother structures are saved as 'struc.xyz' in `/home/pekora/example/mother_strucs`, you can initiate sampling process with the following command:
-
 
 
 ```shell
@@ -77,25 +78,6 @@ The following six steps will be executed automatically:
 
 
 
-```
-
-
-                                                     `;:`  BREAK 1 2
-                                         .;:;         /    BREAK 3 4
-        _____                   _      _;::;         `     ADD 1 3
-        |  __ \                | |    | |';:;'
-        | |  | | __ _ _ __   __| | ___| |  _  ___  _ __
-        | |  | |/ _` | '_ \ / _` |/ _ \ | | |/ _ \| '_ \
-        | |__| | (_| | | | | (_| |  __/ | | | (_) | | | |
-        |_____/ \__,_|_| |_|\__,_|\___|_| |_|\___/|_| |_|
-
-                   Chemical compound space sampling
-           near transition state using xTB, SE-GSM and NEB
-                          Ver. 0.6.2 by mlee
-
-
-
-```
 
 Dandelion first generates possible driving coordinates(seeds) from each mother structure.
 
@@ -118,9 +100,7 @@ Arguments provided:
 
 280 Seeds were generated from ClGeom-m7138-i1-c1-opt
 276 Seeds were generated from ClGeom-m7164-i1-c1-opt
-275 Seeds were generated from ClGeom-m7166-i1-c1-opt
-276 Seeds were generated from ClGeom-m7168-i1-c1-opt
-299 Seeds were generated from ClGeom-m7188-i1-c1-opt
+...
 
 Creating GSM finished!
 ```
@@ -162,15 +142,6 @@ GSM success reactions:           115
 Profile filtered reactions:       41
 Structure filtered reactions:     38
 Unique reactions:                 28
-
-◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢◤◢
-   mother: ClGeom-m7164-i1-c1-opt
-Initial seeds:                   276
-GSM success reactions:           111
-Profile filtered reactions:       42
-Structure filtered reactions:     38
-Unique reactions:                 32
-
 ...
 
 Filtering GSM finished!
@@ -217,7 +188,7 @@ Filtering NEB finished!
 
 ```
 
-Sixth step is to compile samples in Hierarchical Data Format:
+The sixth step is to compile samples in Hierarchical Data Format:
 ```
 
 ╔════════════════════════════════════════════════════════════════════╗
@@ -239,10 +210,9 @@ And there will be a newly generated file in your output path, the `xtb.h5` file.
 
 
 
-# Refine the energy and force labels
+### 2. Refining Energy and Force Labels
 
 Structure sampling is now finished. The next step is to refine the energy and force labels at the DFT level.
-You can enter this command:
 
 ```shell
 $ dand refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
@@ -250,42 +220,20 @@ $ dand refine [-h] -i INPUT_PATH -n MAX_WORKERS --orca ORCA
 
 | Parameter                                      | Description                                                               |
 |------------------------------------------------|---------------------------------------------------------------------------|
-| `-h`, `--help`           | Displays the help message and exits the program.                           |
+| `-h`, `--help`           | Displays the help message and exits the program. 
 | `-i`, `--input_path`     | Specifies the path of working directory containing `xtb.h5`.             |
 | `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
-| `--orca`                 | Specifies the path of the orca binary file             |
+| `--orca`                 | Specifies the path of the orca executable file             |
 
 
 {: .important }
-Ensure that the path of the orca should point to an orca **executable file**.
+The ORCA path must point to the **executable file**.
 
 If you enter like this:
 ```shell
 $ dand refine -i /home/pekora/example/outputs -n 15 --orca /home/pekora/package/orca/orca_5_0_4/orca
 ```
-The two steps below will be executed automatically!
-
-```
-         ⢀⣀⣀⣀⣀⣀⡀       ⢀⢀⣀⢀⠞⠖⠁⠡⡂⡆ ⡠⢀⡀
-         ⠺⢿⣿⣿⣿⣿⣿⣿⣷⣦⣠⣤⣤⣤⣄⣀⣀ ⡏⢸  ⢀ ⠣⠈ ⡠⡋⡨⡋⡂
-           ⠙⢿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣷⣦⣄⡀⡎⢀⡰⢀⢎⠌⢀⠔⣐⠠⣄⣀
-       ⢀ ⡔⢀⣴⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⠿⠿⠿⣿⣿⣷⣄⠂ ⢊⠎ ⠠⠂⡀⠕⠌⠌ ⡄⡠⢄
-    ⢀⡆⠄⠁⢈⢠⣾⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣀   ⣀⣿⣿⣿⣆⠐    ⡨⠒⠁⡀⢠⣦⠍⠇⡀⢲⠂⡄⠄
-   ⠨⡀⠑⡈ ⢠⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⣿⡄   ⠈  ⣬⠠⣰⣿ ⢳⢹⡄⡆⠄⢀⢼
- ⡄⠱⠈⠁⠑⢄⠐⣾⣿⣿⡿⠋⠁⣀⣠⣬⣽⣿⣿⣿⣿⣿⣿⠿⠿⠿⠿⠿⠿⠿⠿⠟⠁⡟⣅⡢⠁⠠⠜⡄⡑⢌⢧⡀ ⡀⣰⢁⡐⢁⢄⣡⣧⡤⠄
-⠠⡐⠓⠂⠌  ⢀⣿⣿⡏⢀⣴⣿⠿⠛⠉⠉⠶⢸⣿⣿⠿⠁⠢⠨⢀⣻⣿⣿⣿⣿⢟⣿⣝⠂  ⠠⡠⢆⠈⡂⠱⡇ ⣅⠫⠂⡠⢂⡪⠋  ⠁⡆
-⡶⠉ ⢀⡀⠁⡁⢸⣿⣿⢠⣾⡟⠁⣿⣿⡇ ⢀⠈⠉⠁    ⣀⠷⣹⣏⣷⢏⠹⠁    ⠈⢈ ⢇ ⢸⠱⢸⡏⡀⡶⡸⠎  ⠰⠁⡸
-⢈⡕⡈⠁⠐⠂⢀⢸⣿⣿⣾⠏⣿⣿⡿⣻⣿⢞⡢⠄ ⠈ ⡀⡤⠂⠁⠉⠌       ⢀⢀⠠⠐⢄ ⡀⢆⠎⢹⣶⣷⣧⡈⠈⠉⠤⠂⠉⢀⠱⡀
-⢠⡊    ⠁⣸⣿⣿⣿⣀⠉⡻⡏⠋⠁ ⠁⠒⠒⡀⣍⠍⠁ ⡀ ⢠⠂     ⢀⠈⠄⢀⠄⡒⠅⠈⢄⢡ ⢿⣿⣷⣿⡄ ⠐⠄⠤ ⠜⢀
-⠐⠁ ⠤⠒⢠⣾⣿⣿⣿⣿⣿⣷⣄⢄  ⢀ ⡏ ⢰⣃⠊⡐⠐⠁⢀⠈  ⣀ ⠰⠢⢀⠂⡰⠈⠂  ⡱⠂⢂⡇⡈⠻⢿⣿⠇   ⡤⠄⣀⡰⠁
-    ⠁⣾⣿⣿⣿⣿⣿⣿⣿⣿⣦ ⠄ ⠉   ⠸⠫⢞⠈⣰⠈ ⡐⢲⣿⡏       ⢠⡾ ⣀⠊⢱ ⠠⡀    ⢈⢀⡐⠤⣕⡄
-    ⢰⣿⡿⠛⠉   ⠈⠙⠛         ⠈⠈ ⠻⠔⠁⢸⡍⡇      ⢀⣏ ⢀⠠⠆ ⠣⡀⠈⡠⡀⠉⠢⡤⠢⣈⡡⣢⠦
-⠈⠁           ⢻⣇               ⢸⡇⡇      ⣼⡿⠉  ⢀⡇ ⠑⡄⠑⣌⢄ ⠙⢄⠠⡪⣅
-             ⠈⣾⡆              ⢸⣏⡇     ⢠⣿⠇   ⠸⢌⢢⢄⡠⠣⠈⠢⡁⡈⣎⢢⡬⠃
-
-               Energy refinement on samples using orca
-                          Ver. 0.6.2 by mlee
-```
+The refinement process includes two steps:
 
 In this phase, we use DFT calculations with Orca 5.0.4. The default setting uses wB97X functional and 6-31(d) basis set, but these settings can be adjusted as needed.
 
@@ -320,18 +268,6 @@ Rows: 53842 (showing first 20)
 ```
 
 
-{: .highlight }
-> You can check how to use the ase db file in the ase manual.
->
-> <https://wiki.fysik.dtu.dk/ase/ase/db/db.html>
-> 
-> For example, you can access the database through the web interface.
-> ```shell
-> $ ase db wb97x.db -w
-> ```
-> <img src="https://github.com/user-attachments/assets/5ea3be3b-a7e1-409a-a878-73d842e922e2" width="400">
-
-
 Finally, it compiles our wb97x.db sample in Hierarchical Data Format :
 ```
 ╔════════════════════════════════════════════════════════════════════╗
@@ -345,11 +281,29 @@ Compiled successfully!
 ```
 
 
+## Checking Results
+
+### ase db file
+
+You can check how to access the ase db file in the [ase manual](https://wiki.fysik.dtu.dk/ase/ase/db/db.html).
+
 
 {: .highlight }
-> The data structure of h5 files can be easily visualized using VS Code extension [H5Web](https://github.com/silx-kit/h5web)
->
-> <img src="https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad" width="400">
+Launch visualization interface:
+```shell
+ase db wb97x.db -w
+```
+<img src="https://github.com/user-attachments/assets/5ea3be3b-a7e1-409a-a878-73d842e922e2" width="400">
+
+
+
+### h5 file
+
+You can check how to access the h5 file in the [hdfgroup webpage](https://www.hdfgroup.org/download-hdfview/)
+
+{: .highlight }
+The data structure of h5 files can be easily visualized using VS Code with [H5Web](https://github.com/silx-kit/h5web) extension.
+<img src="https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad" width="400">
 
 
 
