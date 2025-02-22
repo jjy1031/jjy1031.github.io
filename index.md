@@ -15,12 +15,19 @@ Welcome to the documentation site of Dandelion.
 
 ![overall_scheme](https://github.com/jjy1031/jjy1031.github.io/assets/160209859/e0c9ad94-fa03-42d0-95ad-f0cb31315422)
 
+
+
 <div align="justify"> 
+Dandelion is a code designed to build comprehensive chemical databases by efficiently sampling reactive chemical space. Our approach combines fast tight-binding calculations with selective high-level refinement to generate high-quality datasets for Machine Learning Interatomic Potentials (MLIPs). The workflow consists of four phases:
 
+1. **Reactant Preparation**: Generate diverse 3D structures from GDB-13 database
+2. **Product Search**: Find reaction pathways using single-ended growing string method
+3. **Landscape Search**: Sample transition states using nudged elastic band method
+4. **Refinement**: Perform high-level DFT calculations using ORCA
 
-Dandelion is a method designed to build expanded database beyond equilibrium states by sampling reactive chemical space. Our approach provides an automated method to generate
-sufficient dataset for training general Machine Learning Interatomic Potentials (MLIP) to enhance their performance. To sample chemical space efficiently, our method leverages a tight-binding approach to search for possible reaction pathways on the potential energy surface, and selectively applies high-level calculations. For required high-level calculation, we use ORCA, an external quantum chemistry program. This documentation aims to provide a guide for the installation, setup, and use of Dandelion.
+This documentation guides the installation, setup, and usage of Dandelion.
 </div>
+
 
 ## Git repository
 <https://github.com/mhyeok1/dand/>
