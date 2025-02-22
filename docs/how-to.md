@@ -50,6 +50,8 @@ $ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 
 
 Parameters:
+
+
 | Parameter                                      | Description                                                               |
 |------------------------------------------------|---------------------------------------------------------------------------|
 | `-h`, `--help`           | Displays the help message and exits the program.  |
