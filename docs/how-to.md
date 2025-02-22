@@ -21,7 +21,9 @@ conda activate ts
 
 Download the example structures [Here](https://github.com/mhyeok1/dand_docs/raw/refs/heads/docs/assets/mother_structures_for_tut.Zip)
 
-Let's assume we are interested in expanding the dataset from 5 given mother structures. First,  each mother structure needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. Ensure that all the prepared mother structures are in specific `input_path` and saved in `.xyz` file format. 
+We are interested in expanding the dataset from 5 given mother structures. 
+First, each mother structure needs to be optimized to serve as a good starting point for GSM. This can be achieved by performing geometry optimization using GFN2-xTB. 
+Ensure that all the prepared mother structures are in specific `input_path` and saved in `.xyz` file format. 
 
 Your input structures should be organized as follows:
 
@@ -71,7 +73,7 @@ Output files will be stored in `/home/pekora/example/outputs`.
 
 The following six steps will be executed automatically:
 
-
+----
 
 
 Dandelion first generates possible driving coordinates(seeds) from each mother structure.
