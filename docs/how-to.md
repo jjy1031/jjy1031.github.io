@@ -52,7 +52,7 @@ $ dand sample [-h] -i INPUT_PATH -o OUTPUT_PATH -n MAX_WORKERS
 Parameters:
 | Parameter                                      | Description                                                               |
 |------------------------------------------------|---------------------------------------------------------------------------|
-| `-h`, `--help`           | Displays the help message and exits the program. 
+| `-h`, `--help`           | Displays the help message and exits the program.  |
 | `-i`, `--input_path`     | Specifies the directory where the mother structures are stored.                 |
 | `-o`, `--output_path`    | Specifies the directory where Dandelion output will be saved.              |
 | `-n`, `--max_workers`    | Specifies the number of worker processes for parallel execution.          |
