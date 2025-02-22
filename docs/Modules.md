@@ -14,3 +14,4 @@ Dandelion provides an integrated and streamlined process to create an extensive 
 The following pages introduce submodules, focusing on their contribution to the streamlined process of Dandelion.
 
 
+[Continue: About](https://mhyeok1.github.io/dand_docs/docs/About.html){: .btn .btn-purple }
