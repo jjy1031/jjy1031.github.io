@@ -288,11 +288,11 @@ You can check how to access the ase db file in the [ase manual](https://wiki.fys
 
 
 {: .highlight }
-Launch visualization interface:
-```shell
-ase db wb97x.db -w
-```
-<img src="https://github.com/user-attachments/assets/5ea3be3b-a7e1-409a-a878-73d842e922e2" width="400">
+> Launch visualization interface:
+> ```shell
+> ase db wb97x.db -w
+> ```
+> <img src="https://github.com/user-attachments/assets/5ea3be3b-a7e1-409a-a878-73d842e922e2" width="400">
 
 
 
