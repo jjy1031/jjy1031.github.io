@@ -21,7 +21,7 @@ Dandelion is distributed under the [MIT License](https://raw.githubusercontent.c
 
 Jinyoung Jeong created this documentation.
 
-The design of this docs is inspired by the [CREST docs](https://crest-lab.github.io/crest-docs/).
+The design of the docs is inspired by the [CREST docs](https://crest-lab.github.io/crest-docs/).
 
 ## Citation
 If you find this work useful for your research, please consider citing:
@@ -38,10 +38,10 @@ This work builds upon pioneering works that should also be cited:
 - Institute of Information & communications Technology Planning & Evaluation. Grant Number: RS-2023-00220628
 
 
-## Cool Ascii art from
-- https://patorjk.com/
-- https://emojicombos.com/
-- https://ascii.co.uk/
+## Cool Ascii arts
+- [patorjk](https://patorjk.com/)
+- [emojicombos](https://emojicombos.com/)
+- [ASCII.co.uk](https://ascii.co.uk/)
 
 
 
