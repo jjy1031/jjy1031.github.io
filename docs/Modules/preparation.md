@@ -1,6 +1,6 @@
 ---
 layout: default
-title: preparation
+title: Preparation
 nav_order: 1
 parent: Modules
 has_children: true
