@@ -1,7 +1,7 @@
 ---
 layout: default
 title: geom_opt.py
-parent: preparation
+parent: Preparation
 nav_order: 2
 ---
 
