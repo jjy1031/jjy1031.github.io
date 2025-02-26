@@ -1,7 +1,7 @@
 ---
 layout: default
 title: smiles_to_isoconfs.py
-parent: preparation
+parent: Preparation
 nav_order: 1
 ---
 
