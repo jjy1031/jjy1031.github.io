@@ -302,6 +302,8 @@ You can check how to access the h5 file in the [hdfgroup webpage](https://www.hd
 
 {: .highlight }
 The data structure of h5 files can be easily visualized using VS Code with [H5Web](https://github.com/silx-kit/h5web) extension.
+
+
 <img src="https://github.com/user-attachments/assets/d95f1f5b-7bcd-43bf-9442-78836e87b2ad" width="400">
 
 
