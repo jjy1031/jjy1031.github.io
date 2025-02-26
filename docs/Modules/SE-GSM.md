@@ -1,7 +1,7 @@
 ---
 layout: default
 title: SE-GSM
-nav_order: 1
+nav_order: 2
 parent: Modules
 has_children: true
 ---
