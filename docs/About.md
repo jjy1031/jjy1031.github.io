@@ -33,7 +33,7 @@ Ph.D. Student<br>
 Department of Chemistry, Yonsei University
 
 
-**Dr. Umit V. Ucak**<br>
+**Umit V. Ucak**<br>
 Postdoctoral Researcher<br>
 College of Pharmacy, Seoul National University
 
@@ -48,12 +48,12 @@ Ph.D. Student<br>
 College of Pharmacy, Seoul National University
 
 
-**Dr. Juyong Lee**<br>
+**Juyong Lee**<br>
 Associate Professor<br>
 [College of Pharmacy, Seoul National University](https://sites.google.com/view/lcbc)<br>
 
 
-**Dr. Eunji Sim**<br>
+**Eunji Sim**<br>
 Professor<br>
 [Department of Chemistry, Yonsei University](https://tccl.yonsei.ac.kr/)<br>
 
