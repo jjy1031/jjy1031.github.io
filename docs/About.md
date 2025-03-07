@@ -92,13 +92,13 @@ The design of the docs is inspired by the [CREST docs](https://crest-lab.github.
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;🌠
 <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/>
 
-<a href="https://www.youtube.com/@usadapekora">
+<a href="">
   <img src="https://github.com/user-attachments/assets/0da4604a-62da-439b-b044-616d40d9da10" alt="image" width="100" height="auto">
 </a>
-<a href="https://chiikawamarket.jp/">
+<a href="">
 <img src="https://github.com/user-attachments/assets/cce11461-09e2-443e-9569-d6252af5f960" alt="image" width="100" height="auto">
 </a>
-<a href="https://www.youtube.com/@usadapekora">
+<a href="">
   <img src="https://github.com/user-attachments/assets/0da4604a-62da-439b-b044-616d40d9da10" alt="image" width="100" height="auto">
 </a>
 
